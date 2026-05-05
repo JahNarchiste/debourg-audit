@@ -1026,6 +1026,31 @@ ul { list-style: none; }
 .form-success__titre { font-family: var(--font-titre); font-size: 1.8rem; color: var(--bleu); margin-bottom: 8px; }
 .form-success__texte { font-size: 0.95rem; color: var(--gris-500); }
 
+.form-error {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(220, 53, 69, 0.05);
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  border-radius: 12px;
+}
+.form-error__icon { font-size: 3rem; margin-bottom: 16px; }
+.form-error__titre { font-family: var(--font-titre); font-size: 1.8rem; color: #DC3545; margin-bottom: 12px; }
+.form-error__texte { font-size: 0.95rem; color: var(--gris-500); margin-bottom: 16px; }
+.form-error__link {
+  display: inline-block;
+  background: #DC3545;
+  color: var(--blanc);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background var(--transition);
+}
+.form-error__link:hover {
+  background: #c82333;
+}
+
 /* ═══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
