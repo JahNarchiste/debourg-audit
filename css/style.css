@@ -828,7 +828,7 @@ ul { list-style: none; }
 .critere__titre { font-weight: 600; font-size: 0.9rem; color: var(--bleu); margin-bottom: 4px; }
 .critere__desc { font-size: 0.8rem; color: var(--gris-500); line-height: 1.5; }
 
-/* À propos */
+/* À propos — ancienne structure */
 .apropos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -863,6 +863,44 @@ ul { list-style: none; }
   position: absolute;
   bottom: 24px;
   left: 24px;
+}
+
+/* À propos — nouvelle structure (approche.html avec photo réelle) */
+.apropos-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.apropos-photo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.apropos-photo-block img {
+  width: 220px;
+  height: 290px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  display: block;
+}
+
+.apropos-photo-block .apropos__nom {
+  font-size: 0.875rem;
+  color: var(--bleu);
+  font-weight: 600;
+  text-align: center;
+  position: static;
+  bottom: auto;
+  left: auto;
+  margin-bottom: 0;
+  letter-spacing: 0.04em;
+  text-transform: none;
 }
 .apropos__titre {
   font-family: var(--font-titre);

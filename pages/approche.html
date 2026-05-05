@@ -7,6 +7,241 @@
   <title>L'approche — Debourg Audit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
+  <style>
+    /* ── Poles grid ── */
+    .poles-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    @media (max-width: 900px) { .poles-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .poles-grid { grid-template-columns: 1fr; } }
+    .pole-card {
+      background: var(--bleu);
+      border-radius: 10px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pole-card__label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+    }
+    .pole-card__titre {
+      font-family: var(--font-titre);
+      font-size: 1.05rem;
+      color: #fff;
+      line-height: 1.3;
+    }
+    .pole-card__sous {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── Data families ── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 700px) { .data-grid { grid-template-columns: 1fr; } }
+    .data-card {
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .data-card--full { grid-column: 1 / -1; }
+    .data-card__num {
+      font-family: var(--font-titre);
+      font-size: 2rem;
+      color: var(--cuivre);
+      line-height: 1;
+    }
+    .data-card__question {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gris-400, #aaa);
+    }
+    .data-card__titre {
+      font-family: var(--font-titre);
+      font-size: 1rem;
+      color: var(--bleu);
+    }
+    .data-card__text {
+      font-size: 0.875rem;
+      color: var(--gris-500);
+      line-height: 1.7;
+    }
+
+    /* ── Cas pratiques ── */
+    .cas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    @media (max-width: 700px) { .cas-grid { grid-template-columns: 1fr; } }
+    .cas-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .cas-card__head {
+      background: var(--bleu);
+      padding: 20px 24px;
+      font-family: var(--font-titre);
+      font-size: 0.95rem;
+      color: #fff;
+    }
+    .cas-card__body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cas-card__row { display: flex; flex-direction: column; gap: 4px; }
+    .cas-card__label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+    }
+    .cas-card__text {
+      font-size: 0.875rem;
+      color: var(--gris-500);
+      line-height: 1.65;
+    }
+    .cas-card__badge {
+      display: inline-block;
+      background: rgba(0,0,0,0.05);
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--bleu);
+      margin: 2px 2px 2px 0;
+    }
+
+    /* ── Phases ── */
+    .phases-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 40px;
+      position: relative;
+    }
+    .phases-list::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: rgba(0,0,0,0.07);
+    }
+    .phase {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .phase:last-child { border-bottom: none; }
+    .phase__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--bleu);
+      color: #fff;
+      font-family: var(--font-titre);
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .phase__badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 6px;
+    }
+    .phase__titre {
+      font-family: var(--font-titre);
+      font-size: 1.1rem;
+      color: var(--bleu);
+      margin-bottom: 10px;
+    }
+    .phase__text {
+      font-size: 0.9rem;
+      color: var(--gris-500);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .phase__items {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .phase__item {
+      font-size: 0.875rem;
+      color: var(--gris-500);
+      line-height: 1.6;
+      padding-left: 16px;
+      border-left: 3px solid var(--cuivre);
+    }
+    .phase__item strong { color: var(--bleu); }
+
+    /* ── À propos corrigé ── */
+    .apropos-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    @media (max-width: 800px) {
+      .apropos-grid { grid-template-columns: 1fr; }
+    }
+    .apropos-photo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .apropos-photo-block img {
+      width: 220px;
+      height: 290px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+      display: block;
+    }
+    .apropos-photo-block .apropos__nom {
+      font-size: 0.875rem;
+      color: var(--bleu);
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -29,6 +264,7 @@
   </div>
 </nav>
 
+<!-- ═══ HERO ═══ -->
 <div class="page-hero">
   <div class="container">
     <div class="section__eyebrow">La méthode</div>
@@ -77,8 +313,49 @@
   </div>
 </section>
 
-<!-- ═══ LES 12 CRITÈRES ═══ -->
+<!-- ═══ LES 5 PÔLES ═══ -->
 <section class="section section--grey">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">La cartographie</div>
+      <h2 class="section__titre">Un langage de terrain,<br/><em>pensé pour la PME</em></h2>
+      <p class="section__sous-titre">Dans une PME, les collaborateurs portent souvent plusieurs casquettes. Pour éviter le jargon corporatif, nous modélisons l'entreprise autour de 5 pôles aux intitulés volontairement pragmatiques — chaque sondé s'y identifie instantanément.</p>
+    </div>
+    <div class="poles-grid">
+      <div class="pole-card">
+        <div class="pole-card__label">Pôle Commercial</div>
+        <div class="pole-card__titre">Aller chercher le boulot</div>
+        <div class="pole-card__sous">Prospection, devis, relation client, commandes</div>
+      </div>
+      <div class="pole-card">
+        <div class="pole-card__label">Pôle Production</div>
+        <div class="pole-card__titre">Faire le boulot</div>
+        <div class="pole-card__sous">Réalisation, fabrication, livraison, chantiers</div>
+      </div>
+      <div class="pole-card">
+        <div class="pole-card__label">Pôle SAV</div>
+        <div class="pole-card__titre">Suivre les pépins</div>
+        <div class="pole-card__sous">Réclamations, retours, litiges, suivi qualité</div>
+      </div>
+      <div class="pole-card">
+        <div class="pole-card__label">Pôle Administratif</div>
+        <div class="pole-card__titre">Faire tourner la boutique</div>
+        <div class="pole-card__sous">Comptabilité, RH, facturation, achats</div>
+      </div>
+      <div class="pole-card">
+        <div class="pole-card__label">Pôle Direction</div>
+        <div class="pole-card__titre">Tenir la barre</div>
+        <div class="pole-card__sous">Stratégie, pilotage, arbitrages, vision</div>
+      </div>
+    </div>
+    <p style="margin-top:32px;font-size:0.9rem;color:var(--gris-500);line-height:1.75;max-width:760px;margin-left:auto;margin-right:auto;text-align:center">
+      Si un collaborateur réalise à la fois des tâches commerciales et administratives, le système sépare ces activités et calcule la proportion exacte de temps allouée à sa mission principale — révélant <strong>quelle part de votre masse salariale est réellement investie dans votre cœur de métier.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ═══ LES 12 CRITÈRES ═══ -->
+<section class="section">
   <div class="container">
     <div class="section__header section__header--centre">
       <div class="section__eyebrow">Le questionnaire</div>
@@ -86,18 +363,192 @@
       <p class="section__sous-titre">Le questionnaire explore 12 types de situations qui consomment du temps et de l'énergie sans créer de valeur. 4 questions par critère, 48 au total. 15 minutes par répondant.</p>
     </div>
     <div class="criteres-grid">
-      <div class="critere fade-up"><div class="critere__num">01</div><div><div class="critere__titre">Contrainte temporelle</div><div class="critere__desc">Interruptions, urgences non planifiées, débordements imprévus sur le temps de travail.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">02</div><div><div class="critere__titre">Contrainte utilitaire</div><div class="critere__desc">Pannes d'outils, logiciels défaillants, matériel inadapté qui bloquent l'exécution.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">03</div><div><div class="critere__titre">Contrainte de dépendance</div><div class="critere__desc">Attentes internes — personnes ou informations nécessaires avant de pouvoir avancer.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">04</div><div><div class="critere__titre">Contrainte de mesure</div><div class="critere__desc">Absence de standards clairs sur ce qu'est un travail "bien fait" ou "conforme".</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">05</div><div><div class="critere__titre">Contrainte décisionnelle</div><div class="critere__desc">Attente de validation, circuits de décision trop longs, autonomie insuffisante.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">06</div><div><div class="critere__titre">Contrainte de transmission</div><div class="critere__desc">Informations reçues incomplètes ou tardives qui empêchent d'exécuter correctement.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">07</div><div><div class="critere__titre">Charge attentionnelle</div><div class="critere__desc">Multitâche forcé, sujets actifs simultanément qui fragmentent la concentration.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">08</div><div><div class="critere__titre">RACI</div><div class="critere__desc">Flou dans les rôles — qui fait quoi, qui décide, qui est responsable de quoi.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">09</div><div><div class="critere__titre">Contrainte de validation</div><div class="critere__desc">Attente d'approbation humaine avant de pouvoir avancer ou livrer une tâche.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">10</div><div><div class="critere__titre">Contrainte de compétence</div><div class="critere__desc">Tâches confiées hors du niveau de formation, formation insuffisante pour le poste.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">11</div><div><div class="critere__titre">Isolement / mémoire collective</div><div class="critere__desc">Absence de documentation, connaissance concentrée dans des têtes, manque d'appui.</div></div></div>
-      <div class="critere fade-up"><div class="critere__num">12</div><div><div class="critere__titre">Input externe</div><div class="critere__desc">Imprévus externes — changements clients, fournisseurs, franchiseur — sans délai d'adaptation.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">01</div><div><div class="critere__titre">Contrainte temporelle</div><div class="critere__desc">Interruptions subies, urgences non planifiées, débordements constants qui fragmentent le temps de travail et empêchent toute concentration soutenue.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">02</div><div><div class="critere__titre">Contrainte utilitaire</div><div class="critere__desc">Outils inadaptés, logiciels défaillants, double-saisie informatique — tout ce qui oblige à compenser par du temps et de l'énergie un équipement qui devrait faciliter le travail.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">03</div><div><div class="critere__titre">Contrainte de dépendance</div><div class="critere__desc">Attentes internes bloquantes — une information manquante, une action tierce nécessaire avant de pouvoir avancer. Le temps perdu à attendre ne crée aucune valeur.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">04</div><div><div class="critere__titre">Contrainte de mesure</div><div class="critere__desc">Absence de standards clairs sur ce qu'est un travail « bien fait » ou « conforme ». Sans référentiel commun, chacun improvise — et les corrections s'accumulent.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">05</div><div><div class="critere__titre">Contrainte décisionnelle</div><div class="critere__desc">Paralysie générée par l'absence de cadre clair : qui décide quoi, jusqu'à quel seuil, sans remonter la hiérarchie. Le collaborateur se bloque ou tranche à contre-cœur — dans les deux cas, du temps et de l'argent partent en fumée.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">06</div><div><div class="critere__titre">Contrainte de transmission</div><div class="critere__desc">Informations reçues incomplètes, tardives ou mal structurées lors des passages de relais entre pôles. La déperdition à chaque interface est l'une des causes les plus coûteuses de retravail.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">07</div><div><div class="critere__titre">Charge attentionnelle</div><div class="critere__desc">Coût cognitif du multitâche forcé : notifications, sujets simultanément ouverts, changements de contexte permanents. Ce n'est pas la complexité d'une tâche qui épuise — c'est l'obligation de jongler en continu.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">08</div><div><div class="critere__titre">Contrainte RACI</div><div class="critere__desc">Flou dans la répartition des rôles et responsabilités — qui est Responsable, Approbateur, Consulté, Informé. Les tâches tombent dans les angles morts, sont réalisées en double, ou ne sont jamais faites parce que chacun pensait que c'était la responsabilité de l'autre.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">09</div><div><div class="critere__titre">Contrainte de validation</div><div class="critere__desc">Bureaucratie interne excessive, étapes redondantes, réunions sans ordre du jour, validations en cascade inutiles. Chaque couche de process sans valeur ajoutée alourdit l'exécution.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">10</div><div><div class="critere__titre">Contrainte de compétence</div><div class="critere__desc">Tâches confiées hors du niveau de maîtrise réel, ou formation insuffisante pour le poste occupé. Le décalage entre ce qu'on demande et ce qu'on sait faire génère erreurs, lenteur et stress.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">11</div><div><div class="critere__titre">Isolement / mémoire collective</div><div class="critere__desc">Absence de documentation, connaissance concentrée dans des têtes, aucune capitalisation sur les solutions passées. Chaque problème est réinventé, chaque erreur redécouverte — au coût de l'entreprise.</div></div></div>
+      <div class="critere fade-up"><div class="critere__num">12</div><div><div class="critere__titre">Input externe</div><div class="critere__desc">Dépendance aux livrables provenant de l'extérieur — clients, fournisseurs, franchiseur, administrations — sur lesquels le collaborateur n'a aucune prise. Ces inputs manquants ou hors délai génèrent des temps d'attente forcés et des révisions en cascade.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAS PRATIQUES ═══ -->
+<section class="section section--grey">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">La structure avant l'émotion</div>
+      <h2 class="section__titre">Approche classique vs.<br/><em>Ingénierie structurelle</em></h2>
+      <p class="section__sous-titre">Là où un audit classique se concentre sur les relations interpersonnelles, nous nous concentrons sur les processus. Nous n'allons pas chercher à instaurer des discussions — nous allons instaurer des procédures.</p>
+    </div>
+    <div class="cas-grid">
+      <div class="cas-card">
+        <div class="cas-card__head">Cas n°1 — La guerre entre le Commerce et la Production</div>
+        <div class="cas-card__body">
+          <div class="cas-card__row">
+            <div class="cas-card__label">Le problème</div>
+            <div class="cas-card__text">La production prend du retard, les clients se plaignent, les commerciaux accusent les techniciens d'être trop lents.</div>
+          </div>
+          <div class="cas-card__row">
+            <div class="cas-card__label">L'approche classique</div>
+            <div class="cas-card__text">Diagnostic « problème de communication ». Proposition d'un séminaire de team-building ou d'une réunion hebdomadaire de synchronisation.</div>
+          </div>
+          <div class="cas-card__row">
+            <div class="cas-card__label">Notre diagnostic</div>
+            <div class="cas-card__text">Score critique détecté sur <span class="cas-card__badge">C3 — Dépendance</span> <span class="cas-card__badge">C6 — Transmission</span>. La production n'est pas lente : elle attend des spécificités techniques que le commercial n'a pas saisies.</div>
+          </div>
+          <div class="cas-card__row">
+            <div class="cas-card__label">Notre solution</div>
+            <div class="cas-card__text">Formulaire de transmission ou verrou logiciel empêchant de valider une vente sans les données techniques requises. Zéro réunion ajoutée. La friction disparaît.</div>
+          </div>
+        </div>
+      </div>
+      <div class="cas-card">
+        <div class="cas-card__head">Cas n°2 — Le dirigeant « Goulot d'étranglement »</div>
+        <div class="cas-card__body">
+          <div class="cas-card__row">
+            <div class="cas-card__label">Le problème</div>
+            <div class="cas-card__text">Le chef d'entreprise travaille 70h par semaine, gère les urgences de tout le monde et n'a plus le temps de piloter la stratégie.</div>
+          </div>
+          <div class="cas-card__row">
+            <div class="cas-card__label">L'approche classique</div>
+            <div class="cas-card__text">Formation en gestion du temps, coaching pour « lâcher prise » et mieux déléguer.</div>
+          </div>
+          <div class="cas-card__row">
+            <div class="cas-card__label">Notre diagnostic</div>
+            <div class="cas-card__text">Explosion détectée sur <span class="cas-card__badge">C5 — Décisionnel</span> <span class="cas-card__badge">C8 — RACI</span> chez les équipes. Les employés ne sont pas incompétents — ils n'ont simplement pas l'autorisation de valider une dépense de 50 € sans la signature du dirigeant.</div>
+          </div>
+          <div class="cas-card__row">
+            <div class="cas-card__label">Notre solution</div>
+            <div class="cas-card__text">Matrice de délégation claire et seuils de tolérance financière par pôle. Le dirigeant récupère instantanément 20 % de son temps stratégique.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CE QUE NOUS ANALYSONS ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">De la donnée brute à la vision stratégique</div>
+      <h2 class="section__titre">5 familles de données<br/><em>que nous croisons</em></h2>
+      <p class="section__sous-titre">La force de notre méthodologie ne réside pas dans la simple collecte d'informations, mais dans la manière dont nous analysons et croisons ces données pour en tirer une vérité économique et structurelle. <br>À partir de l'audit rempli par vos équipes, nous extrayons et traitons 5 grandes familles de données. Chacune de ces familles apporte un éclairage crucial sur l'état de santé de votre PME.</p>
+
+    </div>
+    <div class="data-grid">
+      <div class="data-card">
+        <div class="data-card__num">01</div>
+        <div class="data-card__question">Qui fait quoi, vraiment ?</div>
+        <div class="data-card__titre">Les Données de Cartographie Opérationnelle</div>
+        <div class="data-card__text"><strong>La donnée récoltée</strong> : La répartition réelle de l'énergie de vos équipes à travers 5 grands pôles fonctionnels vitaux : Aller chercher le boulot, Faire le boulot, Suivre les pépins, Faire tourner la boutique, et Tenir la barre. Nous mesurons également la proportion de collaborateurs dits "multi-pôles".</div>
+        <div class="data-card__text"><strong>L'intérêt stratégique</strong> : Dans une PME, la polyvalence est indispensable, mais elle devient dangereuse lorsqu'elle est subie. En analysant les répondants multi-pôles, nous détectons les dérives de fonctions et l'éparpillement. Nous identifions par exemple si un excès d'énergie est aspiré par le pôle "Suivre les pépins" au détriment du pôle "Faire le boulot", dégradant ainsi votre capacité de production.</div>
+
+        </div>
+      <div class="data-card">
+        <div class="data-card__num">02</div>
+        <div class="data-card__question">Où ça bloque ?</div>
+        <div class="data-card__titre">Les Données d'Intensité de Friction</div>
+        <div class="data-card__text"><strong>La donnée récoltée</strong> : L'évaluation de 12 critères de friction précis (Contrainte temporelle, Dépendance, Outils/Utilitaire, Charge attentionnelle, etc.) croisés avec chaque pôle fonctionnel pour obtenir un "Taux de friction moyen".</div>
+        <div class="data-card__text"><strong>L'intérêt stratégique</strong>: C'est la radiographie de vos processus. Au lieu d'entendre un vague "on manque d'organisation", nous générons une cartographie thermique (Heatmap) précise. Nous pouvons vous affirmer que le problème majeur du pôle Production n'est pas le manque de compétences, mais une "Contrainte de transmission" en amont. Le taux de friction, plafonné à 60 % (limite physique), nous permet de cibler exactement l'endroit de la tuyauterie qui fuit.</div>
+      </div>
+      <div class="data-card">
+        <div class="data-card__num">03</div>
+        <div class="data-card__question">Combien de temps perdu ?</div>
+        <div class="data-card__titre">Les Données de Dilution du Temps</div>
+        <div class="data-card__text"><strong>La donnée récoltée</strong> : La conversion des fréquences et durées d'interruption en "Heures perdues par semaine" et en "Pourcentage de masse salariale perdue".</div>
+        <div class="data-card__text"><strong>L'intérêt stratégique</strong> : Il s'agit de mesurer la part exacte du budget RH qui est littéralement absorbée par les inefficacités opérationnelles. Nous savons qu'au-delà de 15 à 20 % de temps détourné, l'impact sur la rentabilité structurelle de l'entreprise devient critique. C'est l'indicateur absolu de votre véritable capacité de production entravée.</div>
+      </div>
+      <div class="data-card">
+        <div class="data-card__num">04</div>
+        <div class="data-card__question">Combien ça coûte ?</div>
+        <div class="data-card__titre">Le Chiffrage et le Score de Priorité</div>
+        <div class="data-card__text"><strong>La donnée récoltée</strong> : Le "Coût total des frictions" (calculé en euros selon le coût horaire et la sévérité). Pour éviter les biais, nous croisons ce coût avec un "Indice de fiabilité" des réponses (noté de 0 à 5) pour créer un <strong>Score de priorité (€)</strong>.</div>
+        <div class="data-card__text"><strong>L'intérêt stratégique</strong>: C'est le nerf de la guerre. L'argent n'est jamais "perdu", il est déplacé. Nous vous montrons exactement où migre votre masse salariale en créant un Top 3 des frictions les plus coûteuses par pôle. Le Score de priorité nous permet de construire un plan d'action infaillible : un problème coûteux ET assorti d'un indice de fiabilité élevé (4-5) devient une urgence absolue à traiter.</div>
+      </div>
+      <div class="data-card data-card--full">
+        <div class="data-card__num">05</div>
+        <div class="data-card__question">Pourquoi ?</div>
+        <div class="data-card__titre">La Confrontation Réel vs Ressenti</div>
+        <div class="data-card__text"><strong>La donnée récoltée</strong> : L'écart mathématique entre le classement subjectif (ce que les équipes votent comme étant le plus problématique) et le classement objectif (ce qui vous coûte réellement le plus cher à l'année). Nous y ajoutons le "Score ressenti" global (sur 10).</div>
+        <div class="data-card__text"><strong>L'intérêt stratégique</strong> : C'est la révélation de vos angles morts. Un écart positif fort indique un critère sous-estimé financièrement par vos équipes (un problème latent énorme dont personne ne se plaint). À l'inverse, si le score ressenti est positif mais que les frictions réelles sont très élevées, cela prouve que vos équipes ont dangereusement "normalisé" et accepté l'inefficacité au quotidien.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MÉTHODOLOGIE 4 ÉTAPES ═══ -->
+<section class="section section--grey">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">Notre méthodologie d'intervention</div>
+      <h2 class="section__titre">4 phases,<br/><em>zéro dérangement inutile</em></h2>
+      <p class="section__sous-titre">Pour garantir une efficacité maximale avec un dérangement minimal de vos équipes, notre intervention suit un processus strict et transparent.</p>
+    </div>
+    <div class="phases-list">
+
+      <div class="phase">
+        <div class="phase__num">1</div>
+        <div>
+          <div class="phase__badge">Action de la Direction — confidentiel</div>
+          <div class="phase__titre">Paramétrage</div>
+          <p class="phase__text">Avant toute sollicitation des équipes, nous définissons ensemble le cadre économique.</p>
+          <div class="phase__items">
+            <div class="phase__item">Vous attribuez de manière confidentielle une <strong>catégorie (A à F)</strong> à chaque membre de votre personnel selon son groupe de rémunération.</div>
+            <div class="phase__item">Vous transmettez à chaque collaborateur le lien vers notre questionnaire d'audit, accompagné de la lettre qu'il devra sélectionner.</div>
+            <div class="phase__item">Ce système garantit <strong>l'anonymat des salaires individuels</strong> tout en permettant à notre algorithme de pondérer financièrement les pertes.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase__num">2</div>
+        <div>
+          <div class="phase__badge">Offert — sans engagement</div>
+          <div class="phase__titre">Diagnostic Flash</div>
+          <p class="phase__text">Une fois les questionnaires remplis (environ 15 minutes par collaborateur), nous analysons les données et revenons vers vous gratuitement avec une « photo » factuelle de l'état de friction de votre entreprise.</p>
+          <div class="phase__items">
+            <div class="phase__item"><strong>Le chiffre global de la fuite financière</strong> — le montant exact en euros de la valeur ajoutée perdue chaque mois.</div>
+            <div class="phase__item"><strong>Le Top 3 des pôles en souffrance</strong> — les départements où l'énergie se dilue le plus.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase__num">3</div>
+        <div>
+          <div class="phase__badge">Prestation facturée</div>
+          <div class="phase__titre">Audit détaillé &amp; Restitution</div>
+          <p class="phase__text">Si le chiffre du Diagnostic Flash confirme vos soupçons et que vous souhaitez comprendre la mécanique de cette perte, nous déclenchons l'analyse profonde.</p>
+          <div class="phase__items">
+            <div class="phase__item"><strong>Rapport d'audit complet</strong> cartographiant les 12 critères de friction pour chaque pôle.</div>
+            <div class="phase__item"><strong>Présentation stratégique d'1h30</strong> (visioconférence ou sur site) pour exposer les causes racines, décortiquer le Budget Déplacé et révéler le parasite majeur de votre organisation.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase__num">4</div>
+        <div>
+          <div class="phase__badge">Sur devis sur-mesure</div>
+          <div class="phase__titre">Ingénierie de Résolution</div>
+          <p class="phase__text">Une fois le diagnostic posé et les fuites chiffrées, le choix vous appartient : appliquer nos recommandations par vous-mêmes, ou nous confier la réparation du système. Nous ne partons jamais d'une page blanche — nous disposons d'une boîte à outils technique et procédurale développée pour neutraliser chaque critère de friction.</p>
+          <div class="phase__items">
+            <div class="phase__item"><strong>Immersion silencieuse</strong> — observation passive des flux de travail pour comprendre la réalité du terrain sans perturber la productivité.</div>
+            <div class="phase__item"><strong>Implémentation chirurgicale</strong> — nouvelles procédures, outils de contournement, verrous structurels dans vos logiciels.</div>
+            <div class="phase__item"><strong>Audit de fond</strong> — vérification en cours de déploiement que les nouvelles structures sont viables et produisent les effets attendus.</div>
+            <div class="phase__item"><strong>Rapport final de rentabilité</strong> — preuve chiffrée de l'élimination des zones de friction et de la rentabilité effective des mesures déployées.</div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -105,9 +556,9 @@
 <!-- ═══ À PROPOS ═══ -->
 <section class="section">
   <div class="container">
-    <div class="apropos">
-      <div class="apropos__img">
-        <div class="apropos__img-inner">AD</div>
+    <div class="apropos-grid">
+      <div class="apropos-photo-block">
+        <img src="data:image/jpeg;base64,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" alt="Antonin Debourg — Fondateur Debourg Audit" />
         <div class="apropos__nom">Antonin Debourg — Fondateur</div>
       </div>
       <div>
@@ -120,17 +571,21 @@
           C'est là que j'ai compris que les frictions opérationnelles ne sont pas une fatalité — elles sont identifiables, quantifiables et corrigeables. J'ai développé la méthode Bottom-Up pour donner aux dirigeants ce que j'aurais voulu avoir : un diagnostic honnête, chiffré et actionnable.
         </p>
         <p class="apropos__texte">
-          J'ai également accompagné des entrepreneurs dans leurs démarches de création et restructuration, monté des dossiers SAP et Qualiopi, rédigé des statuts et PV d'AG. Ce n'est pas de la théorie — c'est de l'expérience accumulée dans les vraies contraintes d'une vraie entreprise.
+          J'ai également accompagné des entrepreneurs dans leurs démarches de création et restructuration, monté des dossiers SAP et Qualiopi, rédigé des statuts et PV d'AG. Ma formation en droit et économie m'a donné le cadre analytique pour lire une organisation comme un système — et identifier précisément où elle fuit.
+        </p>
+        <p class="apropos__texte">
+          Formateur en sécurité incendie, j'ai animé des sessions de sensibilisation, conduit des exercices d'évacuation et assuré le contrôle des systèmes de sécurité incendie en Établissements Recevant du Public (ERP). Cette expérience forge une lecture des risques et des dysfonctionnements que les audits de bureau ne donnent pas.
         </p>
         <div class="apropos__tags">
           <span class="apropos__tag">Direction d'entreprise</span>
           <span class="apropos__tag">Efficacité opérationnelle</span>
-          <span class="apropos__tag">Droit des affaires</span>
+          <span class="apropos__tag">Droit &amp; Économie</span>
           <span class="apropos__tag">Gestion financière</span>
           <span class="apropos__tag">Dossiers SAP</span>
           <span class="apropos__tag">Qualiopi</span>
           <span class="apropos__tag">RGE</span>
-          <span class="apropos__tag">Sapeur-Pompier Volontaire</span>
+          <span class="apropos__tag">Sécurité incendie ERP</span>
+          <span class="apropos__tag">Formation évacuation</span>
         </div>
       </div>
     </div>
@@ -167,8 +622,7 @@
       <div>
         <div class="footer__col-titre">Contact</div>
         <ul class="footer__links">
-          <li><a href="tel:0752606634">07 52 60 66 34</a></li>
-          <li><a href="mailto:antonindebourg@gmail.com">antonindebourg@gmail.com</a></li>
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
           <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
