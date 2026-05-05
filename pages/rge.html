@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Debourg Audit accompagne les artisans et entreprises du bâtiment dans leur parcours de certification RGE — de la collecte des pièces jusqu'au suivi de la première année." />
+  <title>Certification RGE — Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
+
+  <style>
+    /* ═══ RGE PAGE — styles spécifiques ═══ */
+
+    /* Phases timeline */
+    .rge-phases {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      margin-top: 48px;
+    }
+    .rge-phases::before {
+      content: '';
+      position: absolute;
+      left: 32px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--cuivre), rgba(192,122,69,0.1));
+    }
+    .rge-phase {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 40px;
+      position: relative;
+    }
+    .rge-phase:last-child {
+      padding-bottom: 0;
+    }
+    .rge-phase__num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bleu);
+      color: var(--blanc);
+      font-family: var(--font-titre);
+      font-size: 1.4rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 16px rgba(26,54,93,0.2);
+    }
+    .rge-phase__content {
+      padding-top: 12px;
+    }
+    .rge-phase__titre {
+      font-family: var(--font-titre);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 8px;
+    }
+    .rge-phase__resultat {
+      display: inline-block;
+      background: rgba(192,122,69,0.12);
+      color: var(--cuivre);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    .rge-phase__texte {
+      font-size: 0.95rem;
+      color: var(--gris-500);
+      line-height: 1.7;
+    }
+
+    /* Documents checklist */
+    .rge-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    @media (max-width: 640px) {
+      .rge-checklist { grid-template-columns: 1fr; }
+    }
+    .rge-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--blanc);
+      border: 1px solid rgba(26,54,93,0.08);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .rge-check-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(192,122,69,0.12);
+      color: var(--cuivre);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rge-check-texte {
+      font-size: 0.9rem;
+      color: var(--gris-500);
+      line-height: 1.5;
+    }
+
+    /* Livrables grid */
+    .rge-livrables {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    @media (max-width: 900px) {
+      .rge-livrables { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .rge-livrables { grid-template-columns: 1fr; }
+    }
+    .rge-livrable {
+      background: var(--blanc);
+      border: 1px solid rgba(26,54,93,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .rge-livrable__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .rge-livrable__texte {
+      font-size: 0.9rem;
+      color: var(--gris-500);
+      line-height: 1.5;
+    }
+
+    /* Limites / obligations */
+    .rge-obligations {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .rge-obligation-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--gris-500);
+      line-height: 1.6;
+    }
+    .rge-obligation-item::before {
+      content: '→';
+      color: var(--cuivre);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* CTA banner */
+    .rge-cta-banner {
+      background: var(--bleu);
+      border-radius: 16px;
+      padding: 56px 48px;
+      text-align: center;
+      color: var(--blanc);
+    }
+    .rge-cta-banner__eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 16px;
+    }
+    .rge-cta-banner__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--blanc);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .rge-cta-banner__titre em {
+      color: var(--cuivre);
+      font-style: normal;
+    }
+    .rge-cta-banner__texte {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    @media (max-width: 640px) {
+      .rge-cta-banner { padding: 40px 24px; }
+      .rge-phases::before { left: 24px; }
+      .rge-phase { grid-template-columns: 48px 1fr; gap: 20px; }
+      .rge-phase__num { width: 48px; height: 48px; font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="offres.html">Les offres</a></li>
+        <li><a href="approche.html">L'approche</a></li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<div class="page-hero">
+  <div class="container">
+    <div class="section__eyebrow">Certification RGE</div>
+    <h1 class="page-hero__titre">Un parcours RGE<br/><em>piloté de A à Z</em></h1>
+    <p class="page-hero__desc">Debourg Audit accompagne les artisans et entreprises du bâtiment dans la préparation, la coordination et la sécurisation de leur qualification ou certification RGE — de la collecte des pièces jusqu'au suivi de la première année.</p>
+  </div>
+</div>
+
+<!-- ═══ INTRODUCTION ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div class="section__eyebrow">Pourquoi se faire accompagner</div>
+        <h2 class="section__titre">Devenir RGE,<br/><em>ce n'est pas juste un formulaire</em></h2>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; margin-bottom:20px;">
+          Le parcours suppose d'identifier la bonne qualification selon les travaux réalisés, de réunir des pièces administratives, sociales, assurantielles et techniques, de justifier la compétence du responsable technique, de présenter des références de chantiers et d'accepter un suivi avec audits ou contrôles de conformité.
+        </p>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8;">
+          Pour un artisan, cette démarche mobilise du temps administratif, de l'organisation et une bonne lecture des exigences du référentiel applicable. Un accompagnement externe permet de transformer une procédure souvent perçue comme complexe en un parcours planifié, avec un calendrier, une check-list de pièces et un pilotage clair de chaque étape.
+        </p>
+      </div>
+      <div style="background:var(--gris-100); border-radius:16px; padding:40px;">
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu); margin-bottom:24px; text-transform:uppercase; letter-spacing:0.08em;">L'objectif de l'accompagnement</div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="color:var(--cuivre); font-size:1.2rem; flex-shrink:0;">⏱</span>
+            <span style="font-size:0.95rem; color:var(--gris-500); line-height:1.6;">Gagner du temps sur chaque étape administrative</span>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="color:var(--cuivre); font-size:1.2rem; flex-shrink:0;">📋</span>
+            <span style="font-size:0.95rem; color:var(--gris-500); line-height:1.6;">Éviter les oublis documentaires et les erreurs de dossier</span>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="color:var(--cuivre); font-size:1.2rem; flex-shrink:0;">🔗</span>
+            <span style="font-size:0.95rem; color:var(--gris-500); line-height:1.6;">Coordonner les échanges avec les organismes, formations et interlocuteurs techniques</span>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="color:var(--cuivre); font-size:1.2rem; flex-shrink:0;">✅</span>
+            <span style="font-size:0.95rem; color:var(--gris-500); line-height:1.6;">Aborder sereinement la première année de suivi RGE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LES 6 PHASES ═══ -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Le parcours client</div>
+    <h2 class="section__titre">6 phases,<br/><em>un pilotage complet</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:620px; line-height:1.7; margin-bottom:0;">
+      Debourg Audit intervient comme coordinateur opérationnel à chaque étape — de l'analyse initiale jusqu'au maintien du label.
+    </p>
+
+    <div class="rge-phases">
+
+      <div class="rge-phase">
+        <div class="rge-phase__num">1</div>
+        <div class="rge-phase__content">
+          <div class="rge-phase__titre">Diagnostic de départ — Cadrage</div>
+          <div class="rge-phase__resultat">→ Feuille de route claire, qualification ciblée</div>
+          <p class="rge-phase__texte">Analyse de l'activité de l'entreprise, de ses domaines de travaux, de son organisation et de son niveau de préparation documentaire. Cette étape permet d'identifier la qualification ou la certification RGE la plus adaptée — le RGE dépend du type de travaux et n'est pas un label unique valable pour toutes les activités.</p>
+        </div>
+      </div>
+
+      <div class="rge-phase">
+        <div class="rge-phase__num">2</div>
+        <div class="rge-phase__content">
+          <div class="rge-phase__titre">Collecte et vérification des pièces</div>
+          <div class="rge-phase__resultat">→ Dossier documentaire complet et ordonné</div>
+          <p class="rge-phase__texte">Collecte avec le client des pièces nécessaires : justificatifs d'immatriculation, attestation Urssaf, attestations d'assurances, compétence du responsable technique, données financières sur les deux derniers exercices clos, références de chantiers achevés. Vérification de la cohérence des documents, repérage des pièces manquantes, classement et préparation d'un dossier lisible pour l'organisme compétent.</p>
+        </div>
+      </div>
+
+      <div class="rge-phase">
+        <div class="rge-phase__num">3</div>
+        <div class="rge-phase__content">
+          <div class="rge-phase__titre">Montage et dépôt du dossier</div>
+          <div class="rge-phase__resultat">→ Dossier prêt à déposer auprès de l'organisme compétent</div>
+          <p class="rge-phase__texte">Préparation du dossier de candidature avec le client et remplissage des formulaires nécessaires auprès de l'organisme de qualification ou de certification sélectionné. Le label étant délivré par des organismes conventionnés avec l'État, la qualité du dossier est déterminante dans le bon déroulement du parcours.</p>
+        </div>
+      </div>
+
+      <div class="rge-phase">
+        <div class="rge-phase__num">4</div>
+        <div class="rge-phase__content">
+          <div class="rge-phase__titre">Coordination de la formation</div>
+          <div class="rge-phase__resultat">→ Responsable technique positionné sur le bon parcours</div>
+          <p class="rge-phase__texte">Lorsque la qualification visée exige une formation du responsable technique, Debourg Audit contacte les organismes de formation, recherche des sessions adaptées et bloque les créneaux en accord avec le client. Cette étape répond à l'exigence officielle selon laquelle l'entreprise doit démontrer la compétence du responsable technique.</p>
+        </div>
+      </div>
+
+      <div class="rge-phase">
+        <div class="rge-phase__num">5</div>
+        <div class="rge-phase__content">
+          <div class="rge-phase__titre">Suivi jusqu'à l'obtention</div>
+          <div class="rge-phase__resultat">→ Instruction sécurisée et réactive</div>
+          <p class="rge-phase__texte">Suivi de l'avancement du dossier, relais des demandes éventuelles de l'organisme instructeur et aide au client pour transmettre les compléments demandés dans les délais. L'objectif est d'éviter les ruptures de traitement et d'assurer une réponse structurée à chaque étape de l'instruction.</p>
+        </div>
+      </div>
+
+      <div class="rge-phase">
+        <div class="rge-phase__num">6</div>
+        <div class="rge-phase__content">
+          <div class="rge-phase__titre">Assistance pendant la première année RGE</div>
+          <div class="rge-phase__resultat">→ Maintien du label facilité, meilleure préparation aux audits</div>
+          <p class="rge-phase__texte">L'accompagnement ne s'arrête pas à l'obtention du label. Debourg Audit assiste le client pendant la première année pour l'aider à préparer les contrôles, à consolider ses dossiers de chantier et à répondre aux exigences de conformité qui peuvent intervenir dans les deux ans suivant l'octroi ou le renouvellement du label.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LIVRABLES ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Ce que comprend la mission</div>
+    <h2 class="section__titre">Les livrables<br/><em>Debourg Audit</em></h2>
+    <div class="rge-livrables">
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">🎯</div>
+        <div class="rge-livrable__texte">Entretien de cadrage et analyse du besoin RGE du client</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">📋</div>
+        <div class="rge-livrable__texte">Check-list personnalisée des documents à fournir</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">🗂️</div>
+        <div class="rge-livrable__texte">Collecte, classement et revue de cohérence des pièces</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">📝</div>
+        <div class="rge-livrable__texte">Préparation et remplissage du dossier de candidature</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">📞</div>
+        <div class="rge-livrable__texte">Prise de contact avec les organismes concernés</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">🎓</div>
+        <div class="rge-livrable__texte">Recherche et réservation des sessions de formation adaptées</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">🔄</div>
+        <div class="rge-livrable__texte">Assistance au traitement des demandes complémentaires</div>
+      </div>
+      <div class="rge-livrable">
+        <div class="rge-livrable__icon">🛡️</div>
+        <div class="rge-livrable__texte">Appui méthodologique pendant la première année pour les contrôles de conformité</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOCUMENTS REQUIS ═══ -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Documents généralement demandés</div>
+    <h2 class="section__titre">Le socle documentaire<br/><em>à réunir</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:620px; line-height:1.7; margin-bottom:0;">
+      Debourg Audit informe le client dès le démarrage des pièces à réunir. La liste exacte peut varier selon l'organisme et la qualification visée — voici le socle commun officiel.
+    </p>
+    <div class="rge-checklist">
+      <div class="rge-check-item">
+        <div class="rge-check-icon">🏢</div>
+        <div class="rge-check-texte">Justificatifs d'immatriculation de l'entreprise et d'activité déclarée</div>
+      </div>
+      <div class="rge-check-item">
+        <div class="rge-check-icon">📄</div>
+        <div class="rge-check-texte">Attestation Urssaf récente et pièces administratives de régularité</div>
+      </div>
+      <div class="rge-check-item">
+        <div class="rge-check-icon">🔒</div>
+        <div class="rge-check-texte">Attestations d'assurance RC professionnelle et responsabilité décennale si applicable</div>
+      </div>
+      <div class="rge-check-item">
+        <div class="rge-check-icon">📊</div>
+        <div class="rge-check-texte">Informations financières sur les deux derniers exercices clos</div>
+      </div>
+      <div class="rge-check-item">
+        <div class="rge-check-icon">👤</div>
+        <div class="rge-check-texte">Identité et justificatifs de compétence du responsable technique, avec attestations de formation si nécessaire</div>
+      </div>
+      <div class="rge-check-item">
+        <div class="rge-check-icon">🏗️</div>
+        <div class="rge-check-texte">Références de chantiers : au moins deux chantiers achevés dans les quatre dernières années, avec devis, factures et éléments techniques associés</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OBLIGATIONS LÉGALES ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+      <div>
+        <div class="section__eyebrow">Transparence et limites</div>
+        <h2 class="section__titre">Ce que Debourg Audit<br/><em>ne fait pas</em></h2>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; margin-bottom:24px;">
+          Debourg Audit accompagne et coordonne, mais ne délivre pas lui-même la qualification ou la certification — celle-ci relève exclusivement des organismes conventionnés avec l'État.
+        </p>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8;">
+          Debourg Audit ne se substitue pas non plus aux obligations légales de l'entreprise en matière d'assurance, de compétence réelle, de qualité de réalisation des travaux et de véracité des documents transmis.
+        </p>
+      </div>
+      <div>
+        <div class="section__eyebrow">Obligations légales à rappeler</div>
+        <h2 class="section__titre">Les obligations<br/><em>du client</em></h2>
+        <div class="rge-obligations">
+          <div class="rge-obligation-item">Être en règle sur le plan administratif, social et assurantiel</div>
+          <div class="rge-obligation-item">Pouvoir justifier de la compétence technique liée aux travaux couverts par la qualification demandée</div>
+          <div class="rge-obligation-item">Informer le client final, avant signature, de la détention ou non du label RGE pour les travaux concernés</div>
+          <div class="rge-obligation-item">Accepter les audits, contrôles et demandes d'informations liés au suivi du label</div>
+          <div class="rge-obligation-item">Respecter les règles applicables en matière de sous-traitance et de responsabilité sur les travaux réalisés</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="rge-cta-banner">
+      <div class="rge-cta-banner__eyebrow">Démarrer votre parcours RGE</div>
+      <h2 class="rge-cta-banner__titre">Un parcours RGE organisé,<br/><em>piloté et sécurisé</em></h2>
+      <p class="rge-cta-banner__texte">Debourg Audit prend en charge l'organisation du parcours RGE du client, de la collecte des pièces jusqu'au suivi de la première année, afin de rendre la démarche plus simple, plus fluide et mieux sécurisée.</p>
+      <a href="contact.html" class="btn btn-cuivre">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Prendre contact
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="rge.html">Certification RGE</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

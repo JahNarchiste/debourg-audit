@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Debourg Audit — Accompagnement Dirigeant : un regard extérieur permanent sur vos décisions. Points mensuels, analyses, disponibilité prioritaire." />
+  <title>Accompagnement Dirigeant — Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
+  <style>
+    .ad-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    @media (max-width: 640px) { .ad-grid { grid-template-columns: 1fr; } }
+
+    .ad-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--blanc);
+      border: 1px solid rgba(26,54,93,0.08);
+      border-radius: 10px;
+      padding: 20px;
+    }
+    .ad-item__icon { color: var(--cuivre); font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .ad-item__texte { font-size: 0.95rem; color: var(--gris-500); line-height: 1.6; }
+
+    .forfaits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    @media (max-width: 900px) { .forfaits-grid { grid-template-columns: 1fr; } }
+
+    .forfait-card {
+      background: var(--blanc);
+      border: 1px solid rgba(26,54,93,0.1);
+      border-radius: 14px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .forfait-card__nom {
+      font-family: var(--font-titre);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--bleu);
+    }
+    .forfait-card__prix {
+      font-family: var(--font-titre);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--cuivre);
+      line-height: 1;
+    }
+    .forfait-card__prix span { font-size: 0.9rem; color: var(--gris-500); font-weight: 400; }
+    .forfait-card__desc { font-size: 0.9rem; color: var(--gris-500); line-height: 1.6; }
+    .forfait-card__items { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+    .forfait-card__item {
+      font-size: 0.875rem;
+      color: var(--gris-500);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .forfait-card__item::before { content: '—'; color: var(--cuivre); flex-shrink: 0; }
+
+    .ad-cta-banner {
+      background: var(--bleu);
+      border-radius: 16px;
+      padding: 56px 48px;
+      text-align: center;
+    }
+    .ad-cta-banner__eyebrow {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--cuivre); margin-bottom: 16px;
+    }
+    .ad-cta-banner__titre {
+      font-family: var(--font-titre); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--blanc); margin-bottom: 16px; line-height: 1.2;
+    }
+    .ad-cta-banner__titre em { color: var(--cuivre); font-style: normal; }
+    .ad-cta-banner__texte {
+      font-size: 1rem; color: rgba(255,255,255,0.75);
+      max-width: 560px; margin: 0 auto 32px; line-height: 1.7;
+    }
+    @media (max-width: 640px) { .ad-cta-banner { padding: 40px 24px; } }
+    @media (max-width: 900px) { .ad-extended-grid { grid-template-columns: 1fr 1fr !important; } }
+    @media (max-width: 580px) { .ad-extended-grid { grid-template-columns: 1fr !important; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="offres.html">Les offres</a></li>
+        <li><a href="approche.html">L'approche</a></li>
+        <li><a href="nos-parcours.html">Nos parcours</a></li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section__eyebrow">Offre 2</div>
+    <h1 class="page-hero__titre">Accompagnement<br/><em>Dirigeant</em></h1>
+    <p class="page-hero__desc">Vous n'avez pas toujours besoin d'un audit. Parfois vous avez besoin de quelqu'un qui connaît votre dossier, répond vite et vous aide à prendre les bonnes décisions au bon moment.</p>
+  </div>
+</div>
+
+<!-- CE QUE VOUS OBTENEZ -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Ce que vous obtenez</div>
+    <h2 class="section__titre">Un regard extérieur<br/><em>permanent sur vos décisions</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; max-width:640px;">
+      Un interlocuteur qui connaît votre organisation, disponible quand vous en avez besoin — pas seulement lors d'un audit ponctuel.
+    </p>
+    <div class="ad-grid">
+      <div class="ad-item">
+        <div class="ad-item__icon">📅</div>
+        <div class="ad-item__texte">Point mensuel structuré : bilan, blocages, décisions</div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-item__icon">📊</div>
+        <div class="ad-item__texte">Analyse des décisions d'investissement</div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-item__icon">💰</div>
+        <div class="ad-item__texte">Lecture trésorerie et indicateurs financiers</div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-item__icon">👥</div>
+        <div class="ad-item__texte">Structuration RH : fiches de poste, RACI, délégation</div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-item__icon">📝</div>
+        <div class="ad-item__texte">Rédaction des actes courants : PV d'AG, statuts, greffe</div>
+      </div>
+      <div class="ad-item">
+        <div class="ad-item__icon">⚡</div>
+        <div class="ad-item__texte">Disponibilité : réponse le jour même ou sous 24h</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 FORFAITS -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Tarifs</div>
+    <h2 class="section__titre">3 forfaits selon<br/><em>votre besoin</em></h2>
+    <div class="forfaits-grid">
+      <div class="forfait-card">
+        <div class="forfait-card__nom">Essentiel</div>
+        <div class="forfait-card__prix">390 €<span> / mois HT</span></div>
+        <div class="forfait-card__desc">Pour les dirigeants qui souhaitent un regard ponctuel et une disponibilité de base.</div>
+        <div class="forfait-card__items">
+          <div class="forfait-card__item">1 point mensuel (1h)</div>
+          <div class="forfait-card__item">Disponibilité questions simples</div>
+          <div class="forfait-card__item">3 à 4h / mois</div>
+        </div>
+      </div>
+      <div class="forfait-card">
+        <div class="forfait-card__nom">Suivi</div>
+        <div class="forfait-card__prix">780 €<span> / mois HT</span></div>
+        <div class="forfait-card__desc">Pour les dirigeants qui ont des décisions régulières à analyser et valider.</div>
+        <div class="forfait-card__items">
+          <div class="forfait-card__item">1 point mensuel + 2 analyses</div>
+          <div class="forfait-card__item">Disponibilité étendue</div>
+          <div class="forfait-card__item">6 à 8h / mois</div>
+        </div>
+      </div>
+      <div class="forfait-card">
+        <div class="forfait-card__nom">Pilotage</div>
+        <div class="forfait-card__prix">1 300 €<span> / mois HT</span></div>
+        <div class="forfait-card__desc">Pour les dirigeants qui souhaitent une implication forte sur tous les fronts.</div>
+        <div class="forfait-card__items">
+          <div class="forfait-card__item">Points bi-mensuels + analyses</div>
+          <div class="forfait-card__item">Démarches tiers (expert-comptable, greffe)</div>
+          <div class="forfait-card__item">Disponibilité prioritaire — 10 à 12h / mois</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px; padding:20px 24px; background:var(--bleu-clair); border-radius:8px; border-left:3px solid var(--bleu-moy);">
+      <p style="font-size:0.875rem; color:var(--bleu-moy);">
+        <strong>Combiné avec l'Offre 1 :</strong> Audit + Accompagnement signés simultanément → −20 % sur l'Accompagnement à vie du contrat. Audit réalisé dans les 3 derniers mois → −15 % pendant 6 mois.
+      </p>
+      <p style="font-size:0.8rem; color:var(--gris-500); margin-top:8px;">Engagement minimum : 3 mois. Résiliation avec préavis de 30 jours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESTATIONS ÉLARGIES -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Au-delà du suivi mensuel</div>
+    <h2 class="section__titre">Ce qu'un artisan ou commerçant<br/><em>n'a jamais le temps de faire</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; max-width:640px; margin-bottom:40px;">
+      Ces missions sont réalisées ponctuellement, intégrées ou non dans un forfait d'accompagnement. Certaines sont exécutées directement par Debourg Audit, d'autres sont pilotées avec des prestataires spécialisés sélectionnés et coordonnés pour vous.
+    </p>
+
+    <div class="ad-extended-grid" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;">
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-size:1.8rem;">🏗️</div>
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu);">Structuration juridique</div>
+        <p style="font-size:0.875rem; color:var(--gris-500); line-height:1.6;">Choix de la bonne structure juridique et fiscale selon votre situation : holding, SCI, séparation patrimoine pro/perso. Rédaction des statuts, PV d'AG, dépôt au greffe. Coordination avec notaire ou avocat si nécessaire.</p>
+        <div style="font-size:0.8rem; color:var(--cuivre); font-weight:600;">Réalisé directement par Debourg Audit</div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-size:1.8rem;">📊</div>
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu);">Stratégie de développement</div>
+        <p style="font-size:0.875rem; color:var(--gris-500); line-height:1.6;">Analyse des leviers de croissance disponibles selon votre marché, vos ressources et votre positionnement. Priorisation des actions : nouveaux segments, nouvelles offres, nouvelles zones géographiques. Plan d'action chiffré.</p>
+        <div style="font-size:0.8rem; color:var(--cuivre); font-weight:600;">Réalisé directement par Debourg Audit</div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-size:1.8rem;">💰</div>
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu);">Décisions d'investissement</div>
+        <p style="font-size:0.875rem; color:var(--gris-500); line-height:1.6;">Analyse de la rentabilité d'un investissement avant de s'engager : équipement, local, recrutement, franchise. Calcul du ROI, impact sur la trésorerie, scénarios de remboursement. Aide à la décision structurée, pas un avis à l'intuition.</p>
+        <div style="font-size:0.8rem; color:var(--cuivre); font-weight:600;">Réalisé directement par Debourg Audit</div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-size:1.8rem;">🎯</div>
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu);">Stratégie commerciale &amp; prospection</div>
+        <p style="font-size:0.875rem; color:var(--gris-500); line-height:1.6;">Définition de la cible, du message, du canal et du tunnel de conversion. Travail sur le positionnement, la proposition de valeur et les outils de vente. L'exécution (démarchage, scripts, campagnes) est ensuite sous-traitée à des spécialistes sélectionnés et pilotés par Debourg Audit.</p>
+        <div style="font-size:0.8rem; color:var(--gris-500); font-weight:600; font-style:italic;">Stratégie Debourg Audit — Exécution pilotée avec prestataires</div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-size:1.8rem;">🌐</div>
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu);">Visibilité internet &amp; réseaux</div>
+        <p style="font-size:0.875rem; color:var(--gris-500); line-height:1.6;">Stratégie de présence en ligne adaptée à votre activité : Google, LinkedIn, réseaux sociaux, site vitrine. Sélection et pilotage des prestataires techniques (webmaster, community manager, SEO). Vous gardez la main sans devoir tout comprendre.</p>
+        <div style="font-size:0.8rem; color:var(--gris-500); font-weight:600; font-style:italic;">Stratégie Debourg Audit — Exécution pilotée avec prestataires</div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:28px; display:flex; flex-direction:column; gap:12px;">
+        <div style="font-size:1.8rem;">🤝</div>
+        <div style="font-family:var(--font-titre); font-size:1rem; font-weight:700; color:var(--bleu);">Démarches tiers &amp; représentation</div>
+        <p style="font-size:0.875rem; color:var(--gris-500); line-height:1.6;">Interface avec votre expert-comptable, votre banquier, l'administration ou votre greffe. Préparation des dossiers, rédaction des courriers, suivi des réponses. Vous ne perdez plus de demi-journées en démarches — Debourg Audit les gère.</p>
+        <div style="font-size:0.8rem; color:var(--cuivre); font-weight:600;">Réalisé directement par Debourg Audit</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:24px; padding:18px 24px; background:rgba(192,122,69,0.08); border-radius:8px; border-left:3px solid var(--cuivre);">
+      <p style="font-size:0.875rem; color:var(--gris-500);">
+        Ces missions sont intégrables dans les forfaits Suivi et Pilotage, ou réalisées en ponctuel sur devis. Le forfait Essentiel couvre les questions simples et le suivi mensuel — les missions complémentaires font l'objet d'un devis séparé.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="ad-cta-banner">
+      <div class="ad-cta-banner__eyebrow">Prendre contact</div>
+      <h2 class="ad-cta-banner__titre">Un interlocuteur dédié,<br/><em>dès la semaine prochaine</em></h2>
+      <p class="ad-cta-banner__texte">Démarrez par un échange de 30 minutes pour définir le forfait adapté à votre situation. Sans engagement.</p>
+      <a href="contact.html" class="btn btn-cuivre">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Prendre contact
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-parcours.html">Nos parcours</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Debourg Audit — Coordination Administrative : interface opérationnelle avec votre outil comptable Indy. Facturation, rapprochement bancaire, communication comptable." />
+  <title>Coordination Administrative — Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
+  <style>
+    .ca-cta-banner {
+      background: var(--bleu);
+      border-radius: 16px;
+      padding: 56px 48px;
+      text-align: center;
+    }
+    .ca-cta-banner__eyebrow {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--cuivre); margin-bottom: 16px;
+    }
+    .ca-cta-banner__titre {
+      font-family: var(--font-titre); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--blanc); margin-bottom: 16px; line-height: 1.2;
+    }
+    .ca-cta-banner__titre em { color: var(--cuivre); font-style: normal; }
+    .ca-cta-banner__texte {
+      font-size: 1rem; color: rgba(255,255,255,0.75);
+      max-width: 560px; margin: 0 auto 32px; line-height: 1.7;
+    }
+    .ca-missions {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    @media (max-width: 900px) { .ca-missions { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .ca-missions { grid-template-columns: 1fr; } .ca-cta-banner { padding: 40px 24px; } }
+    .ca-mission {
+      background: var(--blanc);
+      border: 1px solid rgba(26,54,93,0.08);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .ca-mission__icon { font-size: 1.5rem; flex-shrink: 0; }
+    .ca-mission__texte { font-size: 0.9rem; color: var(--gris-500); line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="offres.html">Les offres</a></li>
+        <li><a href="approche.html">L'approche</a></li>
+        <li><a href="nos-parcours.html">Nos parcours</a></li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section__eyebrow">Offre 3</div>
+    <h1 class="page-hero__titre">Coordination<br/><em>Administrative</em></h1>
+    <p class="page-hero__desc">Vous n'avez pas le temps de courir après vos factures, de faire le rapprochement bancaire et de communiquer avec votre comptable. Je m'en charge à votre place.</p>
+  </div>
+</div>
+
+<!-- CE QUE JE PRENDS EN CHARGE -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Ce que je prends en charge</div>
+    <h2 class="section__titre">Interface opérationnelle<br/><em>avec votre outil comptable Indy</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; max-width:640px;">
+      Une prestation de coordination administrative complète, calée sur votre volume de factures, pour que vous puissiez vous concentrer sur votre activité.
+    </p>
+    <div class="ca-missions">
+      <div class="ca-mission">
+        <div class="ca-mission__icon">📥</div>
+        <div class="ca-mission__texte">Collecte et classement des factures entrantes et sortantes</div>
+      </div>
+      <div class="ca-mission">
+        <div class="ca-mission__icon">🏦</div>
+        <div class="ca-mission__texte">Rapprochement bancaire mensuel via Indy</div>
+      </div>
+      <div class="ca-mission">
+        <div class="ca-mission__icon">📤</div>
+        <div class="ca-mission__texte">Communication structurée avec votre expert-comptable</div>
+      </div>
+      <div class="ca-mission">
+        <div class="ca-mission__icon">📋</div>
+        <div class="ca-mission__texte">Suivi des paiements et relances fournisseurs</div>
+      </div>
+      <div class="ca-mission">
+        <div class="ca-mission__icon">📊</div>
+        <div class="ca-mission__texte">Tableau de bord mensuel des flux</div>
+      </div>
+      <div class="ca-mission">
+        <div class="ca-mission__icon">🔗</div>
+        <div class="ca-mission__texte">Interface avec l'outil Indy (paramétrage et suivi)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Tarifs</div>
+    <h2 class="section__titre">Un tarif indexé<br/><em>sur votre volume</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.7; max-width:560px; margin-bottom:32px;">
+      Vous ne payez que ce dont vous avez besoin. Plus votre volume de factures augmente, plus la mission est calibrée en conséquence.
+    </p>
+
+    <table class="tarif-table" style="margin-bottom:24px">
+      <thead>
+        <tr>
+          <th>Volume annuel de factures</th>
+          <th>Temps estimé / mois</th>
+          <th>Tarif mensuel HT</th>
+          <th>Tarif annuel HT</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Moins de 50 factures</td>
+          <td>1h à 1h30</td>
+          <td>150 €</td>
+          <td>1 650 €</td>
+        </tr>
+        <tr>
+          <td>50 à 150 factures</td>
+          <td>1h30 à 2h</td>
+          <td>250 €</td>
+          <td>2 750 €</td>
+        </tr>
+        <tr class="highlight">
+          <td>150 à 300 factures</td>
+          <td>2h30 à 3h</td>
+          <td>400 €</td>
+          <td>4 400 €</td>
+        </tr>
+        <tr>
+          <td>Plus de 300 factures</td>
+          <td>Sur devis</td>
+          <td>Sur devis</td>
+          <td>Sur devis</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="padding:16px 20px; background:var(--cuivre-bg); border-radius:8px; border-left:3px solid var(--cuivre);">
+      <p style="font-size:0.875rem; color:var(--gris-800);">
+        L'abonnement Indy (29 à 79 €/mois) est souscrit directement par vous auprès d'Indy — non inclus dans la prestation. Offre 2 + Offre 3 simultanées : −15 % sur l'Offre 3.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ANALYSE FINANCIÈRE -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Prestations complémentaires — Sur devis</div>
+    <h2 class="section__titre">Au-delà de la coordination :<br/><em>analyser et anticiper</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; max-width:640px; margin-bottom:32px;">
+      La tenue administrative donne une photographie du passé. Ces prestations complémentaires, réalisées sur devis, permettent de transformer vos chiffres en outil de décision — et d'anticiper au lieu de subir.
+    </p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:32px;">
+        <div style="font-size:1.8rem; margin-bottom:16px;">📊</div>
+        <div style="font-family:var(--font-titre); font-size:1.1rem; font-weight:700; color:var(--bleu); margin-bottom:12px;">Analyse financière</div>
+        <p style="font-size:0.9rem; color:var(--gris-500); line-height:1.65; margin-bottom:16px;">
+          Lecture structurée de votre compte de résultat, bilan et trésorerie. Identification des postes de charges anormaux, des marges par activité, des ratios de structure. Travail réalisé sur Excel avec vos données réelles — pas un rapport générique.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Compte de résultat annoté par poste
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Identification des fuites de marge
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Ratios clés commentés
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Restitution orale incluse (1h)
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:32px;">
+        <div style="font-size:1.8rem; margin-bottom:16px;">📈</div>
+        <div style="font-family:var(--font-titre); font-size:1.1rem; font-weight:700; color:var(--bleu); margin-bottom:12px;">Prévisionnel &amp; plan de trésorerie</div>
+        <p style="font-size:0.9rem; color:var(--gris-500); line-height:1.65; margin-bottom:16px;">
+          Construction d'un prévisionnel à 12 ou 24 mois sur la base de vos hypothèses de développement. Plan de trésorerie mensuel intégré. Outil Excel remis, modifiable et actualisable en autonomie. Utile pour une demande de financement, une décision d'investissement ou un simple cap à tenir.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Prévisionnel P&amp;L sur 12 à 24 mois
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Plan de trésorerie mensuel détaillé
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Fichier Excel remis et commenté
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Scénarios comparatifs (optimiste / réaliste / prudent)
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:32px;">
+        <div style="font-size:1.8rem; margin-bottom:16px;">🔎</div>
+        <div style="font-family:var(--font-titre); font-size:1.1rem; font-weight:700; color:var(--bleu); margin-bottom:12px;">Étude de marché</div>
+        <p style="font-size:0.9rem; color:var(--gris-500); line-height:1.65; margin-bottom:16px;">
+          Analyse structurée de votre marché cible : taille, dynamiques, concurrents directs, positionnement possible. Réalisée à partir de sources documentaires et d'entretiens ciblés. Utile en amont d'un lancement, d'une extension géographique ou d'une levée de fonds. Expérience directe : étude conduite avant le lancement des Jardins de l'Union.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Analyse de la demande et des tendances
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Cartographie concurrentielle
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Recommandations de positionnement
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Rapport synthétique remis
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--gris-100); border-radius:14px; padding:32px;">
+        <div style="font-size:1.8rem; margin-bottom:16px;">📋</div>
+        <div style="font-family:var(--font-titre); font-size:1.1rem; font-weight:700; color:var(--bleu); margin-bottom:12px;">Tableau de bord de pilotage</div>
+        <p style="font-size:0.9rem; color:var(--gris-500); line-height:1.65; margin-bottom:16px;">
+          Construction d'un tableau de bord Excel ou Looker Studio connecté à vos données (Indy, exports comptables, données commerciales). Indicateurs clés sélectionnés avec vous, mis à jour mensuellement. Vous pilotez sans avoir à tout recalculer.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Sélection des KPIs adaptés à votre activité
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Construction sur Excel ou Looker Studio
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Mise à jour mensuelle incluse (si couplé à l'Offre 3)
+          </div>
+          <div style="display:flex; gap:10px; font-size:0.875rem; color:var(--gris-500);">
+            <span style="color:var(--cuivre); flex-shrink:0;">→</span>Formation à l'utilisation incluse
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:24px; padding:18px 24px; background:rgba(192,122,69,0.08); border-radius:8px; border-left:3px solid var(--cuivre);">
+      <p style="font-size:0.875rem; color:var(--gris-500);">
+        Ces prestations sont facturées sur devis selon la complexité et le volume de données. Elles peuvent être réalisées de façon ponctuelle ou intégrées dans l'Offre 2 — Accompagnement Dirigeant.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="ca-cta-banner">
+      <div class="ca-cta-banner__eyebrow">Démarrer</div>
+      <h2 class="ca-cta-banner__titre">Libérez-vous<br/><em>de l'administratif</em></h2>
+      <p class="ca-cta-banner__texte">Prenez contact pour définir votre volume et calibrer la prestation. Démarrage possible sous une semaine.</p>
+      <a href="contact.html" class="btn btn-cuivre">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Prendre contact
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-parcours.html">Nos parcours</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

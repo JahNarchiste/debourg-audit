@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Debourg Audit — Certification et Conformité : SAP, RGE, Qualiopi. Accompagnement complet jusqu'à l'obtention du label." />
+  <title>Certification &amp; Conformité — Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
+  <style>
+    .cert-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .cert-card {
+      background: var(--blanc);
+      border: 1px solid rgba(26,54,93,0.1);
+      border-radius: 14px;
+      padding: 36px 40px;
+      display: grid;
+      grid-template-columns: 64px 1fr auto;
+      gap: 28px;
+      align-items: center;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .cert-card:hover {
+      box-shadow: 0 8px 32px rgba(26,54,93,0.12);
+      transform: translateY(-2px);
+    }
+    .cert-card--link {
+      border-left: 4px solid var(--cuivre);
+    }
+    .cert-card__icon {
+      font-size: 2.4rem;
+      text-align: center;
+    }
+    .cert-card__body {}
+    .cert-card__titre {
+      font-family: var(--font-titre);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 8px;
+    }
+    .cert-card__desc {
+      font-size: 0.9rem;
+      color: var(--gris-500);
+      line-height: 1.6;
+    }
+    .cert-card__right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+      min-width: 160px;
+    }
+    .cert-card__prix {
+      font-family: var(--font-titre);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cuivre);
+      white-space: nowrap;
+    }
+    .cert-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(192,122,69,0.12);
+      color: var(--cuivre);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .cert-card__badge svg { width: 14px; height: 14px; }
+
+    @media (max-width: 720px) {
+      .cert-card {
+        grid-template-columns: 48px 1fr;
+        grid-template-rows: auto auto;
+        padding: 24px;
+      }
+      .cert-card__right {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        min-width: 0;
+      }
+    }
+
+    .cert-cta-banner {
+      background: var(--bleu);
+      border-radius: 16px;
+      padding: 56px 48px;
+      text-align: center;
+    }
+    .cert-cta-banner__eyebrow {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--cuivre); margin-bottom: 16px;
+    }
+    .cert-cta-banner__titre {
+      font-family: var(--font-titre); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700; color: var(--blanc); margin-bottom: 16px; line-height: 1.2;
+    }
+    .cert-cta-banner__titre em { color: var(--cuivre); font-style: normal; }
+    .cert-cta-banner__texte {
+      font-size: 1rem; color: rgba(255,255,255,0.75);
+      max-width: 560px; margin: 0 auto 32px; line-height: 1.7;
+    }
+    @media (max-width: 640px) { .cert-cta-banner { padding: 40px 24px; } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li><a href="offres.html">Les offres</a></li>
+        <li><a href="approche.html">L'approche</a></li>
+        <li><a href="nos-parcours.html">Nos parcours</a></li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section__eyebrow">Offre 4</div>
+    <h1 class="page-hero__titre">Certification<br/><em>&amp; Conformité</em></h1>
+    <p class="page-hero__desc">Chaque certification ouvre une porte concrète sur de nouveaux marchés. Debourg Audit vous accompagne jusqu'à ce qu'elle soit franchie — de la faisabilité jusqu'à l'obtention du label.</p>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Audit de faisabilité gratuit</div>
+    <h2 class="section__titre">Chaque mission démarre<br/><em>par un diagnostic de 30 min</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; max-width:640px; margin-bottom:0;">
+      Avant de s'engager, Debourg Audit analyse votre situation administrative, vos assurances, vos compétences et vos références pour évaluer la faisabilité et calibrer précisément la mission. Cet audit de départ est gratuit et sans engagement.
+    </p>
+  </div>
+</section>
+
+<!-- LES 3 CERTIFICATIONS -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Les certifications accompagnées</div>
+    <h2 class="section__titre">3 labels,<br/><em>3 parcours dédiés</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); line-height:1.7; max-width:560px; margin-bottom:0;">
+      Chaque certification a ses propres exigences, ses propres organismes et ses propres délais. Cliquez sur une certification pour accéder à la page détaillée.
+    </p>
+
+    <div class="cert-cards">
+
+      <!-- SAP -->
+      <div class="cert-card">
+        <div class="cert-card__icon">🏠</div>
+        <div class="cert-card__body">
+          <div class="cert-card__titre">SAP + Agrément + Avance immédiate</div>
+          <div class="cert-card__desc">Dossier NOVA, agrément préfectoral (DREETS), paramétrage avance immédiate URSSAF. Expérience directe : dossiers validés pour 2 sociétés SAP.</div>
+        </div>
+        <div class="cert-card__right">
+          <div class="cert-card__prix">800 à 1 500 € HT</div>
+          <a href="contact.html" class="btn btn-outline" style="font-size:0.85rem; padding:8px 18px;">Prendre contact</a>
+        </div>
+      </div>
+
+      <!-- RGE — lien cliquable vers rge.html -->
+      <a href="rge.html" class="cert-card cert-card--link">
+        <div class="cert-card__icon">🌿</div>
+        <div class="cert-card__body">
+          <div class="cert-card__titre">RGE — Reconnu Garant de l'Environnement</div>
+          <div class="cert-card__desc">Identification de la qualification visée (Qualibat, Qualit'EnR, etc.), constitution du dossier, préparation à l'audit. Accès aux chantiers Prime Rénov et MaPrimeRénov. Accompagnement de la collecte des pièces jusqu'à la première année de conformité.</div>
+        </div>
+        <div class="cert-card__right">
+          <div class="cert-card__prix">1 500 à 3 500 € HT</div>
+          <div class="cert-card__badge">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            Voir le parcours détaillé
+          </div>
+        </div>
+      </a>
+
+      <!-- QUALIOPI -->
+      <div class="cert-card">
+        <div class="cert-card__icon">📋</div>
+        <div class="cert-card__body">
+          <div class="cert-card__titre">Qualiopi — Certification qualité formation</div>
+          <div class="cert-card__desc">Cartographie des 7 indicateurs du RNQ, rédaction du système documentaire, préparation à l'audit. Accès aux financements OPCO, CPF et marchés publics. Expérience directe : dossier monté en conditions réelles.</div>
+        </div>
+        <div class="cert-card__right">
+          <div class="cert-card__prix">3 000 à 6 000 € HT</div>
+          <a href="contact.html" class="btn btn-outline" style="font-size:0.85rem; padding:8px 18px;">Prendre contact</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cert-cta-banner">
+      <div class="cert-cta-banner__eyebrow">Audit de faisabilité gratuit</div>
+      <h2 class="cert-cta-banner__titre">Quelle certification<br/><em>vous correspond ?</em></h2>
+      <p class="cert-cta-banner__texte">Prenez contact pour un premier échange de 30 minutes. Debourg Audit analyse votre situation et identifie la certification la plus adaptée à votre activité et vos marchés cibles.</p>
+      <a href="contact.html" class="btn btn-cuivre">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Demander mon audit de faisabilité
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-parcours.html">Nos parcours</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
