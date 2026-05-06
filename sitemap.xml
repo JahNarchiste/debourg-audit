@@ -81,6 +81,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://debourg-audit.fr/pages/parcours-ambition.html</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Mentions légales -->
   <url>
     <loc>https://debourg-audit.fr/pages/mentions-legales.html</loc>

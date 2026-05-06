@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Le Parcours Ambition 1M€ — Debourg Audit accompagne les artisans et PME de 80 000€ à 1 million de CA : optimisation fiscale, certification RGE, stratégie de trésorerie, holding et SCI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://debourg-audit.fr/pages/parcours-ambition.html" />
+  <meta property="og:title" content="Parcours Ambition 1M€ — De l'artisan à l'entrepreneur investisseur" />
+  <meta property="og:description" content="4 étapes pour structurer, accélérer, sécuriser et transmettre votre entreprise. Chaque palier autofinance le suivant." />
+  <meta property="og:image" content="https://debourg-audit.fr/assets/logo_transparent.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Debourg Audit" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Parcours Ambition 1M€ — Debourg Audit" />
+  <meta name="twitter:description" content="4 étapes pour passer de l'artisan à l'entrepreneur investisseur. Chaque palier autofinance le suivant." />
+  <meta name="twitter:image" content="https://debourg-audit.fr/assets/logo_transparent.png" />
+  <link rel="canonical" href="https://debourg-audit.fr/pages/parcours-ambition.html" />
+  <title>Parcours Ambition 1M€ — De l'artisan à l'entrepreneur investisseur | Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+
+  <style id="nav-dropdown-styles">
+    .nav__logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav__has-dropdown { position:relative; }
+    .nav__has-dropdown > a::after { content:' ▾'; font-size:0.65rem; opacity:0.6; margin-left:2px; }
+    .nav__dropdown { display:none; position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%); background:var(--blanc,#fff); border:1px solid rgba(26,54,93,0.1); border-radius:12px; box-shadow:0 16px 48px rgba(26,54,93,0.14); padding:8px; min-width:240px; z-index:1000; list-style:none; margin:0; }
+    .nav__dropdown::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:12px; height:12px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
+    .nav__dropdown li { margin:0; padding:0; }
+    .nav__dropdown li a { display:block; padding:10px 16px; font-size:0.875rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:8px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
+    .nav__dropdown li a:hover { background:rgba(26,54,93,0.05); color:var(--bleu,#1a365d); }
+    .nav__has-dropdown:hover .nav__dropdown, .nav__has-dropdown:focus-within .nav__dropdown { display:block; }
+    .nav__has-dropdown > a { padding-bottom:14px; }
+    .nav__dropdown { top:calc(100% + 0px); margin-top:0; }
+    .nav__has-dropdown::after { content:''; position:absolute; top:100%; left:0; right:0; height:16px; }
+    @media (max-width:900px) { .nav__dropdown { display:none !important; } .nav__has-dropdown > a::after { display:none; } .nav__has-dropdown > a { padding-bottom:0; } }
+  </style>
+
+  <style>
+    /* ══════════════════════════════════════════════
+       PARCOURS AMBITION — styles spécifiques
+    ══════════════════════════════════════════════ */
+
+    /* Couleurs étapes */
+    :root {
+      --e1: #1A5276;
+      --e2: #1E8449;
+      --e3: #6E2F8F;
+      --e4: #B7770D;
+    }
+
+    /* ── Hero ── */
+    .pa-hero {
+      background: var(--bleu);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pa-hero::before {
+      content: '1M€';
+      position: absolute;
+      right: -40px;
+      top: -20px;
+      font-family: var(--font-titre);
+      font-size: 18rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .pa-hero__eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 20px;
+    }
+    .pa-hero__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--blanc);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .pa-hero__titre em { color: var(--cuivre); font-style: normal; }
+    .pa-hero__accroche {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .pa-hero__accroche strong { color: var(--blanc); }
+
+    /* ── Barre des 4 étapes (navigation) ── */
+    .pa-steps-nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 48px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+    .pa-step-tab {
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      transition: filter 0.2s;
+    }
+    .pa-step-tab:hover { filter: brightness(1.1); }
+    .pa-step-tab--1 { background: var(--e1); }
+    .pa-step-tab--2 { background: var(--e2); }
+    .pa-step-tab--3 { background: var(--e3); }
+    .pa-step-tab--4 { background: var(--e4); }
+    .pa-step-tab__num {
+      font-family: var(--font-titre);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.9);
+      line-height: 1;
+    }
+    .pa-step-tab__titre {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--blanc);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .pa-step-tab__ca {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.6);
+    }
+    @media (max-width: 640px) {
+      .pa-steps-nav { grid-template-columns: repeat(2, 1fr); }
+      .pa-hero__titre { font-size: 2rem; }
+    }
+
+    /* ── Promesse centrale ── */
+    .pa-promesse {
+      background: var(--gris-100);
+      padding: 64px 0;
+    }
+    .pa-promesse__inner {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pa-promesse__texte {
+      font-size: 1.2rem;
+      color: var(--gris-500);
+      line-height: 1.85;
+    }
+    .pa-promesse__texte strong { color: var(--bleu); }
+
+    /* ── Étapes ── */
+    .pa-etape {
+      padding: 80px 0;
+    }
+    .pa-etape:nth-child(even) { background: var(--gris-100); }
+
+    .pa-etape__header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 28px;
+      align-items: flex-start;
+      margin-bottom: 48px;
+    }
+    .pa-etape__badge {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--blanc);
+    }
+    .pa-etape__badge-num {
+      font-family: var(--font-titre);
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .pa-etape__badge-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+    .pa-etape__eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .pa-etape__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--bleu);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .pa-etape__titre em { font-style: normal; }
+    .pa-etape__ca {
+      font-size: 0.9rem;
+      color: var(--gris-500);
+      font-weight: 500;
+    }
+    @media (max-width: 640px) {
+      .pa-etape__header { grid-template-columns: 1fr; }
+      .pa-etape__badge { display: none; }
+    }
+
+    /* Corps étape : grille 2 colonnes */
+    .pa-etape__body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 840px) { .pa-etape__body { grid-template-columns: 1fr; } }
+
+    .pa-card {
+      background: var(--blanc);
+      border-radius: 14px;
+      padding: 28px;
+      border: 1px solid rgba(26,54,93,0.08);
+    }
+    .pa-card--dark {
+      color: var(--blanc);
+      border: none;
+    }
+    .pa-card__titre {
+      font-family: var(--font-titre);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pa-card--dark .pa-card__titre { color: var(--blanc); }
+    .pa-card__icon { font-size: 1.2rem; flex-shrink: 0; }
+
+    .pa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .pa-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--gris-500);
+      line-height: 1.55;
+    }
+    .pa-list li::before {
+      content: '▸';
+      color: var(--cuivre);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pa-card--dark .pa-list li { color: rgba(255,255,255,0.8); }
+    .pa-list li strong { color: var(--bleu); font-weight: 600; }
+    .pa-card--dark .pa-list li strong { color: var(--blanc); }
+
+    /* Avant / Après */
+    .pa-avantapres {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(26,54,93,0.1);
+      margin-bottom: 32px;
+    }
+    @media (max-width: 640px) { .pa-avantapres { grid-template-columns: 1fr; } }
+    .pa-avant {
+      background: #FEF0EF;
+      padding: 24px 28px;
+      border-right: 1px solid rgba(176,48,32,0.12);
+    }
+    .pa-apres {
+      background: #EAF7EF;
+      padding: 24px 28px;
+    }
+    .pa-avant__titre {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #B03020;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pa-apres__titre {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #1B6B3A;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pa-avant .pa-list li::before { color: #B03020; }
+    .pa-apres .pa-list li::before { color: #1B6B3A; }
+    .pa-aa-profil {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gris-500);
+      margin-bottom: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Bloc tarif */
+    .pa-tarif {
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .pa-tarif__prix {
+      font-family: var(--font-titre);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .pa-tarif__prix span {
+      font-size: 0.95rem;
+      font-weight: 400;
+      opacity: 0.75;
+    }
+    .pa-tarif__detail {
+      flex: 1;
+      min-width: 180px;
+    }
+    .pa-tarif__detail-titre {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .pa-tarif__detail-texte {
+      font-size: 0.82rem;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+    .pa-tarif__roi {
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      min-width: 180px;
+    }
+    .pa-tarif__roi strong { display: block; margin-bottom: 2px; }
+
+    /* Couleurs par étape */
+    .pa-etape--1 .pa-etape__eyebrow { color: var(--e1); }
+    .pa-etape--1 .pa-etape__badge { background: var(--e1); }
+    .pa-etape--1 .pa-tarif { background: var(--e1); color: var(--blanc); }
+    .pa-etape--2 .pa-etape__eyebrow { color: var(--e2); }
+    .pa-etape--2 .pa-etape__badge { background: var(--e2); }
+    .pa-etape--2 .pa-tarif { background: var(--e2); color: var(--blanc); }
+    .pa-etape--3 .pa-etape__eyebrow { color: var(--e3); }
+    .pa-etape--3 .pa-etape__badge { background: var(--e3); }
+    .pa-etape--3 .pa-tarif { background: var(--e3); color: var(--blanc); }
+    .pa-etape--4 .pa-etape__eyebrow { color: var(--e4); }
+    .pa-etape--4 .pa-etape__badge { background: var(--e4); }
+    .pa-etape--4 .pa-tarif { background: var(--e4); color: var(--blanc); }
+
+    /* Séparateur flèche entre étapes */
+    .pa-arrow {
+      text-align: center;
+      padding: 8px 0;
+      font-size: 2rem;
+      color: var(--cuivre);
+      opacity: 0.5;
+    }
+
+    /* CTA final */
+    .pa-cta-finale {
+      background: var(--bleu);
+      padding: 80px 0;
+    }
+    .pa-cta-finale__inner {
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .pa-cta-finale__eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 16px;
+    }
+    .pa-cta-finale__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--blanc);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .pa-cta-finale__titre em { color: var(--cuivre); font-style: normal; }
+    .pa-cta-finale__texte {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .pa-cta-finale__actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Badge "Debourg Audit réalise" */
+    .pa-badge-da {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(26,54,93,0.07);
+      border: 1px solid rgba(26,54,93,0.15);
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      color: var(--bleu);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .pa-badge-da strong { font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav__has-dropdown">
+          <a href="offres.html">Les offres</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="parcours-ambition.html">Parcours Ambition</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="approche.html">L'approche</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">La méthode Bottom-Up</a></li>
+            <li><a href="approche.html">Les 12 critères de friction</a></li>
+            <li><a href="approche.html">Les 4 phases</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-parcours.html">Nos parcours</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="parcours-ambition.html">Parcours Ambition</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+            <li><a href="sap.html">Parcours SAP</a></li>
+            <li><a href="rge.html">Parcours RGE</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-dossiers.html">Nos dossiers</a>
+          <ul class="nav__dropdown">
+            <li><a href="sap.html">Dossier SAP &amp; Avance immédiate</a></li>
+            <li><a href="rge.html">Dossier RGE</a></li>
+            <li><a href="nos-dossiers.html">Newsletter</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<section class="pa-hero">
+  <div class="container">
+    <div class="pa-hero__eyebrow">Un plan de route sur mesure</div>
+    <h1 class="pa-hero__titre">
+      Le Parcours<br/>
+      <em>Ambition 1M€</em>
+    </h1>
+    <p class="pa-hero__accroche">
+      De l'artisan à l'entrepreneur investisseur.<br/>
+      <strong>4 étapes structurées</strong> où chaque palier autofinance le suivant grâce aux économies réalisées ou au chiffre d'affaires additionnel généré.
+    </p>
+    <a href="contact.html" class="btn btn-cuivre">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      Évaluer mon étape actuelle — gratuitement
+    </a>
+
+    <!-- Navigation 4 étapes -->
+    <div class="pa-steps-nav">
+      <a href="#etape-1" class="pa-step-tab pa-step-tab--1">
+        <div class="pa-step-tab__num">1</div>
+        <div class="pa-step-tab__titre">Fondations</div>
+        <div class="pa-step-tab__ca">80k – 150k€</div>
+      </a>
+      <a href="#etape-2" class="pa-step-tab pa-step-tab--2">
+        <div class="pa-step-tab__num">2</div>
+        <div class="pa-step-tab__titre">Accélération</div>
+        <div class="pa-step-tab__ca">150k – 300k€</div>
+      </a>
+      <a href="#etape-3" class="pa-step-tab pa-step-tab--3">
+        <div class="pa-step-tab__num">3</div>
+        <div class="pa-step-tab__titre">Sécurisation</div>
+        <div class="pa-step-tab__ca">400k – 800k€</div>
+      </a>
+      <a href="#etape-4" class="pa-step-tab pa-step-tab--4">
+        <div class="pa-step-tab__num">4</div>
+        <div class="pa-step-tab__titre">L'Empire</div>
+        <div class="pa-step-tab__ca">800k€ et +</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROMESSE ═══ -->
+<section class="pa-promesse">
+  <div class="container">
+    <div class="pa-promesse__inner">
+      <div class="section__eyebrow">La philosophie</div>
+      <h2 class="section__titre" style="margin-bottom:24px;">Vous ne payez pas un cabinet de conseil.<br/><em>Vous recrutez un directeur général externalisé.</em></h2>
+      <p class="pa-promesse__texte">
+        Chaque prestation Debourg Audit est conçue pour générer <strong>plus qu'elle ne coûte</strong> — par des économies fiscales et sociales, par l'accès à de nouveaux marchés, ou par la sécurisation d'un patrimoine que vous constituez sans le savoir. Le parcours est progressif : vous n'avez pas besoin d'être au million pour commencer. Vous avez besoin d'<strong>un interlocuteur qui connaît votre dossier</strong> et sait où vous emmener.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉTAPE 1
+════════════════════════════════════════════════════════ -->
+<section class="pa-etape pa-etape--1" id="etape-1">
+  <div class="container">
+
+    <div class="pa-etape__header">
+      <div class="pa-etape__badge">
+        <div class="pa-etape__badge-num">1</div>
+        <div class="pa-etape__badge-label">Étape</div>
+      </div>
+      <div>
+        <div class="pa-etape__eyebrow">80 000 € à 150 000 € de CA</div>
+        <h2 class="pa-etape__titre">Les Fondations —<br/><em style="color:var(--e1);">Sécuriser la structure</em></h2>
+        <p class="pa-etape__ca">Vous gagnez correctement votre vie. L'URSSAF et les impôts en prennent une part croissante. Il est temps de structurer.</p>
+      </div>
+    </div>
+
+    <div class="pa-badge-da">
+      <strong>✅ Debourg Audit réalise directement :</strong> audit de structure, rédaction des statuts, immatriculation INPI/RCS, publication de l'annonce légale, arbitrage rémunération, optimisation des charges.
+    </div>
+
+    <div class="pa-etape__body">
+      <!-- Problème -->
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">⚡</span>Le problème typique</div>
+        <ul class="pa-list">
+          <li>Dépassement du seuil TVA — obligation de facturer la TVA, perte de compétitivité prix immédiate</li>
+          <li>Micro-entreprise saturée : basculement forcé en régime réel sans anticipation</li>
+          <li>Aucune optimisation des charges — véhicule, téléphone, repas : rien n'est déduit</li>
+          <li>Mélange finances pro et perso, aucune protection patrimoniale</li>
+        </ul>
+      </div>
+
+      <!-- Ce qu'on fait -->
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">🔧</span>Ce que Debourg Audit analyse et réalise</div>
+        <ul class="pa-list">
+          <li><strong>Audit de structure :</strong> EI, micro, EURL, SARL — analyse des avantages et contraintes</li>
+          <li><strong>Arbitrage rémunération :</strong> simulation chiffrée salaire vs dividendes selon votre TMI</li>
+          <li><strong>Optimisation des charges :</strong> véhicule, local, repas, téléphone, formation, mutuelle TNS</li>
+          <li><strong>Création ou transformation :</strong> rédaction des statuts, immatriculation, annonce légale</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Avant / Après -->
+    <p style="font-size:0.8rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gris-500); margin-bottom:12px;">📋 Cas concret — Marc, électricien, Var</p>
+    <div class="pa-avantapres">
+      <div class="pa-avant">
+        <div class="pa-avant__titre">❌ Avant</div>
+        <div class="pa-aa-profil">Micro-entreprise — 94 000€ de CA — célibataire, 38 ans</div>
+        <ul class="pa-list">
+          <li>Cotisations micro à 22 % = 20 680€/an, aucune déduction possible</li>
+          <li>Dépasse le seuil TVA : doit facturer TVA 20 %, perd en compétitivité</li>
+          <li>Véhicule perso utilisé pro : 0€ de déduction</li>
+          <li>Revenu net estimé : 52 000€/an</li>
+        </ul>
+      </div>
+      <div class="pa-apres">
+        <div class="pa-apres__titre">✅ Après — EURL à l'IS</div>
+        <ul class="pa-list">
+          <li>Véhicule société + téléphone + repas : −5 640€ de charges/an</li>
+          <li>Arbitrage salaire 18 000€ + dividendes 25 000€ : optimisation cotisations</li>
+          <li>Mutuelle TNS Madelin intégrée et déductible</li>
+          <li>Revenu net estimé : 61 000€/an <strong>(+9 000€)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tarif -->
+    <div class="pa-tarif">
+      <div class="pa-tarif__prix">390€<span> HT/mois</span></div>
+      <div class="pa-tarif__detail">
+        <div class="pa-tarif__detail-titre">Abonnement Conseil</div>
+        <div class="pa-tarif__detail-texte">+ Création ou transformation de société : 700 à 1 200€ HT (ponctuel, frais légaux ~190€ au réel en sus)</div>
+      </div>
+      <div class="pa-tarif__roi">
+        <strong>💰 ROI année 1</strong>
+        +9 000€ de revenu net. L'abonnement annuel (4 680€ HT) est couvert 1,9 fois par les économies réalisées.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="pa-arrow">↓</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉTAPE 2
+════════════════════════════════════════════════════════ -->
+<section class="pa-etape pa-etape--2" id="etape-2">
+  <div class="container">
+
+    <div class="pa-etape__header">
+      <div class="pa-etape__badge">
+        <div class="pa-etape__badge-num">2</div>
+        <div class="pa-etape__badge-label">Étape</div>
+      </div>
+      <div>
+        <div class="pa-etape__eyebrow">150 000 € à 300 000 € de CA</div>
+        <h2 class="pa-etape__titre">L'Accélération —<br/><em style="color:var(--e2);">Débloquer les marchés subventionnés</em></h2>
+        <p class="pa-etape__ca">Vos clients vous demandent des aides que vous ne pouvez pas activer. Un concurrent certifié rafle les gros chantiers. Il est temps de changer ça.</p>
+      </div>
+    </div>
+
+    <div class="pa-badge-da">
+      <strong>✅ Debourg Audit réalise directement :</strong> montage intégral du dossier RGE/SAP/Qualiopi, coordination de la formation, dépôt, suivi instruction, tableaux de bord de croissance.
+    </div>
+
+    <div class="pa-etape__body">
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">⚡</span>Le problème typique</div>
+        <ul class="pa-list">
+          <li>Les clients demandent MaPrimeRénov' — vous ne pouvez pas l'activer sans label RGE</li>
+          <li>Chantiers de rénovation globale perdus au profit d'un concurrent certifié</li>
+          <li>Panier moyen plafonné à 3 000–5 000€ alors que le marché RGE tourne à 15 000–40 000€</li>
+          <li>CA qui stagne malgré une bonne réputation terrain</li>
+        </ul>
+      </div>
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">🔧</span>Ce que Debourg Audit réalise</div>
+        <ul class="pa-list">
+          <li><strong>Label RGE :</strong> Qualibat, Qualit'EnR — dossier complet en 3 à 6 mois</li>
+          <li><strong>Agrément SAP :</strong> dossier NOVA, coordination DDETS, Avance immédiate Urssaf</li>
+          <li><strong>Qualiopi :</strong> cartographie des 7 indicateurs, préparation à l'audit COFRAC</li>
+          <li><strong>Tableaux de bord :</strong> suivi rentabilité chantier, trésorerie prévisionnelle, conformité label</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gris-500); margin-bottom:12px;">📋 Cas concret — Karim, artisan isolation, Nord</p>
+    <div class="pa-avantapres">
+      <div class="pa-avant">
+        <div class="pa-avant__titre">❌ Avant</div>
+        <div class="pa-aa-profil">SARL — 210 000€ de CA — 2 salariés — pas de label RGE</div>
+        <ul class="pa-list">
+          <li>3 à 4 gros chantiers rénovation perdus chaque mois faute de RGE</li>
+          <li>Panier moyen : 4 500€ (petits travaux)</li>
+          <li>CA plafonné malgré une excellente réputation terrain</li>
+        </ul>
+      </div>
+      <div class="pa-apres">
+        <div class="pa-apres__titre">✅ Après — RGE Qualibat obtenu en 5 mois</div>
+        <ul class="pa-list">
+          <li>Accès immédiat aux chantiers MaPrimeRénov' et CEE</li>
+          <li>Panier moyen chantier : 18 000€ (+300 %)</li>
+          <li>CA an 1 post-RGE : 310 000€ <strong>(+100 000€)</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pa-tarif">
+      <div class="pa-tarif__prix">780€<span> HT/mois</span></div>
+      <div class="pa-tarif__detail">
+        <div class="pa-tarif__detail-titre">Abonnement Suivi</div>
+        <div class="pa-tarif__detail-texte">+ Pack certification RGE/SAP/Qualiopi : 1 500 à 3 500€ HT (ponctuel, frais organisme au réel en sus)</div>
+      </div>
+      <div class="pa-tarif__roi">
+        <strong>💰 ROI</strong>
+        Prestation rentabilisée dès le 1er gros chantier rénovation globale obtenu grâce au label (marge artisan ≥ 4 000€).
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="pa-arrow">↓</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉTAPE 3
+════════════════════════════════════════════════════════ -->
+<section class="pa-etape pa-etape--3" id="etape-3">
+  <div class="container">
+
+    <div class="pa-etape__header">
+      <div class="pa-etape__badge">
+        <div class="pa-etape__badge-num">3</div>
+        <div class="pa-etape__badge-label">Étape</div>
+      </div>
+      <div>
+        <div class="pa-etape__eyebrow">400 000 € à 800 000 € de CA</div>
+        <h2 class="pa-etape__titre">La Sécurisation —<br/><em style="color:var(--e3);">Faire travailler le cash</em></h2>
+        <p class="pa-etape__ca">La trésorerie s'accumule. L'IS ampute 25 % du résultat. L'argent dort à 0 % sur votre compte pro pendant que l'inflation l'érode.</p>
+      </div>
+    </div>
+
+    <div class="pa-badge-da">
+      <strong>✅ Debourg Audit réalise directement :</strong> analyse de trésorerie et BFR, stratégie de placement d'entreprise, sélection et coordination du CGP habilité AMF, recalcul de rémunération, pilotage CFO externalisé mensuel.
+    </div>
+
+    <div class="pa-etape__body">
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">⚡</span>Le problème typique</div>
+        <ul class="pa-list">
+          <li>30 000 à 50 000€ de trésorerie dormante sur le compte courant pro à 0 %</li>
+          <li>IS de 15 000 à 20 000€/an — vous travaillez pour payer des impôts</li>
+          <li>Aucune stratégie de placement : l'inflation érode silencieusement le cash</li>
+          <li>Rémunération du dirigeant non revue depuis des années</li>
+        </ul>
+      </div>
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">🔧</span>Ce que Debourg Audit pilote</div>
+        <ul class="pa-list">
+          <li><strong>Contrat de capitalisation PM :</strong> 3 à 5 % net/an, liquidité conservée, fiscalité différée</li>
+          <li><strong>Usufruit de SCPI :</strong> loyers 4 à 6 %/an + charge déductible qui réduit l'IS</li>
+          <li><strong>PEE, intéressement, Madelin :</strong> optimisation de la rémunération dirigeant</li>
+          <li><strong>CFO externalisé :</strong> point mensuel, tableau de bord groupe, interface expert-comptable</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gris-500); margin-bottom:12px;">📋 Cas concret — Sylvie, nettoyage professionnel, Seine-et-Marne</p>
+    <div class="pa-avantapres">
+      <div class="pa-avant">
+        <div class="pa-avant__titre">❌ Avant</div>
+        <div class="pa-aa-profil">SAS — 520 000€ de CA — 8 salariés — 45 000€ de trésorerie dormante</div>
+        <ul class="pa-list">
+          <li>45 000€ sur le compte pro à 0 % — l'inflation efface ~1 600€/an silencieusement</li>
+          <li>IS : 18 200€ sur l'exercice (25 % du résultat)</li>
+          <li>Rémunération de Sylvie non optimisée depuis 3 ans</li>
+        </ul>
+      </div>
+      <div class="pa-apres">
+        <div class="pa-apres__titre">✅ Après — stratégie trésorerie en place</div>
+        <ul class="pa-list">
+          <li>30 000€ en contrat capitalisation : +1 200€/an de rendement net</li>
+          <li>50 000€ usufruit SCPI : 4 800€ loyers/an + 3 500€ économie IS sur amortissement</li>
+          <li>Rémunération recalculée : <strong>+4 200€ de revenu net annuel</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pa-tarif">
+      <div class="pa-tarif__prix">1 300€<span> HT/mois</span></div>
+      <div class="pa-tarif__detail">
+        <div class="pa-tarif__detail-titre">Abonnement Pilotage</div>
+        <div class="pa-tarif__detail-texte">+ Schéma d'optimisation initial : 500 à 800€ HT (one-shot). CGP coordonné : facture directement le client.</div>
+      </div>
+      <div class="pa-tarif__roi">
+        <strong>💰 ROI année 1</strong>
+        +10 200€ (économies IS + rendements + optimisation rémunération). Abonnement couvert en 18 mois par les gains générés.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="pa-arrow">↓</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉTAPE 4
+════════════════════════════════════════════════════════ -->
+<section class="pa-etape pa-etape--4" id="etape-4">
+  <div class="container">
+
+    <div class="pa-etape__header">
+      <div class="pa-etape__badge">
+        <div class="pa-etape__badge-num">4</div>
+        <div class="pa-etape__badge-label">Étape</div>
+      </div>
+      <div>
+        <div class="pa-etape__eyebrow">800 000 € à 1 500 000 € de CA et plus</div>
+        <h2 class="pa-etape__titre">L'Empire —<br/><em style="color:var(--e4);">Structurer pour croître sans friction fiscale</em></h2>
+        <p class="pa-etape__ca">Vous pensez patrimoine, locaux, transmission. Vous voulez racheter un concurrent. Il faut une structure qui laisse circuler l'argent sans le gaspiller en impôts.</p>
+      </div>
+    </div>
+
+    <div class="pa-badge-da">
+      <strong>✅ Debourg Audit réalise directement :</strong> schéma de structuration, rédaction des statuts de la holding SAS, rédaction des statuts de la SCI, immatriculation, annonces légales, acte d'apport de titres (volet fiscal validé par l'expert-comptable du client).
+    </div>
+
+    <div class="pa-etape__body">
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">⚡</span>Le problème typique</div>
+        <ul class="pa-list">
+          <li>Dividendes perçus en perso à 30 % de flat tax — sur 60 000€ : 18 000€ perdus en impôts</li>
+          <li>Locaux loués à un propriétaire externe — loyer qui enrichit un tiers, pas vous</li>
+          <li>Pas de protection du patrimoine pro en cas de retournement</li>
+          <li>Veut racheter un concurrent mais ne sait pas comment structurer</li>
+        </ul>
+      </div>
+      <div class="pa-card">
+        <div class="pa-card__titre"><span class="pa-card__icon">🔧</span>Ce que Debourg Audit structure</div>
+        <ul class="pa-list">
+          <li><strong>Holding SAS :</strong> les dividendes de la fille remontent à 5 % d'IS (régime Mère-Fille) au lieu de 30 %</li>
+          <li><strong>SCI :</strong> la holding achète vos murs — le loyer vous revient, pas à un tiers</li>
+          <li><strong>Acte d'apport de titres :</strong> report d'imposition sur la plus-value (art. 150-0 B ter CGI)</li>
+          <li><strong>Croissance externe :</strong> ciblage, analyse, LOI, coordination due diligence, closing</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size:0.8rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gris-500); margin-bottom:12px;">📋 Cas concret — Patrick, plombier-chauffagiste, Sarthe</p>
+    <div class="pa-avantapres">
+      <div class="pa-avant">
+        <div class="pa-avant__titre">❌ Avant</div>
+        <div class="pa-aa-profil">SARL — 950 000€ de CA — 12 salariés — pas de structure patrimoniale</div>
+        <ul class="pa-list">
+          <li>60 000€ de dividendes perçus en perso : 18 000€ d'impôts (30 % PFU)</li>
+          <li>2 400€/mois de loyer versé à un propriétaire extérieur pour son dépôt</li>
+          <li>Veut racheter un électricien voisin mais sans structure adaptée</li>
+        </ul>
+      </div>
+      <div class="pa-apres">
+        <div class="pa-apres__titre">✅ Après — Holding + SCI créées par Debourg Audit</div>
+        <ul class="pa-list">
+          <li>Dividendes à 5 % d'IS : économie <strong>15 000€/an</strong> sur les dividendes</li>
+          <li>SCI rachète les murs (280 000€) : le loyer revient à Patrick, pas à un tiers</li>
+          <li>Rachat de l'électricien structuré via la holding — effet de levier bancaire</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pa-tarif">
+      <div class="pa-tarif__prix">1 300€<span> HT/mois</span></div>
+      <div class="pa-tarif__detail">
+        <div class="pa-tarif__detail-titre">Abonnement Pilotage maintenu</div>
+        <div class="pa-tarif__detail-texte">+ Créations juridiques (holding + SCI + acte d'apport) : 1 600 à 3 100€ HT selon complexité. Frais légaux ~450€ au réel en sus.</div>
+      </div>
+      <div class="pa-tarif__roi">
+        <strong>💰 ROI année 1</strong>
+        15 000€/an d'économie sur les dividendes. Les créations juridiques sont amorties en moins de 6 semaines d'économies.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CTA FINALE ═══ -->
+<section class="pa-cta-finale">
+  <div class="container">
+    <div class="pa-cta-finale__inner">
+      <div class="pa-cta-finale__eyebrow">Première étape — gratuite</div>
+      <h2 class="pa-cta-finale__titre">
+        À quelle étape<br/>
+        <em>êtes-vous aujourd'hui ?</em>
+      </h2>
+      <p class="pa-cta-finale__texte">
+        Prenez contact pour un premier échange de 30 minutes. Debourg Audit analyse votre situation, identifie votre étape actuelle et vous explique concrètement ce que le prochain palier peut vous rapporter — en euros, cette année.
+      </p>
+      <div class="pa-cta-finale__actions">
+        <a href="contact.html" class="btn btn-cuivre">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Évaluer mon étape — gratuitement
+        </a>
+        <a href="offres.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3); color:var(--blanc);">
+          Voir toutes les offres
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-parcours.html">Nos parcours</a></li>
+          <li><a href="nos-dossiers.html">Nos dossiers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
