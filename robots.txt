@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://debourg-audit.fr/sitemap.xml
