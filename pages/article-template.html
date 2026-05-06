@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════
+       ZONE 1 — MÉTA (à remplir pour chaque article)
+  ════════════════════════════════════════════════ -->
+  <meta name="description" content="REMPLACER — Courte description de l'article (1-2 phrases, pour Google)" />
+  <title>TITRE DE L'ARTICLE — Debourg Audit</title>
+  <!-- ═══════════════════════════════════════════ -->
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+
+  <style>
+    /* ── Mise en page article ── */
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* En-tête article */
+    .article-header {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--gris-200);
+      margin-bottom: 48px;
+    }
+    .article-header__categorie {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 16px;
+    }
+    .article-header__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--bleu);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-header__intro {
+      font-size: 1.1rem;
+      color: var(--gris-500);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .article-header__meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: var(--gris-500);
+    }
+    .article-header__meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* Corps de l'article */
+    .article-body {
+      padding-bottom: 64px;
+    }
+
+    /* Typographie automatique dans .article-body */
+    .article-body h2 {
+      font-family: var(--font-titre);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin: 48px 0 16px;
+      line-height: 1.25;
+    }
+    .article-body h3 {
+      font-family: var(--font-titre);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin: 32px 0 12px;
+    }
+    .article-body p {
+      font-size: 1rem;
+      color: var(--gris-800);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 24px;
+      list-style: disc;
+    }
+    .article-body ol { list-style: decimal; }
+    .article-body li {
+      font-size: 1rem;
+      color: var(--gris-800);
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .article-body strong { color: var(--bleu); font-weight: 600; }
+    .article-body em { font-style: italic; }
+    .article-body a { color: var(--cuivre); text-decoration: underline; }
+    .article-body a:hover { color: var(--bleu); }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--gris-200);
+      margin: 40px 0;
+    }
+
+    /* Bloc encadré — à utiliser pour les points clés */
+    .article-body .encadre {
+      background: var(--gris-100);
+      border-left: 4px solid var(--cuivre);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .article-body .encadre p { margin-bottom: 0; }
+    .article-body .encadre p + p { margin-top: 10px; }
+
+    /* Bloc alerte / important */
+    .article-body .alerte {
+      background: rgba(192,122,69,0.08);
+      border: 1px solid rgba(192,122,69,0.25);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    /* Citation mise en avant */
+    .article-body blockquote {
+      border-left: 3px solid var(--cuivre);
+      margin: 32px 0;
+      padding: 4px 0 4px 24px;
+      font-family: var(--font-titre);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--bleu);
+      line-height: 1.5;
+    }
+
+    /* Navigation article (retour + suivant) */
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 0;
+      border-top: 1px solid var(--gris-200);
+      gap: 16px;
+    }
+    .article-nav__retour {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gris-500);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-nav__retour:hover { color: var(--bleu); }
+    .article-nav__retour svg { width: 16px; height: 16px; }
+
+    /* CTA newsletter en bas d'article */
+    .article-cta {
+      background: var(--bleu);
+      border-radius: 14px;
+      padding: 40px 40px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .article-cta__titre {
+      font-family: var(--font-titre);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blanc);
+      margin-bottom: 10px;
+    }
+    .article-cta__titre em { color: var(--cuivre); font-style: normal; }
+    .article-cta__texte {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 24px;
+    }
+    .article-cta__form {
+      display: flex;
+      gap: 10px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .article-cta__input {
+      flex: 1;
+      padding: 13px 16px;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: var(--blanc);
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .article-cta__input::placeholder { color: rgba(255,255,255,0.35); }
+    .article-cta__input:focus { border-color: var(--cuivre); }
+    .article-cta__btn {
+      padding: 13px 20px;
+      background: var(--cuivre);
+      color: var(--blanc);
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .article-cta__notice {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      margin-top: 12px;
+    }
+    .article-cta__success { display:none; color:var(--blanc); font-size:0.95rem; padding:12px; }
+    @media (max-width: 560px) {
+      .article-cta { padding: 32px 24px; }
+      .article-cta__form { flex-direction: column; }
+    }
+  </style>
+<script src="https://www.google.com/recaptcha/api.js?render=6LdlDtwsAAAAAFpFJrTwKEAXuAr2u-Jf5b-0gP12"></script>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION (ne pas modifier) ═══ -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav__has-dropdown">
+          <a href="offres.html">Les offres</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="approche.html">L'approche</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">La méthode Bottom-Up</a></li>
+            <li><a href="approche.html">Les 12 critères de friction</a></li>
+            <li><a href="approche.html">Les 4 phases</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-parcours.html">Nos parcours</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+            <li><a href="sap.html">Parcours SAP</a></li>
+            <li><a href="rge.html">Parcours RGE</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-dossiers.html">Nos dossiers</a>
+          <ul class="nav__dropdown">
+            <li><a href="sap.html">Dossier SAP &amp; Avance immédiate</a></li>
+            <li><a href="rge.html">Dossier RGE</a></li>
+            <li><a href="nos-dossiers.html">Newsletter</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- ═══ FIN NAVIGATION ═══ -->
+
+
+<div style="padding-top: 80px;">
+<div class="article-wrap">
+
+  <!-- ═══════════════════════════════════════════════════════
+       ZONE 2 — EN-TÊTE DE L'ARTICLE (à remplir)
+  ══════════════════════════════════════════════════════════ -->
+  <header class="article-header">
+
+    <!-- Catégorie — choisir parmi : Efficacité opérationnelle / Administratif & Juridique / Gestion & Finance / Certification / Développement commercial -->
+    <div class="article-header__categorie">CATÉGORIE</div>
+
+    <!-- Titre principal de l'article -->
+    <h1 class="article-header__titre">Titre de l'article</h1>
+
+    <!-- Phrase d'accroche / chapeau — 1 à 3 phrases qui résument l'article -->
+    <p class="article-header__intro">
+      Phrase d'introduction qui donne envie de lire la suite. Expliquer en 1 à 3 phrases ce que le lecteur va apprendre ou comprendre.
+    </p>
+
+    <!-- Date et temps de lecture estimé -->
+    <div class="article-header__meta">
+      <span>📅 JJ mois AAAA</span>
+      <span>⏱ X min de lecture</span>
+    </div>
+
+  </header>
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       ZONE 3 — CORPS DE L'ARTICLE (rédiger ici)
+
+       BALISES DISPONIBLES :
+       <h2>Titre de section</h2>
+       <h3>Sous-titre</h3>
+       <p>Paragraphe de texte.</p>
+       <ul><li>Point 1</li><li>Point 2</li></ul>
+       <ol><li>Étape 1</li><li>Étape 2</li></ol>
+       <strong>texte en gras</strong>
+       <em>texte en italique</em>
+       <blockquote>Citation ou phrase clé à mettre en avant</blockquote>
+       <hr> (ligne de séparation)
+
+       BLOCS SPÉCIAUX :
+       <div class="encadre"><p>Texte encadré — pour un résumé, un point clé ou une définition.</p></div>
+       <div class="alerte"><p>⚠️ Point important à retenir.</p></div>
+  ══════════════════════════════════════════════════════════ -->
+  <article class="article-body">
+
+    <h2>Premier titre de section</h2>
+
+    <p>
+      Premier paragraphe. Écrire ici le contenu de l'article. Les styles (taille, couleur, espacement) sont appliqués automatiquement — il suffit d'utiliser les balises indiquées ci-dessus.
+    </p>
+
+    <p>
+      Deuxième paragraphe. Continuer la rédaction normalement.
+    </p>
+
+    <div class="encadre">
+      <p><strong>À retenir :</strong> Utiliser ce bloc pour mettre en avant une définition, un résumé ou un point clé que le lecteur doit retenir.</p>
+    </div>
+
+    <h2>Deuxième titre de section</h2>
+
+    <p>
+      Nouveau paragraphe. Ajouter autant de sections que nécessaire en répétant le même schéma.
+    </p>
+
+    <ul>
+      <li>Premier point de liste</li>
+      <li>Deuxième point de liste</li>
+      <li>Troisième point de liste</li>
+    </ul>
+
+    <div class="alerte">
+      <p>⚠️ <strong>Point important :</strong> Utiliser ce bloc pour signaler une erreur fréquente, une obligation légale ou un point de vigilance.</p>
+    </div>
+
+    <h2>Troisième titre de section</h2>
+
+    <p>Continuer l'article ici.</p>
+
+    <blockquote>
+      Une phrase ou citation à mettre particulièrement en avant.
+    </blockquote>
+
+    <p>Conclusion de l'article.</p>
+
+  </article>
+  <!-- ═══════════════════════════════════════════════════════ -->
+
+
+    <!-- CTA Newsletter Brevo officiel -->
+  <div class="article-cta">
+    <div class="article-cta__titre">Recevoir les prochains dossiers<br/><em>directement dans votre boîte mail</em></div>
+    <p class="article-cta__texte">Un dossier à la fois, quand il est prêt. Pas de spam.</p>
+
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <style>
+      .article-cta #sib-container { background:transparent !important; border:none !important; max-width:100% !important; }
+      .article-cta .sib-form { background:transparent !important; padding:0 !important; }
+      .article-cta #sib-form-container { padding:0 !important; }
+      .article-cta .sib-form-block:first-child, .article-cta .sib-form-block:nth-child(2) { display:none !important; }
+      .article-cta .entry__label { display:none !important; }
+      .article-cta .entry__specification { display:none !important; }
+      .article-cta .form__entry { display:flex; gap:10px; max-width:420px; margin:0 auto; }
+      .article-cta #EMAIL { flex:1; padding:13px 16px; border:2px solid rgba(255,255,255,0.15); border-radius:8px; background:rgba(255,255,255,0.08); color:#fff; font-size:0.9rem; outline:none; font-family:var(--font-corps,'DM Sans',sans-serif); }
+      .article-cta #EMAIL::placeholder { color:rgba(255,255,255,0.35); }
+      .article-cta #EMAIL:focus { border-color:#C07A45; }
+      .article-cta .sib-form-block__button { padding:13px 20px; background:#C07A45; color:#fff; border:none; border-radius:8px; font-weight:700; font-size:0.9rem; cursor:pointer; white-space:nowrap; font-family:var(--font-corps,'DM Sans',sans-serif); }
+      .article-cta .sib-form-block__button:hover { background:#a8662e; }
+      .article-cta .entry__error { font-size:0.75rem; color:rgba(255,200,200,0.9); display:block; text-align:center; margin-top:6px; background:transparent !important; border:none !important; }
+      .article-cta #success-message { background:rgba(255,255,255,0.1) !important; border-color:rgba(255,255,255,0.2) !important; border-radius:10px !important; max-width:420px; margin:0 auto; }
+      .article-cta #success-message .sib-form-message-panel__inner-text { color:#fff !important; font-family:var(--font-corps,'DM Sans',sans-serif) !important; }
+      .article-cta #error-message { background:rgba(220,53,69,0.15) !important; border-color:rgba(220,53,69,0.3) !important; border-radius:10px !important; max-width:420px; margin:0 auto; }
+    </style>
+
+    <div class="sib-form">
+      <div id="sib-form-container" class="sib-form-container">
+        <div id="error-message" class="sib-form-message-panel" style="display:none; font-size:14px; font-family:Helvetica,sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949; max-width:420px; margin:0 auto 12px;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">Nous n&#039;avons pas pu confirmer votre inscription.</span>
+          </div>
+        </div>
+        <div id="success-message" class="sib-form-message-panel" style="display:none; font-size:14px; font-family:Helvetica,sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66; max-width:420px; margin:0 auto;">
+          <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+            <span class="sib-form-message-panel__inner-text">Votre inscription est confirmée. ✅</span>
+          </div>
+        </div>
+        <div id="sib-container" class="sib-container--large sib-container--vertical">
+          <form id="sib-form" method="POST" action="https://c2d92939.sibforms.com/serve/MUIFALfqr-TsXCtGnIdK41K3z8WJl94uZnGHi6PE_SIwWbJ7CLtp4pAWBoEOmqPNShezT6IaNglt5dFeAl10aHDbZzcyiESJjK0UIfhqppvmSXmsi7qscgHlhmTueHLGtjUMviOooVC6CfsGweboknowKMeSvi3OeGweZcWphZdAaJXYZcIUjLC3bEKq8UYPjKI6YK3E5Ma8fl9dXQ==" data-type="subscription">
+            <div class="sib-form-block"><p>Newsletter</p></div>
+            <div class="sib-form-block"><div class="sib-text-form-block"><p>Newsletter</p></div></div>
+            <div style="padding:8px 0;">
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row">
+                    <label class="entry__label" for="EMAIL" data-required="*">Email</label>
+                    <div class="entry__field">
+                      <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="vous@exemple.fr" data-required="true" required />
+                    </div>
+                  </div>
+                  <label class="entry__error entry__error--primary"></label>
+                </div>
+              </div>
+            </div>
+            <div style="padding:8px 0;">
+              <div class="sib-form-block">
+                <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">S'abonner</button>
+              </div>
+            </div>
+            <input type="text" name="email_address_check" value="" class="input--hidden">
+            <input type="hidden" name="locale" value="fr">
+          </form>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem; color:rgba(255,255,255,0.35); margin-top:12px;">Désinscription libre à tout moment. Données non transmises à des tiers.</p>
+  </div>
+
+  <!-- Navigation retour -->
+  <div class="article-nav">
+    <a href="nos-dossiers.html" class="article-nav__retour">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
+      Retour aux dossiers
+    </a>
+    <!-- ═══════════════════════════════════════
+         ZONE 4 — LIEN ARTICLE SUIVANT (optionnel)
+         Décommenter et remplir si un article suivant existe :
+    <a href="NOM-DU-FICHIER.html" style="display:inline-flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:600;color:var(--gris-500);">
+      Article suivant
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+    </a>
+    ════════════════════════════════════════ -->
+  </div>
+
+</div>
+</div>
+
+
+<!-- ═══ FOOTER (ne pas modifier) ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-parcours.html">Nos parcours</a></li>
+          <li><a href="nos-dossiers.html">Nos dossiers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+<!-- ═══ FIN FOOTER ═══ -->
+
+<script src="../js/main.js"></script>
+
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+  window.LOCALE = 'fr';
+  window.EMAIL_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides.";
+  window.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ.";
+  window.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides.";
+  window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var forms = document.querySelectorAll('#sib-form');
+  forms.forEach(function(form) {
+    // Ajouter le champ caché si pas encore présent
+    if (!form.querySelector('input[name="g-recaptcha-response"]')) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'g-recaptcha-response';
+      input.id = 'g-recaptcha-response';
+      form.appendChild(input);
+    }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var f = this;
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6LdlDtwsAAAAAFpFJrTwKEAXuAr2u-Jf5b-0gP12', {action: 'newsletter_subscribe'}).then(function(token) {
+          f.querySelector('#g-recaptcha-response').value = token;
+          // Soumettre via Brevo normalement
+          f.removeEventListener('submit', arguments.callee);
+          HTMLFormElement.prototype.submit.call(f);
+        });
+      });
+    }, false);
+  });
+});
+</script>
+</body>
+</html>
