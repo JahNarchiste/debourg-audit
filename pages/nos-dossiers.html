@@ -3,75 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Debourg Audit — Nos parcours : audit Bottom-Up, accompagnement dirigeant, coordination administrative, certification RGE, SAP, Qualiopi." />
-  <title>Nos parcours — Debourg Audit</title>
+  <meta name="description" content="Debourg Audit — Nos dossiers : guides pratiques sur les parcours SAP, RGE, et l'efficacité opérationnelle pour artisans et PME. Abonnez-vous à notre newsletter." />
+  <title>Nos dossiers — Debourg Audit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
   <style>
-    .parcours-grid {
+    /* Dossiers grid */
+    .dossiers-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 28px;
       margin-top: 48px;
     }
-    @media (max-width: 720px) { .parcours-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .dossiers-grid { grid-template-columns: 1fr; } }
 
-    .parcours-card {
+    .dossier-card {
       background: var(--blanc);
       border: 1px solid rgba(26,54,93,0.1);
       border-radius: 16px;
-      padding: 36px 32px;
+      overflow: hidden;
+      text-decoration: none;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      text-decoration: none;
       transition: box-shadow 0.2s, transform 0.2s;
-      position: relative;
-      overflow: hidden;
     }
-    .parcours-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: var(--cuivre);
-      opacity: 0;
-      transition: opacity 0.2s;
-    }
-    .parcours-card:hover {
+    .dossier-card:hover {
       box-shadow: 0 12px 40px rgba(26,54,93,0.12);
       transform: translateY(-3px);
     }
-    .parcours-card:hover::before { opacity: 1; }
-
-    .parcours-card__num {
-      font-family: var(--font-titre);
+    .dossier-card__header {
+      padding: 32px 32px 24px;
+      border-bottom: 1px solid rgba(26,54,93,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .dossier-card__icon {
+      font-size: 2.4rem;
+      flex-shrink: 0;
+    }
+    .dossier-card__meta {}
+    .dossier-card__categorie {
       font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--cuivre);
+      margin-bottom: 6px;
     }
-    .parcours-card__icon { font-size: 2.4rem; }
-    .parcours-card__titre {
+    .dossier-card__titre {
       font-family: var(--font-titre);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
       color: var(--bleu);
       line-height: 1.3;
     }
-    .parcours-card__desc {
+    .dossier-card__body {
+      padding: 24px 32px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .dossier-card__desc {
       font-size: 0.9rem;
       color: var(--gris-500);
       line-height: 1.65;
       flex: 1;
     }
-    .parcours-card__prix {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--cuivre);
+    .dossier-card__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
     }
-    .parcours-card__cta {
+    .dossier-card__tag {
+      background: var(--gris-100);
+      color: var(--gris-500);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .dossier-card__cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -80,39 +93,133 @@
       color: var(--bleu);
       margin-top: 4px;
     }
-    .parcours-card__cta svg { width: 16px; height: 16px; transition: transform 0.2s; }
-    .parcours-card:hover .parcours-card__cta svg { transform: translateX(4px); }
+    .dossier-card__cta svg { width:16px; height:16px; transition: transform 0.2s; }
+    .dossier-card:hover .dossier-card__cta svg { transform: translateX(4px); }
 
-    /* Sous-parcours RGE dans la card certification */
-    .parcours-sub {
-      margin-top: 8px;
-      padding-top: 16px;
-      border-top: 1px solid rgba(26,54,93,0.08);
+    /* Newsletter bloc */
+    .newsletter-bloc {
+      background: var(--bleu);
+      border-radius: 20px;
+      padding: 60px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
     }
-    .parcours-sub__titre {
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gris-500);
-      margin-bottom: 10px;
+    @media (max-width: 800px) {
+      .newsletter-bloc { grid-template-columns: 1fr; padding: 40px 32px; gap: 32px; }
     }
-    .parcours-sub__links {
+    @media (max-width: 480px) { .newsletter-bloc { padding: 32px 24px; } }
+
+    .newsletter-bloc__eyebrow {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--cuivre); margin-bottom: 14px;
+    }
+    .newsletter-bloc__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      color: var(--blanc);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .newsletter-bloc__titre em { color: var(--cuivre); font-style: normal; }
+    .newsletter-bloc__texte {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+    }
+    .newsletter-bloc__points {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 10px;
+      margin-top: 24px;
     }
-    .parcours-sub__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .newsletter-bloc__point {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
       font-size: 0.875rem;
-      color: var(--bleu);
-      font-weight: 500;
-      text-decoration: none;
+      color: rgba(255,255,255,0.8);
     }
-    .parcours-sub__link:hover { color: var(--cuivre); }
-    .parcours-sub__link svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .newsletter-bloc__point::before {
+      content: '→';
+      color: var(--cuivre);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .newsletter-form__label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: -6px;
+    }
+    .newsletter-form__input {
+      width: 100%;
+      padding: 16px 20px;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.08);
+      color: var(--blanc);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .newsletter-form__input::placeholder { color: rgba(255,255,255,0.35); }
+    .newsletter-form__input:focus { border-color: var(--cuivre); }
+    .newsletter-form__btn {
+      width: 100%;
+      padding: 16px 24px;
+      background: var(--cuivre);
+      color: var(--blanc);
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .newsletter-form__btn:hover { background: #a8662e; }
+    .newsletter-form__notice {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.5;
+      text-align: center;
+    }
+    .newsletter-success {
+      display: none;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+    }
+    .newsletter-success__icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .newsletter-success__titre { font-family: var(--font-titre); font-size: 1.3rem; font-weight: 700; color: var(--blanc); margin-bottom: 8px; }
+    .newsletter-success__texte { font-size: 0.9rem; color: rgba(255,255,255,0.65); }
+    .newsletter-error {
+      display: none;
+      background: rgba(220,53,69,0.15);
+      border: 1px solid rgba(220,53,69,0.3);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+    }
   </style>
 <style id="nav-dropdown-styles">
 .nav__logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
@@ -187,89 +294,120 @@
 
 <div class="page-hero">
   <div class="container">
-    <div class="section__eyebrow">Nos parcours</div>
-    <h1 class="page-hero__titre">Quatre formules,<br/><em>un seul objectif</em></h1>
-    <p class="page-hero__desc">Chaque parcours est conçu pour répondre à un besoin précis. Ils fonctionnent de façon autonome et se combinent entre eux selon votre situation.</p>
+    <div class="section__eyebrow">Nos dossiers</div>
+    <h1 class="page-hero__titre">Ressources pratiques<br/><em>pour les dirigeants</em></h1>
+    <p class="page-hero__desc">Des dossiers complets sur les parcours administratifs, les certifications et l'efficacité opérationnelle — rédigés par Debourg Audit pour les artisans, commerçants et dirigeants de PME.</p>
   </div>
 </div>
 
+<!-- DOSSIERS -->
 <section class="section">
   <div class="container">
-    <div class="parcours-grid">
+    <div class="section__eyebrow">Dossiers disponibles</div>
+    <h2 class="section__titre">Lire et comprendre<br/><em>avant d'agir</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:600px; line-height:1.7;">Ces dossiers sont consultables librement. Ils sont également envoyés à nos abonnés newsletter au fur et à mesure de leur publication.</p>
 
-      <!-- AUDIT BOTTOM-UP -->
-      <a href="approche.html" class="parcours-card">
-        <div class="parcours-card__num">Parcours 01</div>
-        <div class="parcours-card__icon">🔍</div>
-        <div class="parcours-card__titre">Audit Bottom-Up</div>
-        <div class="parcours-card__desc">Un diagnostic structuré qui transforme ce que vos équipes vivent au quotidien en chiffres concrets. 12 critères de friction analysés, coût réel des pertes calculé, plan d'action priorisé livré. 3 niveaux progressifs — du diagnostic flash gratuit à la mise en place complète.</div>
-        <div class="parcours-card__prix">Diagnostic Flash gratuit — Rapport à partir de 850 € HT — Mise en place à partir de 5 000 € HT</div>
-        <div class="parcours-card__cta">
-          Découvrir l'approche
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        </div>
-      </a>
+    <div class="dossiers-grid">
 
-      <!-- ACCOMPAGNEMENT DIRIGEANT -->
-      <a href="accompagnement-dirigeant.html" class="parcours-card">
-        <div class="parcours-card__num">Parcours 02</div>
-        <div class="parcours-card__icon">🧭</div>
-        <div class="parcours-card__titre">Accompagnement Dirigeant</div>
-        <div class="parcours-card__desc">Un regard extérieur permanent sur vos décisions. Points mensuels structurés, analyse des investissements, lecture de trésorerie, structuration RH, rédaction des actes courants. Disponibilité le jour même ou sous 24h. 3 forfaits selon votre niveau de besoin.</div>
-        <div class="parcours-card__prix">De 390 € à 1 300 € / mois HT — Engagement 3 mois minimum</div>
-        <div class="parcours-card__cta">
-          Voir les forfaits
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        </div>
-      </a>
-
-      <!-- COORDINATION ADMINISTRATIVE -->
-      <a href="coordination-administrative.html" class="parcours-card">
-        <div class="parcours-card__num">Parcours 03</div>
-        <div class="parcours-card__icon">📂</div>
-        <div class="parcours-card__titre">Coordination Administrative</div>
-        <div class="parcours-card__desc">Interface opérationnelle avec votre outil comptable Indy. Collecte et classement des factures, rapprochement bancaire mensuel, communication structurée avec votre expert-comptable. Tarif indexé sur votre volume de factures — pas de forfait surdimensionné.</div>
-        <div class="parcours-card__prix">De 150 € à 400 € / mois HT selon volume — Sur devis au-delà</div>
-        <div class="parcours-card__cta">
-          Voir les tarifs
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        </div>
-      </a>
-
-      <!-- CERTIFICATION -->
-      <a href="certification.html" class="parcours-card">
-        <div class="parcours-card__num">Parcours 04</div>
-        <div class="parcours-card__icon">🏅</div>
-        <div class="parcours-card__titre">Certification &amp; Conformité</div>
-        <div class="parcours-card__desc">Chaque certification ouvre une porte concrète sur de nouveaux marchés. Debourg Audit accompagne de la faisabilité jusqu'à l'obtention du label — SAP avec avance immédiate, RGE ou Qualiopi. Chaque mission démarre par un audit de faisabilité gratuit de 30 min.</div>
-        <div class="parcours-card__prix">SAP : 800–1 500 € HT — RGE : 1 500–3 500 € HT — Qualiopi : 3 000–6 000 € HT</div>
-        <div class="parcours-sub">
-          <div class="parcours-sub__titre">Parcours spécifiques disponibles</div>
-          <div class="parcours-sub__links">
-            <span class="parcours-sub__link" onclick="event.stopPropagation(); event.preventDefault(); window.location='rge.html';">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-              Parcours RGE détaillé — 6 phases, de la collecte à la première année
-            </span>
+      <!-- DOSSIER SAP -->
+      <a href="sap.html" class="dossier-card">
+        <div class="dossier-card__header">
+          <div class="dossier-card__icon">🏠</div>
+          <div class="dossier-card__meta">
+            <div class="dossier-card__categorie">Parcours administratif</div>
+            <div class="dossier-card__titre">Services à la personne — Déclaration, agrément &amp; Avance immédiate</div>
           </div>
         </div>
-        <div class="parcours-card__cta">
-          Voir toutes les certifications
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        <div class="dossier-card__body">
+          <div class="dossier-card__desc">Guide exhaustif du parcours SAP : distinctions déclaration / agrément / autorisation / certification, 12 étapes détaillées de la qualification à l'Avance immédiate Urssaf, organismes impliqués, pièces requises et erreurs fréquentes à éviter.</div>
+          <div class="dossier-card__tags">
+            <span class="dossier-card__tag">SAP</span>
+            <span class="dossier-card__tag">Agrément</span>
+            <span class="dossier-card__tag">NOVA</span>
+            <span class="dossier-card__tag">Avance immédiate</span>
+            <span class="dossier-card__tag">Urssaf</span>
+          </div>
+          <div class="dossier-card__cta">
+            Lire le dossier
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </div>
+        </div>
+      </a>
+
+      <!-- DOSSIER RGE -->
+      <a href="rge.html" class="dossier-card">
+        <div class="dossier-card__header">
+          <div class="dossier-card__icon">🌿</div>
+          <div class="dossier-card__meta">
+            <div class="dossier-card__categorie">Certification</div>
+            <div class="dossier-card__titre">Certification RGE — Reconnu Garant de l'Environnement</div>
+          </div>
+        </div>
+        <div class="dossier-card__body">
+          <div class="dossier-card__desc">Guide complet du parcours RGE pour les artisans et entreprises du bâtiment : 6 phases de l'accompagnement, collecte des pièces, montage du dossier, coordination de la formation, suivi jusqu'à l'obtention et assistance pendant la première année de conformité.</div>
+          <div class="dossier-card__tags">
+            <span class="dossier-card__tag">RGE</span>
+            <span class="dossier-card__tag">Qualibat</span>
+            <span class="dossier-card__tag">Qualit'EnR</span>
+            <span class="dossier-card__tag">MaPrimeRénov</span>
+            <span class="dossier-card__tag">Bâtiment</span>
+          </div>
+          <div class="dossier-card__cta">
+            Lire le dossier
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </div>
         </div>
       </a>
 
     </div>
+
+    <!-- Mention prochains dossiers -->
+    <div style="margin-top:32px; padding:20px 28px; background:var(--gris-100); border-radius:12px; display:flex; align-items:center; gap:16px;">
+      <span style="font-size:1.5rem;">📬</span>
+      <p style="font-size:0.9rem; color:var(--gris-500); line-height:1.6; margin:0;">
+        <strong style="color:var(--bleu);">Prochains dossiers en préparation :</strong> Qualiopi, création de holding et SCI, gestion de trésorerie pour artisans, stratégie de développement commercial. Abonnez-vous à la newsletter pour les recevoir à leur publication.
+      </p>
+    </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-band">
+<!-- NEWSLETTER -->
+<section class="section" style="background:var(--gris-100);">
   <div class="container">
-    <h2 class="cta-band__titre">Vous ne savez pas par où commencer ?</h2>
-    <p class="cta-band__texte">Le Diagnostic Flash est gratuit. Il permet d'identifier rapidement le parcours le plus adapté à votre situation.</p>
-    <div class="cta-band__actions">
-      <a href="contact.html" class="btn btn-primary">Demander mon Diagnostic Flash</a>
-      <a href="offres.html" class="btn btn-outline">Voir le détail des offres</a>
+    <div class="newsletter-bloc">
+      <div>
+        <div class="newsletter-bloc__eyebrow">Newsletter Debourg Audit</div>
+        <h2 class="newsletter-bloc__titre">Les dossiers qui vous<br/><em>font gagner du temps</em></h2>
+        <p class="newsletter-bloc__texte">Chaque dossier publié est envoyé directement à nos abonnés. Pas de contenu générique — des analyses concrètes sur les sujets qui bloquent vraiment les dirigeants de PME.</p>
+        <div class="newsletter-bloc__points">
+          <div class="newsletter-bloc__point">Parcours administratifs décryptés (SAP, RGE, Qualiopi…)</div>
+          <div class="newsletter-bloc__point">Sujets juridiques et fiscaux utiles pour les artisans et PME</div>
+          <div class="newsletter-bloc__point">Analyses d'efficacité opérationnelle et gestion</div>
+          <div class="newsletter-bloc__point">Fréquence raisonnable — un dossier à la fois, quand il est prêt</div>
+        </div>
+      </div>
+
+      <div>
+        <form id="newsletter-form" class="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="2c98c154-7787-4f3b-ac55-8d62842f9049" />
+          <input type="hidden" name="subject" value="Nouvelle inscription newsletter — Debourg Audit" />
+          <input type="hidden" name="message" value="Nouvelle demande d'inscription à la newsletter." />
+          <div class="newsletter-form__label">Votre adresse email</div>
+          <input type="email" name="email" class="newsletter-form__input" placeholder="vous@exemple.fr" required />
+          <button type="submit" class="newsletter-form__btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            Je m'abonne
+          </button>
+          <div id="newsletter-error" class="newsletter-error">Une erreur s'est produite. Écrivez-nous directement à <strong>contact@debourg-audit.fr</strong></div>
+          <p class="newsletter-form__notice">Pas de spam. Désinscription libre à tout moment. Vos données ne sont pas transmises à des tiers.</p>
+        </form>
+        <div id="newsletter-success" class="newsletter-success">
+          <div class="newsletter-success__icon">✅</div>
+          <div class="newsletter-success__titre">Inscription confirmée !</div>
+          <div class="newsletter-success__texte">Vous recevrez les prochains dossiers directement dans votre boîte mail.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -308,5 +446,31 @@
 </footer>
 
 <script src="../js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('newsletter-form');
+  const success = document.getElementById('newsletter-success');
+  const error = document.getElementById('newsletter-error');
+
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', { method:'POST', body:formData });
+        const data = await response.json();
+        if (data.success) {
+          form.style.display = 'none';
+          success.style.display = 'block';
+        } else {
+          error.style.display = 'block';
+        }
+      } catch(err) {
+        error.style.display = 'block';
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Debourg Audit accompagne les professionnels dans leur parcours SAP : déclaration, agrément, dossier NOVA, Avance immédiate Urssaf. Guide complet et accompagnement opérationnel." />
+  <title>Parcours SAP &amp; Avance immédiate — Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/logo_transparent.png" type="image/png" />
+  <style>
+    .sap-phases { display:flex; flex-direction:column; gap:0; position:relative; margin-top:48px; }
+    .sap-phases::before { content:''; position:absolute; left:32px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,var(--cuivre),rgba(192,122,69,0.1)); }
+    .sap-phase { display:grid; grid-template-columns:64px 1fr; gap:32px; align-items:start; padding-bottom:40px; position:relative; }
+    .sap-phase:last-child { padding-bottom:0; }
+    .sap-phase__num { width:64px; height:64px; border-radius:50%; background:var(--bleu); color:var(--blanc); font-family:var(--font-titre); font-size:1.3rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; z-index:1; box-shadow:0 4px 16px rgba(26,54,93,0.2); }
+    .sap-phase__content { padding-top:12px; }
+    .sap-phase__titre { font-family:var(--font-titre); font-size:1.2rem; font-weight:700; color:var(--bleu); margin-bottom:8px; }
+    .sap-phase__resultat { display:inline-block; background:rgba(192,122,69,0.12); color:var(--cuivre); font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:20px; margin-bottom:12px; letter-spacing:0.04em; }
+    .sap-phase__texte { font-size:0.95rem; color:var(--gris-500); line-height:1.7; }
+
+    .notions-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px; }
+    @media (max-width:680px) { .notions-grid { grid-template-columns:1fr; } }
+    .notion-card { background:var(--blanc); border:1px solid rgba(26,54,93,0.08); border-radius:12px; padding:28px; }
+    .notion-card__label { display:inline-block; background:var(--bleu); color:var(--blanc); font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:4px 12px; border-radius:20px; margin-bottom:14px; }
+    .notion-card__label--cuivre { background:var(--cuivre); }
+    .notion-card__label--vert { background:#2d7a4f; }
+    .notion-card__label--gris { background:var(--gris-500); }
+    .notion-card__titre { font-family:var(--font-titre); font-size:1.05rem; font-weight:700; color:var(--bleu); margin-bottom:10px; }
+    .notion-card__texte { font-size:0.875rem; color:var(--gris-500); line-height:1.65; }
+    .notion-card__alerte { margin-top:12px; padding:10px 14px; background:rgba(192,122,69,0.08); border-left:3px solid var(--cuivre); border-radius:4px; font-size:0.8rem; color:var(--gris-500); font-style:italic; }
+
+    .organismes-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; margin-top:32px; }
+    @media (max-width:900px) { .organismes-grid { grid-template-columns:1fr 1fr; } }
+    @media (max-width:560px) { .organismes-grid { grid-template-columns:1fr; } }
+    .organisme-card { background:var(--blanc); border:1px solid rgba(26,54,93,0.08); border-radius:10px; padding:20px; display:flex; align-items:flex-start; gap:14px; }
+    .organisme-card__icon { width:36px; height:36px; border-radius:8px; background:rgba(26,54,93,0.06); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+    .organisme-card__nom { font-family:var(--font-titre); font-size:0.9rem; font-weight:700; color:var(--bleu); margin-bottom:4px; }
+    .organisme-card__role { font-size:0.8rem; color:var(--gris-500); line-height:1.5; }
+
+    .pieces-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:32px; }
+    @media (max-width:640px) { .pieces-grid { grid-template-columns:1fr; } }
+    .piece-item { display:flex; align-items:flex-start; gap:14px; background:var(--blanc); border:1px solid rgba(26,54,93,0.08); border-radius:10px; padding:18px 20px; }
+    .piece-icon { width:32px; height:32px; border-radius:50%; background:rgba(192,122,69,0.12); color:var(--cuivre); font-size:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .piece-texte { font-size:0.875rem; color:var(--gris-500); line-height:1.5; }
+
+    .erreurs-list { display:flex; flex-direction:column; gap:12px; margin-top:24px; }
+    .erreur-item { display:flex; align-items:flex-start; gap:14px; background:rgba(220,53,69,0.04); border:1px solid rgba(220,53,69,0.12); border-radius:10px; padding:16px 20px; }
+    .erreur-item__icon { color:#DC3545; font-size:1.1rem; flex-shrink:0; margin-top:1px; }
+    .erreur-item__texte { font-size:0.9rem; color:var(--gris-500); line-height:1.55; }
+
+    .avance-steps { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px; }
+    @media (max-width:640px) { .avance-steps { grid-template-columns:1fr; } }
+    .avance-step { background:var(--blanc); border:1px solid rgba(26,54,93,0.08); border-radius:12px; padding:24px; display:flex; gap:16px; align-items:flex-start; }
+    .avance-step__num { width:36px; height:36px; border-radius:50%; background:var(--cuivre); color:var(--blanc); font-family:var(--font-titre); font-weight:700; font-size:1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .avance-step__titre { font-weight:700; color:var(--bleu); margin-bottom:4px; font-size:0.95rem; }
+    .avance-step__texte { font-size:0.875rem; color:var(--gris-500); line-height:1.6; }
+
+    .sap-cta-banner { background:var(--bleu); border-radius:16px; padding:56px 48px; text-align:center; }
+    .sap-cta-banner__eyebrow { font-size:0.8rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--cuivre); margin-bottom:16px; }
+    .sap-cta-banner__titre { font-family:var(--font-titre); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:700; color:var(--blanc); margin-bottom:16px; line-height:1.2; }
+    .sap-cta-banner__titre em { color:var(--cuivre); font-style:normal; }
+    .sap-cta-banner__texte { font-size:1rem; color:rgba(255,255,255,0.75); max-width:560px; margin:0 auto 32px; line-height:1.7; }
+
+    @media (max-width:640px) {
+      .sap-cta-banner { padding:40px 24px; }
+      .sap-phases::before { left:24px; }
+      .sap-phase { grid-template-columns:48px 1fr; gap:20px; }
+      .sap-phase__num { width:48px; height:48px; font-size:1rem; }
+    }
+  </style>
+<style id="nav-dropdown-styles">
+.nav__logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.nav__logo-img { height:52px; width:52px; object-fit:contain; border-radius:8px; }
+.nav__logo-name { font-family:var(--font-titre,'Playfair Display',serif); font-size:1.05rem; font-weight:700; color:var(--bleu,#1a365d); white-space:nowrap; letter-spacing:0.02em; }
+.nav__has-dropdown { position:relative; }
+.nav__has-dropdown > a::after { content:' ▾'; font-size:0.65rem; opacity:0.6; margin-left:2px; }
+.nav__dropdown { display:none; position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%); background:var(--blanc,#fff); border:1px solid rgba(26,54,93,0.1); border-radius:12px; box-shadow:0 16px 48px rgba(26,54,93,0.14); padding:8px; min-width:240px; z-index:1000; list-style:none; margin:0; }
+.nav__dropdown::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:12px; height:12px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
+.nav__dropdown li { margin:0; padding:0; }
+.nav__dropdown li a { display:block; padding:10px 16px; font-size:0.875rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:8px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
+.nav__dropdown li a:hover { background:rgba(26,54,93,0.05); color:var(--bleu,#1a365d); }
+.nav__has-dropdown:hover .nav__dropdown, .nav__has-dropdown:focus-within .nav__dropdown { display:block; }
+@media (max-width:900px) { .nav__logo-name { display:none; } .nav__logo-img { height:44px; width:44px; } .nav__dropdown { display:none !important; } .nav__has-dropdown > a::after { display:none; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="data:image/png;base64,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" alt="Debourg Audit" class="nav__logo-img" />
+        <span class="nav__logo-name">Debourg Audit</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav__has-dropdown">
+          <a href="offres.html">Les offres</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="approche.html">L'approche</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">La méthode Bottom-Up</a></li>
+            <li><a href="approche.html">Les 12 critères de friction</a></li>
+            <li><a href="approche.html">Les 4 phases</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-parcours.html">Nos parcours</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+            <li><a href="sap.html">Parcours SAP</a></li>
+            <li><a href="rge.html">Parcours RGE</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-dossiers.html">Nos dossiers</a>
+          <ul class="nav__dropdown">
+            <li><a href="sap.html">Dossier SAP &amp; Avance immédiate</a></li>
+            <li><a href="rge.html">Dossier RGE</a></li>
+            <li><a href="nos-dossiers.html">Newsletter</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="section__eyebrow">Parcours SAP &amp; Avance immédiate</div>
+    <h1 class="page-hero__titre">Services à la personne :<br/><em>un parcours piloté de A à Z</em></h1>
+    <p class="page-hero__desc">Déclaration, agrément, dossier NOVA, mise en place de l'Avance immédiate Urssaf — Debourg Audit accompagne les professionnels et structures dans chaque étape du parcours administratif SAP. Expérience directe : dossiers validés pour deux sociétés de services à la personne.</p>
+  </div>
+</div>
+
+<!-- VUE D'ENSEMBLE -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div class="section__eyebrow">Pourquoi se faire accompagner</div>
+        <h2 class="section__titre">Le parcours SAP est plus<br/><em>complexe qu'il n'y paraît</em></h2>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; margin-bottom:20px;">Déclaration, agrément, autorisation, certification qualité et Avance immédiate relèvent de logiques différentes, d'organismes différents et de niveaux d'obligation différents. Confondre ces notions est l'erreur la plus fréquente — et la plus coûteuse en temps.</p>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8;">Le parcours complet commence par l'identification précise de l'activité exercée, passe par la constitution d'un dossier cohérent sur NOVA, et se termine par la mise en place opérationnelle de l'Avance immédiate avec pédagogie auprès des bénéficiaires.</p>
+      </div>
+      <div style="background:var(--gris-100); border-radius:16px; padding:36px;">
+        <div style="font-family:var(--font-titre); font-size:0.85rem; font-weight:700; color:var(--bleu); margin-bottom:20px; text-transform:uppercase; letter-spacing:0.08em;">5 blocs de travail</div>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="background:var(--cuivre); color:var(--blanc); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">1</span><span style="font-size:0.9rem; color:var(--gris-500); line-height:1.5;">Diagnostic de l'activité et du régime applicable</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="background:var(--cuivre); color:var(--blanc); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">2</span><span style="font-size:0.9rem; color:var(--gris-500); line-height:1.5;">Collecte des pièces et vérification de cohérence</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="background:var(--cuivre); color:var(--blanc); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">3</span><span style="font-size:0.9rem; color:var(--gris-500); line-height:1.5;">Dépôt et suivi du dossier sur NOVA</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="background:var(--cuivre); color:var(--blanc); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">4</span><span style="font-size:0.9rem; color:var(--gris-500); line-height:1.5;">Mise en conformité des documents et communication client</span></div>
+          <div style="display:flex; gap:12px; align-items:flex-start;"><span style="background:var(--cuivre); color:var(--blanc); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">5</span><span style="font-size:0.9rem; color:var(--gris-500); line-height:1.5;">Déploiement opérationnel de l'Avance immédiate</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 NOTIONS -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Les notions à distinguer absolument</div>
+    <h2 class="section__titre">Déclaration, agrément, autorisation,<br/><em>certification : ce n'est pas la même chose</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:640px; line-height:1.7; margin-bottom:0;">L'erreur la plus fréquente est de supposer qu'une déclaration suffit dans tous les cas. La nature de l'activité et le public visé déterminent le régime applicable.</p>
+    <div class="notions-grid">
+      <div class="notion-card">
+        <div class="notion-card__label">Déclaration SAP</div>
+        <div class="notion-card__titre">Le socle administratif de base</div>
+        <div class="notion-card__texte">Formalité permettant d'entrer dans le cadre administratif SAP et d'accéder aux avantages fiscaux et sociaux du secteur. Les devis et factures doivent mentionner le numéro d'enregistrement. Obligatoire pour toute structure souhaitant proposer des activités éligibles à des particuliers.</div>
+        <div class="notion-card__alerte">Ne suffit pas pour les activités auprès de publics fragiles.</div>
+      </div>
+      <div class="notion-card">
+        <div class="notion-card__label notion-card__label--cuivre">Agrément</div>
+        <div class="notion-card__titre">Obligatoire pour les publics fragiles</div>
+        <div class="notion-card__texte">Requis pour exercer auprès de personnes âgées, handicapées ou en situation de dépendance. Délivré par l'État via les directions départementales compétentes (DDETS). La nature exacte de l'activité et le public visé doivent être analysés précisément avant de lancer la démarche.</div>
+        <div class="notion-card__alerte">Demande instruite via NOVA par les DDETS.</div>
+      </div>
+      <div class="notion-card">
+        <div class="notion-card__label notion-card__label--gris">Autorisation</div>
+        <div class="notion-card__titre">Pour les services autonomie à domicile</div>
+        <div class="notion-card__texte">Applicable à certaines activités relevant des services autonomie à domicile. Gérée par les conseils départementaux — un organisme peut avoir à dialoguer avec plusieurs administrations selon la nature exacte de ses prestations. Régime distinct de la déclaration et de l'agrément.</div>
+        <div class="notion-card__alerte">Instruite par le Conseil Départemental, pas par NOVA.</div>
+      </div>
+      <div class="notion-card">
+        <div class="notion-card__label notion-card__label--vert">Certification qualité</div>
+        <div class="notion-card__titre">Démarche volontaire et complémentaire</div>
+        <div class="notion-card__texte">Garantie de qualité de service sur référentiels reconnus (Qualicert, Qualisap). Ne remplace pas la déclaration ou l'agrément — un organisme certifié reste tenu d'effectuer les démarches obligatoires. Avantage : renouvellement simplifié de l'agrément pour les organismes certifiés.</div>
+        <div class="notion-card__alerte">Atout commercial et administratif — pas une alternative aux démarches obligatoires.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 ÉTAPES -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Le parcours détaillé</div>
+    <h2 class="section__titre">12 étapes,<br/><em>de la qualification à l'Avance immédiate</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:620px; line-height:1.7; margin-bottom:0;">Debourg Audit pilote chaque étape — de l'analyse initiale de l'activité jusqu'au déploiement opérationnel du service Avance immédiate auprès de vos clients.</p>
+    <div class="sap-phases">
+      <div class="sap-phase">
+        <div class="sap-phase__num">1</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Qualifier précisément l'activité exercée</div>
+          <div class="sap-phase__resultat">→ Périmètre réel identifié</div>
+          <p class="sap-phase__texte">Analyse fine de la nature de la prestation, du type de bénéficiaire, du mode d'intervention et du périmètre géographique ou opérationnel. Cette qualification est le point de départ de tout le parcours — une erreur ici se répercute sur toutes les étapes suivantes.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">2</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Identifier le mode d'intervention</div>
+          <div class="sap-phase__resultat">→ Prestataire, mandataire ou autre schéma défini</div>
+          <p class="sap-phase__texte">Le parcours et le circuit de l'Avance immédiate diffèrent selon que l'organisme agit comme prestataire, mandataire ou dans un autre schéma. Cette distinction a des conséquences directes sur la facturation, la relation contractuelle et le circuit de paiement.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">3</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Vérifier l'éligibilité au régime SAP</div>
+          <div class="sap-phase__resultat">→ Cadre réglementaire confirmé</div>
+          <p class="sap-phase__texte">Rapprochement de la prestation réelle avec le cadre réglementaire. Particulièrement important pour les activités mixtes, les structures pluriactivités et les professionnels qui ajoutent une offre de service au domicile à une activité déjà existante.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">4</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Déterminer le bon régime administratif</div>
+          <div class="sap-phase__resultat">→ Déclaration, agrément, autorisation ou combinaison</div>
+          <p class="sap-phase__texte">En fonction de l'activité qualifiée et du public visé : déclaration simple, agrément obligatoire pour les publics fragiles, autorisation pour certains services autonomie, ou combinaison de régimes si l'organisme propose plusieurs types de prestations.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">5</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Constituer juridiquement l'organisme</div>
+          <div class="sap-phase__resultat">→ Structure existante avec SIREN actif</div>
+          <p class="sap-phase__texte">La structure doit exister juridiquement avant toute démarche SAP. Debourg Audit vérifie que l'immatriculation est cohérente avec l'activité déclarée et accompagne la création si nécessaire (choix de forme juridique, rédaction des statuts, dépôt au greffe).</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">6</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Ouvrir et paramétrer l'espace NOVA</div>
+          <div class="sap-phase__resultat">→ Accès opérationnel à la téléprocédure officielle</div>
+          <p class="sap-phase__texte">NOVA est la téléprocédure officielle pour le dépôt des déclarations et agréments, et pour le suivi des statistiques trimestrielles et annuelles obligatoires. Un paramétrage soigné dès l'ouverture évite des complications dans la durée.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">7</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Préparer le dossier administratif</div>
+          <div class="sap-phase__resultat">→ Dossier cohérent, complet et ordonné</div>
+          <p class="sap-phase__texte">Phase la plus sensible. Les retards viennent le plus souvent d'une mauvaise qualification de l'activité, de pièces incohérentes ou de justificatifs manquants. Debourg Audit vérifie chaque document, repère les contradictions et prépare un dossier lisible pour l'administration.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">8</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Déposer la déclaration ou la demande d'agrément</div>
+          <div class="sap-phase__resultat">→ Dossier soumis à l'administration compétente</div>
+          <p class="sap-phase__texte">Dépôt via NOVA avec vérification finale de la cohérence entre les informations déclarées, la description de l'activité et les documents de la structure. Toute contradiction peut entraîner des demandes de compléments ou ralentir l'instruction.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">9</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Suivre l'instruction et répondre aux compléments</div>
+          <div class="sap-phase__resultat">→ Instruction sécurisée et réactive</div>
+          <p class="sap-phase__texte">Suivi des échanges avec l'administration, relais des demandes de précision, transmission des compléments dans les délais. Debourg Audit assure la traçabilité complète des pièces envoyées, des échanges et des versions de documents produits.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">10</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Obtenir l'enregistrement ou la décision</div>
+          <div class="sap-phase__resultat">→ Cadre administratif sécurisé</div>
+          <p class="sap-phase__texte">À l'issue de l'instruction, obtention de l'enregistrement de la déclaration ou de l'agrément. Structuration immédiate de la communication commerciale : mentions obligatoires sur les devis et factures, inscription à l'annuaire des organismes SAP, charte de qualité si applicable.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">11</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Respecter les obligations de suivi</div>
+          <div class="sap-phase__resultat">→ Conformité maintenue dans la durée</div>
+          <p class="sap-phase__texte">Le parcours ne s'arrête pas à l'enregistrement. NOVA impose le suivi des statistiques trimestrielles et annuelles. Les obligations réglementaires — activité exclusive, offre globale de services, obligations liées à l'agrément — se poursuivent dans le temps. Debourg Audit assure ce suivi.</p>
+        </div>
+      </div>
+      <div class="sap-phase">
+        <div class="sap-phase__num">12</div>
+        <div class="sap-phase__content">
+          <div class="sap-phase__titre">Déployer l'Avance immédiate</div>
+          <div class="sap-phase__resultat">→ Dispositif opérationnel avec vos clients bénéficiaires</div>
+          <p class="sap-phase__texte">Une fois le cadre SAP sécurisé, mise en place du circuit Avance immédiate avec l'Urssaf. Inscription des clients au dispositif, activation du service, préparation des supports d'explication du reste à charge. Le client ne paie que sa part — le crédit d'impôt (50 % dans les limites des plafonds) est déduit en temps réel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANISMES -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Les interlocuteurs du parcours</div>
+    <h2 class="section__titre">Organismes &amp; plateformes<br/><em>impliqués</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:620px; line-height:1.7; margin-bottom:0;">Un même organisme peut avoir à dialoguer avec plusieurs administrations selon la nature exacte de ses prestations. Debourg Audit gère ces interfaces à votre place.</p>
+    <div class="organismes-grid">
+      <div class="organisme-card"><div class="organisme-card__icon">🌐</div><div><div class="organisme-card__nom">Portail SAP officiel</div><div class="organisme-card__role">Source gouvernementale centrale pour toutes les démarches SAP — déclaration, agrément, autorisation, qualité.</div></div></div>
+      <div class="organisme-card"><div class="organisme-card__icon">💻</div><div><div class="organisme-card__nom">NOVA</div><div class="organisme-card__role">Téléprocédure officielle pour le dépôt des déclarations et agréments. Suivi des statistiques obligatoires trimestrielles et annuelles.</div></div></div>
+      <div class="organisme-card"><div class="organisme-card__icon">🏛️</div><div><div class="organisme-card__nom">DDETS</div><div class="organisme-card__role">Directions départementales de l'emploi — services instructeurs pour les déclarations et agréments déposés via NOVA.</div></div></div>
+      <div class="organisme-card"><div class="organisme-card__icon">🏢</div><div><div class="organisme-card__nom">Conseil Départemental</div><div class="organisme-card__role">Gère les autorisations des services autonomie à domicile — interlocuteur distinct des DDETS selon l'activité exercée.</div></div></div>
+      <div class="organisme-card"><div class="organisme-card__icon">📋</div><div><div class="organisme-card__nom">Urssaf</div><div class="organisme-card__role">Organisme compétent pour l'Avance immédiate. Gère l'activation du service, l'inscription des particuliers et le circuit de paiement.</div></div></div>
+      <div class="organisme-card"><div class="organisme-card__icon">🏅</div><div><div class="organisme-card__nom">Qualicert / Qualisap</div><div class="organisme-card__role">Certificateurs qualité (SGS-ICS et Bureau Veritas) — démarche volontaire sur référentiels reconnus, hors du circuit administratif obligatoire.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANCE IMMÉDIATE -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Le dispositif Avance immédiate</div>
+    <h2 class="section__titre">Le crédit d'impôt<br/><em>déduit en temps réel</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:640px; line-height:1.8; margin-bottom:32px;">L'Avance immédiate permet au client de ne payer que son reste à charge — le crédit d'impôt de 50 % est déduit immédiatement, sans attendre l'année suivante. Service gratuit, optionnel et dématérialisé géré par l'Urssaf.</p>
+    <div class="avance-steps">
+      <div class="avance-step"><div class="avance-step__num">1</div><div><div class="avance-step__titre">Sécuriser le cadre SAP</div><div class="avance-step__texte">L'Avance immédiate ne peut être mise en place qu'une fois la déclaration ou l'agrément obtenu. Ne jamais annoncer le bénéfice au client avant que le cadre administratif soit stabilisé et le circuit activé.</div></div></div>
+      <div class="avance-step"><div class="avance-step__num">2</div><div><div class="avance-step__titre">Activer le service auprès de l'Urssaf</div><div class="avance-step__texte">Inscription de l'organisme au dispositif et paramétrage du circuit de paiement. L'Urssaf gère l'activation et le traitement des flux numériques entre l'organisme, le client et l'administration.</div></div></div>
+      <div class="avance-step"><div class="avance-step__num">3</div><div><div class="avance-step__titre">Inscrire les clients bénéficiaires</div><div class="avance-step__texte">Chaque client doit être inscrit dans son espace personnel. Debourg Audit prépare les supports d'explication et accompagne la communication auprès des bénéficiaires pour faciliter leur adhésion au dispositif.</div></div></div>
+      <div class="avance-step"><div class="avance-step__num">4</div><div><div class="avance-step__titre">Gérer le circuit opérationnel</div><div class="avance-step__texte">Organisation de la relation d'information avec le client : explication du service, vérification de l'activation, lecture du reste à charge et maîtrise du calendrier opérationnel de paiement.</div></div></div>
+    </div>
+    <div style="margin-top:24px; padding:18px 24px; background:rgba(26,54,93,0.05); border-radius:8px; border-left:3px solid var(--bleu);">
+      <p style="font-size:0.875rem; color:var(--gris-500);"><strong style="color:var(--bleu);">Rappel :</strong> le crédit d'impôt lié aux services à la personne est égal à 50 % des dépenses engagées, dans la limite des plafonds applicables. L'Avance immédiate en permet le bénéfice sans attendre la déclaration de revenus de l'année suivante.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PIÈCES -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="section__eyebrow">Documents requis</div>
+    <h2 class="section__titre">Les pièces généralement<br/><em>nécessaires au dossier</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:620px; line-height:1.7; margin-bottom:0;">La liste exacte varie selon le régime applicable et la nature de l'activité. Debourg Audit dresse une check-list personnalisée dès le cadrage initial.</p>
+    <div class="pieces-grid">
+      <div class="piece-item"><div class="piece-icon">🏢</div><div class="piece-texte">Dénomination, forme juridique, adresse du siège et coordonnées administratives de la structure</div></div>
+      <div class="piece-item"><div class="piece-icon">📄</div><div class="piece-texte">Numéro SIREN et justificatifs d'immatriculation — la structure doit exister avant tout dépôt</div></div>
+      <div class="piece-item"><div class="piece-icon">👤</div><div class="piece-texte">Identité et justificatifs du représentant légal de la structure</div></div>
+      <div class="piece-item"><div class="piece-icon">📋</div><div class="piece-texte">Description précise des prestations : nature, public visé, mode d'intervention, périmètre géographique</div></div>
+      <div class="piece-item"><div class="piece-icon">🔒</div><div class="piece-texte">Pièces relatives à la capacité d'organisation et aux procédures internes (agrément ou certification qualité)</div></div>
+      <div class="piece-item"><div class="piece-icon">📊</div><div class="piece-texte">Éléments spécifiques à l'agrément ou à l'autorisation selon l'activité — liste vérifiée au cas par cas avant dépôt</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ERREURS -->
+<section class="section">
+  <div class="container">
+    <div class="section__eyebrow">Points de vigilance</div>
+    <h2 class="section__titre">Les erreurs les plus fréquentes<br/><em>— et évitables</em></h2>
+    <p style="font-size:1rem; color:var(--gris-500); max-width:620px; line-height:1.7; margin-bottom:0;">Ces erreurs ralentissent l'instruction, génèrent des demandes de compléments ou remettent en cause le cadre administratif après le démarrage de l'activité.</p>
+    <div class="erreurs-list">
+      <div class="erreur-item"><div class="erreur-item__icon">⚠️</div><div class="erreur-item__texte"><strong>Confondre déclaration, agrément et certification.</strong> Ce sont trois régimes distincts avec des organismes instructeurs différents, des obligations différentes et des conséquences différentes en cas de non-respect.</div></div>
+      <div class="erreur-item"><div class="erreur-item__icon">⚠️</div><div class="erreur-item__texte"><strong>Supposer que la déclaration suffit dans tous les cas.</strong> Pour toute activité auprès de publics fragiles (personnes âgées, handicapées, dépendantes), un agrément ou une autorisation est obligatoire — la déclaration seule n'est pas suffisante.</div></div>
+      <div class="erreur-item"><div class="erreur-item__icon">⚠️</div><div class="erreur-item__texte"><strong>Déposer un dossier avant d'avoir correctement qualifié l'activité.</strong> Une mauvaise qualification entraîne des incohérences dans le dossier, des demandes de compléments et parfois un rejet avec obligation de recommencer la procédure.</div></div>
+      <div class="erreur-item"><div class="erreur-item__icon">⚠️</div><div class="erreur-item__texte"><strong>Négliger les obligations de suivi après dépôt.</strong> Les statistiques trimestrielles et annuelles sur NOVA sont obligatoires. L'activité exclusive, l'offre globale de services et les obligations liées à l'agrément doivent être respectées dans la durée.</div></div>
+      <div class="erreur-item"><div class="erreur-item__icon">⚠️</div><div class="erreur-item__texte"><strong>Annoncer trop tôt le bénéfice de l'Avance immédiate au client.</strong> L'Avance immédiate ne peut être proposée qu'une fois le cadre administratif SAP stabilisé et le circuit opérationnel activé auprès de l'Urssaf.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--gris-100);">
+  <div class="container">
+    <div class="sap-cta-banner">
+      <div class="sap-cta-banner__eyebrow">Audit de faisabilité gratuit — 30 min</div>
+      <h2 class="sap-cta-banner__titre">Un parcours SAP organisé,<br/><em>piloté et sécurisé</em></h2>
+      <p class="sap-cta-banner__texte">Debourg Audit analyse votre activité, identifie le bon régime, constitue votre dossier et pilote les échanges avec les administrations — jusqu'au déploiement de l'Avance immédiate. Expérience directe : deux dossiers SAP validés.</p>
+      <a href="contact.html" class="btn btn-cuivre">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Prendre contact
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-parcours.html">Nos parcours</a></li>
+          <li><a href="nos-dossiers.html">Nos dossiers</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
