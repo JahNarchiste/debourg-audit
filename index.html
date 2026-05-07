@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Debourg Audit identifie et chiffre les frictions opérationnelles qui coûtent de l'argent à votre PME. Diagnostic Flash gratuit. Méthode Bottom-Up, 12 critères, résultats en quelques jours." />
+  <meta name="description" content="Debourg Audit — Audit opérationnel, Parcours Ambition, accompagnement dirigeant, certification RGE/SAP/Qualiopi. 5 offres pour PME, artisans et franchises. Diagnostic Flash gratuit." />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://debourg-audit.fr/index.html" />
@@ -36,6 +36,10 @@
 .nav__dropdown { top: calc(100% + 0px); margin-top: 0; }
 .nav__has-dropdown::after { content:''; position:absolute; top:100%; left:0; right:0; height:16px; }
 @media (max-width:900px) { .nav__dropdown { display:none !important; } .nav__has-dropdown > a::after { display:none; } .nav__has-dropdown > a { padding-bottom: 0; } }
+  /* Section 2 offres phares — responsive */
+  @media (max-width: 720px) {
+    .hero-offres-grid { grid-template-columns: 1fr !important; }
+  }
 </style>
 </head>
 <body>
@@ -65,6 +69,15 @@
             <li><a href="pages/approche.html">La méthode Bottom-Up</a></li>
             <li><a href="pages/approche.html">Les 12 critères de friction</a></li>
             <li><a href="pages/approche.html">Les 4 phases</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="pages/parcours-ambition.html">Parcours Ambition</a>
+          <ul class="nav__dropdown">
+            <li><a href="pages/parcours-ambition.html#etape-1">① Fondations — 80k à 150k€</a></li>
+            <li><a href="pages/parcours-ambition.html#etape-2">② Accélération — 150k à 300k€</a></li>
+            <li><a href="pages/parcours-ambition.html#etape-3">③ Sécurisation — 400k à 800k€</a></li>
+            <li><a href="pages/parcours-ambition.html#etape-4">④ L'Empire — 800k€ et +</a></li>
           </ul>
         </li>
         <li class="nav__has-dropdown">
@@ -104,19 +117,19 @@
         <div class="hero__eyebrow">Cabinet de conseil en efficacité opérationnelle</div>
         <h1 class="hero__titre">
           Votre organisation<br/>
-          perd de l'argent<br/>
-          <em>chaque jour.</em>
+          perd de l'argent.<br/>
+          <em>On l'arrête.</em>
         </h1>
         <p class="hero__accroche">
-          Nous identifions <strong>où</strong> et combien.<br/>
-          Puis nous l'arrêtons.
+          Frictions opérationnelles, structure fiscale non optimisée, marchés inaccessibles faute de certification —
+          <strong>Debourg Audit identifie, chiffre et corrige.</strong>
         </p>
         <div class="hero__actions">
           <a href="pages/contact.html" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
             Diagnostic Flash gratuit
           </a>
-          <a href="pages/offres.html" class="btn btn-outline">Voir les offres</a>
+          <a href="pages/parcours-ambition.html" class="btn btn-outline">Parcours Ambition</a>
         </div>
         <div style="margin-top:40px">
           <div class="hero__stats">
@@ -125,8 +138,8 @@
               <div class="hero__stat-lbl">critères<br/>analysés</div>
             </div>
             <div class="hero__stat">
-              <div class="hero__stat-val">100%</div>
-              <div class="hero__stat-lbl">données<br/>terrain</div>
+              <div class="hero__stat-val">5</div>
+              <div class="hero__stat-lbl">offres<br/>complémentaires</div>
             </div>
             <div class="hero__stat">
               <div class="hero__stat-val">ROI</div>
@@ -140,49 +153,24 @@
         <div class="hero__card">
           <div class="hero__card-title">Exemple de diagnostic — PME 20 salariés</div>
           <div class="hero__meter">
-            <div class="hero__meter-label">
-              <span>Charge attentionnelle</span>
-              <span>28 %</span>
-            </div>
-            <div class="hero__meter-bar">
-              <div class="hero__meter-fill" data-width="28%"></div>
-            </div>
+            <div class="hero__meter-label"><span>Charge attentionnelle</span><span>28 %</span></div>
+            <div class="hero__meter-bar"><div class="hero__meter-fill" data-width="28%"></div></div>
           </div>
           <div class="hero__meter">
-            <div class="hero__meter-label">
-              <span>Input externe</span>
-              <span>22 %</span>
-            </div>
-            <div class="hero__meter-bar">
-              <div class="hero__meter-fill" data-width="22%"></div>
-            </div>
+            <div class="hero__meter-label"><span>Input externe</span><span>22 %</span></div>
+            <div class="hero__meter-bar"><div class="hero__meter-fill" data-width="22%"></div></div>
           </div>
           <div class="hero__meter">
-            <div class="hero__meter-label">
-              <span>Contrainte de transmission</span>
-              <span>18 %</span>
-            </div>
-            <div class="hero__meter-bar">
-              <div class="hero__meter-fill" data-width="18%"></div>
-            </div>
+            <div class="hero__meter-label"><span>Contrainte de transmission</span><span>18 %</span></div>
+            <div class="hero__meter-bar"><div class="hero__meter-fill" data-width="18%"></div></div>
           </div>
           <div class="hero__meter">
-            <div class="hero__meter-label">
-              <span>Contrainte décisionnelle</span>
-              <span>14 %</span>
-            </div>
-            <div class="hero__meter-bar">
-              <div class="hero__meter-fill" data-width="14%"></div>
-            </div>
+            <div class="hero__meter-label"><span>Contrainte décisionnelle</span><span>14 %</span></div>
+            <div class="hero__meter-bar"><div class="hero__meter-fill" data-width="14%"></div></div>
           </div>
           <div class="hero__meter">
-            <div class="hero__meter-label">
-              <span>Contrainte utilitaire</span>
-              <span>11 %</span>
-            </div>
-            <div class="hero__meter-bar">
-              <div class="hero__meter-fill" data-width="11%"></div>
-            </div>
+            <div class="hero__meter-label"><span>Contrainte utilitaire</span><span>11 %</span></div>
+            <div class="hero__meter-bar"><div class="hero__meter-fill" data-width="11%"></div></div>
           </div>
           <div class="hero__card-total">
             <div class="hero__card-total-label">Perte estimée / an</div>
@@ -193,6 +181,86 @@
     </div>
   </div>
 </section>
+
+<!-- ═══════════════ 2 OFFRES PHARES ═══════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">Nos deux offres principales</div>
+      <h2 class="section__titre">Deux approches,<br/><em>une seule promesse</em></h2>
+      <p class="section__sous-titre">Un diagnostic immédiat pour stopper les pertes. Un plan long terme pour structurer et accélérer. Les deux se combinent.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:40px;">
+
+      <!-- Audit -->
+      <div style="background:var(--bleu); border-radius:18px; padding:44px 40px; display:flex; flex-direction:column; gap:20px;">
+        <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--cuivre);">Offre 01 — Diagnostic</div>
+        <h3 style="font-family:var(--font-titre); font-size:1.8rem; font-weight:700; color:var(--blanc); line-height:1.2; margin:0;">Audit<br/>Bottom-Up</h3>
+        <p style="font-size:0.95rem; color:rgba(255,255,255,0.72); line-height:1.75; margin:0;">Vos équipes répondent à 48 questions terrain. En quelques jours, vous savez exactement ce que votre organisation perd — en euros, par pôle, par critère. Avec un plan d'action priorisé par ROI.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-size:0.875rem; color:rgba(255,255,255,0.8); display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--cuivre); flex-shrink:0;">▸</span>Diagnostic Flash <strong style="color:var(--blanc);">gratuit</strong> — résultat sous 48h</li>
+          <li style="font-size:0.875rem; color:rgba(255,255,255,0.8); display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--cuivre); flex-shrink:0;">▸</span>12 critères de friction analysés sur données réelles</li>
+          <li style="font-size:0.875rem; color:rgba(255,255,255,0.8); display:flex; gap:10px; align-items:flex-start;"><span style="color:var(--cuivre); flex-shrink:0;">▸</span>Rapport chiffré en euros par an, par pôle d'activité</li>
+        </ul>
+        <div style="margin-top:auto; padding-top:16px; border-top:1px solid rgba(255,255,255,0.12);">
+          <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-bottom:16px;">Gratuit → 850 € → 10 % des pertes identifiées</div>
+          <a href="pages/approche.html" style="display:inline-flex;align-items:center;gap:10px;background:transparent;border:2px solid rgba(255,255,255,0.5);color:var(--blanc);padding:14px 24px;border-radius:8px;font-weight:700;font-size:0.9rem;text-decoration:none;transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.12)';this.style.borderColor='rgba(255,255,255,0.8)'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(255,255,255,0.5)'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            Découvrir la méthode
+          </a>
+        </div>
+      </div>
+
+      <!-- Parcours Ambition -->
+      <div style="background:linear-gradient(135deg, #1A5276 0%, #B7770D 100%); border-radius:18px; padding:44px 40px; display:flex; flex-direction:column; gap:20px; position:relative; overflow:hidden;">
+        <div style="position:absolute; right:-20px; top:-10px; font-family:var(--font-titre); font-size:8rem; font-weight:900; color:rgba(255,255,255,0.06); line-height:1; pointer-events:none;">1M€</div>
+        <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.6);">Offre 02 — Plan long terme</div>
+        <h3 style="font-family:var(--font-titre); font-size:1.8rem; font-weight:700; color:var(--blanc); line-height:1.2; margin:0;"><br/>Parcours Ambition</h3>
+        <p style="font-size:0.95rem; color:rgba(255,255,255,0.72); line-height:1.75; margin:0;">De l'artisan à l'entrepreneur investisseur. 4 étapes structurées où chaque palier autofinance le suivant — optimisation fiscale, certifications, trésorerie, holding.</p>
+        <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+          <li style="font-size:0.875rem; color:rgba(255,255,255,0.8); display:flex; gap:10px; align-items:flex-start;"><span style="color:rgba(255,200,100,0.8); flex-shrink:0;">▸</span>Étape 1 : Fondations — 80 à 150k€ de CA</li>
+          <li style="font-size:0.875rem; color:rgba(255,255,255,0.8); display:flex; gap:10px; align-items:flex-start;"><span style="color:rgba(255,200,100,0.8); flex-shrink:0;">▸</span>Étape 2 : Accélération — 150 à 300k€</li>
+          <li style="font-size:0.875rem; color:rgba(255,255,255,0.8); display:flex; gap:10px; align-items:flex-start;"><span style="color:rgba(255,200,100,0.8); flex-shrink:0;">▸</span>Étapes 3 & 4 : Sécurisation & Empire — jusqu'à 1M€+</li>
+        </ul>
+        <div style="margin-top:auto; padding-top:16px; border-top:1px solid rgba(255,255,255,0.12);">
+          <div style="font-size:0.85rem; color:rgba(255,255,255,0.5); margin-bottom:16px;">À partir de 390€/mois — chaque palier autofinancé</div>
+          <a href="pages/parcours-ambition.html" style="display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:var(--blanc); padding:14px 24px; border-radius:8px; font-weight:700; font-size:0.9rem; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.25)'" onmouseout="this.style.background='rgba(255,255,255,0.15)'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            Découvrir le parcours
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION AVIS TRUSTPILOT ═══
+     Pour activer : changer display:none en display:block sur la balise <section> ci-dessous
+     Pour désactiver : remettre display:none -->
+<section id="section-trustpilot" style="display:none; background:var(--bleu); padding:32px 0;">
+  <div class="container">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
+      <div>
+        <div style="font-size:0.75rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--cuivre); margin-bottom:6px;">Ils nous font confiance</div>
+        <div style="font-family:var(--font-titre); font-size:1.2rem; color:var(--blanc); font-weight:700;">Ce que disent nos clients</div>
+      </div>
+      <div style="flex:1; min-width:280px; max-width:600px;">
+        <div class="trustpilot-widget"
+          data-locale="fr-FR"
+          data-template-id="56278e9abfbbba0bdcd568bc"
+          data-businessunit-id="69fc2df577d05e8503cea656"
+          data-style-height="52px"
+          data-style-width="100%"
+          data-theme="dark"
+          data-token="ae2ee650-d8d4-44d4-b2b4-4a49965f7396">
+          <a href="https://fr.trustpilot.com/review/debourg-audit.fr" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══ FIN SECTION TRUSTPILOT ═══ -->
 
 <!-- ═══════════════ COMMENT ÇA MARCHE ═══════════════ -->
 <section class="section section--grey">
@@ -271,6 +339,16 @@
       </div>
       <div class="offre-card fade-up">
         <div class="offre-card__num">02</div>
+        <h3 class="offre-card__titre">Parcours Ambition</h3>
+        <p class="offre-card__desc">Un plan en 4 étapes pour propulser votre entreprise de 100 k€ à 1 M€ de CA : optimisation fiscale, accélération par les certifications (RGE, SAP, Qualiopi), placement de trésorerie et structuration patrimoniale en holding.</p>
+        <div class="offre-card__prix">Sur devis</div>
+        <a href="pages/parcours-ambition.html" class="offre-card__link">
+          Découvrir
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+      <div class="offre-card fade-up">
+        <div class="offre-card__num">03</div>
         <h3 class="offre-card__titre">Accompagnement Dirigeant</h3>
         <p class="offre-card__desc">Un regard extérieur permanent sur vos décisions opérationnelles, financières et organisationnelles. Points mensuels + disponibilité.</p>
         <div class="offre-card__prix">390 à 1 300 € / mois HT</div>
@@ -280,7 +358,7 @@
         </a>
       </div>
       <div class="offre-card fade-up">
-        <div class="offre-card__num">03</div>
+        <div class="offre-card__num">04</div>
         <h3 class="offre-card__titre">Coordination Administrative</h3>
         <p class="offre-card__desc">Interface opérationnelle avec votre outil comptable Indy. Collecte des factures, rapprochement bancaire, synthèse mensuelle.</p>
         <div class="offre-card__prix">150 à 400 € / mois HT</div>
@@ -290,7 +368,7 @@
         </a>
       </div>
       <div class="offre-card fade-up">
-        <div class="offre-card__num">04</div>
+        <div class="offre-card__num">05</div>
         <h3 class="offre-card__titre">Certification & Conformité</h3>
         <p class="offre-card__desc">Accompagnement à l'obtention d'agréments et certifications : SAP + avance immédiate, label RGE, Qualiopi.</p>
         <div class="offre-card__prix">800 à 6 000 € HT</div>
@@ -298,17 +376,6 @@
           Découvrir
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
         </a>
-      </div>
-      <div class="offre-card fade-up">
-        <div class="offre-card__num">05</div>
-        <h3 class="offre-card__titre">Parcours Ambition 1M€</h3>
-        <p class="offre-card__desc">Un plan en 4 étapes pour propulser votre entreprise de 100 k€ à 1 M€ de CA : optimisation fiscale, accélération par les certifications (RGE, SAP, Qualiopi), placement de trésorerie et structuration patrimoniale en holding.</p>
-        <div class="offre-card__prix">Sur devis</div>
-        <a href="pages/parcours-ambition.html" class="offre-card__link">
-          Découvrir
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
-        </a>
-      </div>
     </div>
   </div>
 </section>
@@ -364,5 +431,8 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- Script Trustpilot — déjà présent, s'active automatiquement quand la section est visible -->
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 </body>
 </html>

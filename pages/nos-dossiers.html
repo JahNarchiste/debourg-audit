@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Debourg Audit — Nos dossiers : guides pratiques sur les parcours SAP, RGE, et l'efficacité opérationnelle pour artisans et PME. Abonnez-vous à notre newsletter." />
-  <title>Nos dossiers — Debourg Audit</title>
+  <meta name="description" content="Dossiers complets sur les parcours SAP, RGE, la gestion opérationnelle et la certification. Ressources gratuites pour artisans, commerçants et dirigeants de PME. Newsletter mensuelle." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://debourg-audit.fr/pages/nos-dossiers.html" />
+  <meta property="og:title" content="Guides gratuits pour PME et artisans — Debourg Audit" />
+  <meta property="og:description" content="Dossiers SAP, RGE, gestion et certification. Ressources gratuites. Newsletter mensuelle." />
+  <meta property="og:image" content="https://debourg-audit.fr/assets/logo_transparent.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Debourg Audit" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Guides gratuits pour PME et artisans — Debourg Audit" />
+  <meta name="twitter:description" content="Dossiers SAP, RGE, gestion et certification. Ressources gratuites. Newsletter mensuelle." />
+  <meta name="twitter:image" content="https://debourg-audit.fr/assets/logo_transparent.png" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://debourg-audit.fr/pages/nos-dossiers.html" />
+  <title>Guides pratiques pour dirigeants de PME et artisans — Debourg Audit</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="icon" href="../assets/favicon.png" type="image/png" />
   <style>
@@ -224,15 +239,14 @@
 <style id="nav-dropdown-styles">
 .nav__logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
 .nav__has-dropdown { position:relative; }
-.nav__has-dropdown > a::after { content:' ▾'; font-size:0.65rem; opacity:0.6; margin-left:2px; }
-.nav__dropdown { display:none; position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%); background:var(--blanc,#fff); border:1px solid rgba(26,54,93,0.1); border-radius:12px; box-shadow:0 16px 48px rgba(26,54,93,0.14); padding:8px; min-width:240px; z-index:1000; list-style:none; margin:0; }
-.nav__dropdown::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:12px; height:12px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
+.nav__has-dropdown > a::after { content:' ▾'; font-size:0.6rem; opacity:0.6; margin-left:2px; }
+.nav__dropdown { display:none; position:absolute; top:calc(100% + 0px); left:50%; transform:translateX(-50%); background:var(--blanc,#fff); border:1px solid rgba(26,54,93,0.1); border-radius:8px; box-shadow:0 8px 24px rgba(26,54,93,0.12); padding:4px; min-width:180px; z-index:1000; list-style:none; margin:0; }
+.nav__dropdown::before { content:''; position:absolute; top:-5px; left:50%; transform:translateX(-50%); width:10px; height:10px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
 .nav__dropdown li { margin:0; padding:0; }
-.nav__dropdown li a { display:block; padding:10px 16px; font-size:0.875rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:8px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
+.nav__dropdown li a { display:block; padding:7px 12px; font-size:0.75rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:6px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
 .nav__dropdown li a:hover { background:rgba(26,54,93,0.05); color:var(--bleu,#1a365d); }
 .nav__has-dropdown:hover .nav__dropdown, .nav__has-dropdown:focus-within .nav__dropdown { display:block; }
 .nav__has-dropdown > a { padding-bottom: 14px; }
-.nav__dropdown { top: calc(100% + 0px); margin-top: 0; }
 .nav__has-dropdown::after { content:''; position:absolute; top:100%; left:0; right:0; height:16px; }
 @media (max-width:900px) { .nav__dropdown { display:none !important; } .nav__has-dropdown > a::after { display:none; } .nav__has-dropdown > a { padding-bottom: 0; } }
 </style>
@@ -264,6 +278,15 @@
             <li><a href="approche.html">La méthode Bottom-Up</a></li>
             <li><a href="approche.html">Les 12 critères de friction</a></li>
             <li><a href="approche.html">Les 4 phases</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="parcours-ambition.html">Parcours Ambition</a>
+          <ul class="nav__dropdown">
+            <li><a href="parcours-ambition.html#etape-1">① Fondations — 80k à 150k€</a></li>
+            <li><a href="parcours-ambition.html#etape-2">② Accélération — 150k à 300k€</a></li>
+            <li><a href="parcours-ambition.html#etape-3">③ Sécurisation — 400k à 800k€</a></li>
+            <li><a href="parcours-ambition.html#etape-4">④ L'Empire — 800k€ et +</a></li>
           </ul>
         </li>
         <li class="nav__has-dropdown">

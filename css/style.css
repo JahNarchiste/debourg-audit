@@ -83,14 +83,15 @@ ul { list-style: none; }
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 18px;
+  flex-wrap: nowrap;
 }
 .nav__links a {
   font-family: var(--font-corps);
-  font-size: 0.875rem;
+  font-size: 0.78rem;
   font-weight: 500;
   color: rgba(255,255,255,0.75);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   transition: color var(--transition);
   position: relative;
@@ -109,11 +110,12 @@ ul { list-style: none; }
 .nav__cta {
   background: var(--cuivre);
   color: var(--blanc) !important;
-  padding: 9px 20px;
+  padding: 8px 14px;
   border-radius: var(--radius);
   font-weight: 600 !important;
-  font-size: 0.8rem !important;
-  letter-spacing: 0.06em !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.04em !important;
+  white-space: nowrap;
   transition: background var(--transition), transform var(--transition) !important;
 }
 .nav__cta:hover {
