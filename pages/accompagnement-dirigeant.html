@@ -277,7 +277,109 @@
     </div>
   </div>
 </section>
+<section class="section section--grey" style="padding: 40px 0;">
+  <div class="container">
+    <div class="section__header section__header--centre" style="margin-bottom: 30px;">
+      <div class="section__eyebrow">Aide à la décision</div>
+      <h2 class="section__titre" style="font-size: 1.8rem;">Stratégie vs <em>Exécution</em></h2>
+    </div>
 
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-bottom:40px;">
+      <div style="background:var(--blanc); border-radius:8px; padding:20px; border-left:4px solid var(--gris-500); box-shadow:var(--shadow-sm);">
+        <h3 style="font-family:var(--font-titre); font-size:1.1rem; color:var(--bleu); margin-bottom:8px;">Coordination Administrative</h3>
+        <p style="font-size:0.85rem; line-height:1.5; margin:0;"><strong>Le rangement :</strong> Collecte, rapprochement et transmission comptable. Libère votre temps de gestion pur.</p>
+      </div>
+      <div style="background:var(--cuivre-bg); border-radius:8px; padding:20px; border-left:4px solid var(--cuivre); box-shadow:var(--shadow-sm);">
+        <h3 style="font-family:var(--font-titre); font-size:1.1rem; color:var(--cuivre); margin-bottom:8px;">Accompagnement Dirigeant</h3>
+        <p style="font-size:0.85rem; line-height:1.5; margin:0;"><strong>La décision :</strong> Analyse financière, RH, juridique et stratégie. Votre cerveau droit opérationnel.</p>
+      </div>
+    </div>
+
+    <div id="simulateur" style="background:var(--blanc); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-md); max-width:900px; margin:0 auto;">
+      <div style="background:var(--bleu); padding:20px; color:var(--blanc); display:flex; flex-wrap:wrap; align-items:center; gap:20px; justify-content:space-between;">
+        <div style="flex:1; min-width:250px;">
+          <span style="font-size:0.7rem; text-transform:uppercase; color:var(--cuivre); font-weight:700;">Étape 1 : Choisir un niveau</span>
+          <div style="display:flex; gap:10px; margin-top:8px;">
+            <button onclick="updateSim('essentiel', this)" class="sim-btn active">Essentiel</button>
+            <button onclick="updateSim('suivi', this)" class="sim-btn">Suivi</button>
+            <button onclick="updateSim('pilotage', this)" class="sim-btn">Pilotage</button>
+          </div>
+        </div>
+        <div style="flex:1; min-width:250px;">
+          <label style="display:flex; align-items:center; gap:10px; cursor:pointer; font-size:0.85rem;">
+            <input type="checkbox" id="coord-check" onchange="updateSim()" style="width:18px; height:18px; accent-color:var(--cuivre);">
+            Option Coordination Administrative (+150€)
+          </label>
+        </div>
+      </div>
+      
+      <div style="padding:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+          <h4 style="font-family:var(--font-titre); font-size:1.2rem; margin:0; color:var(--bleu);">Répartition des tâches</h4>
+          <div style="text-align:right;">
+            <span style="font-size:0.7rem; color:var(--gris-500); display:block;">LIBERTÉ DIRIGEANT</span>
+            <span id="sim-score" style="font-family:var(--font-titre); font-size:1.8rem; font-weight:700; color:var(--cuivre);">20%</span>
+          </div>
+        </div>
+        <div id="sim-rows" style="display:grid; gap:8px;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sim-btn { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.3); color:#fff; padding:6px 12px; border-radius:4px; cursor:pointer; font-size:0.8rem; transition:0.2s; }
+  .sim-btn.active { background:var(--cuivre); border-color:var(--cuivre); font-weight:700; }
+  .sim-row { display:flex; justify-content:space-between; align-items:center; padding:8px 15px; background:var(--gris-100); border-radius:6px; font-size:0.85rem; }
+  .sim-badge { font-size:0.7rem; font-weight:700; padding:3px 10px; border-radius:12px; min-width:100px; text-align:center; text-transform:uppercase; }
+  .b-dir { background:rgba(13,27,42,0.1); color:var(--bleu); }
+  .b-deb { background:var(--cuivre); color:#fff; }
+  .b-mix { background:var(--bleu-moy); color:#fff; }
+</style>
+
+<script>
+  const tasks = [
+    {id:'t1', n:"Stratégie & Investissements"},
+    {id:'t2', n:"Veille & Alertes échéances"},
+    {id:'t3', n:"Analyse de trésorerie"},
+    {id:'t4', n:"Préparation comptable"},
+    {id:'t5', n:"Actes juridiques & RH"},
+    {id:'t6', n:"Démarches tiers (Banque/Greffe)"},
+    {id:'t7', n:"Factures & Rapprochement"}
+  ];
+  const logic = {
+    essentiel: {t1:'M', t2:'C', t3:'D', t4:'D', t5:'D', t6:'D', t7:'D', s:20},
+    suivi: {t1:'M', t2:'C', t3:'C', t4:'C', t5:'D', t6:'D', t7:'D', s:55},
+    pilotage: {t1:'M', t2:'C', t3:'C', t4:'C', t5:'C', t6:'C', t7:'D', s:85}
+  };
+  let currentPack = 'essentiel';
+
+  function updateSim(pack, btn) {
+    if(pack) {
+      currentPack = pack;
+      document.querySelectorAll('.sim-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+    const isCoord = document.getElementById('coord-check').checked;
+    const l = logic[currentPack];
+    const rows = document.getElementById('sim-rows');
+    const score = document.getElementById('sim-score');
+    
+    let totalScore = l.s + (isCoord ? 15 : 0);
+    score.innerText = Math.min(totalScore, 100) + '%';
+    
+    rows.innerHTML = tasks.map(t => {
+      let who = l[t.id];
+      if(t.id === 't7' && isCoord) who = 'C';
+      
+      let bClass = who === 'C' ? 'b-deb' : (who === 'M' ? 'b-mix' : 'b-dir');
+      let bText = who === 'C' ? 'Debourg' : (who === 'M' ? 'Binôme' : 'Vous');
+      
+      return `<div class="sim-row"><span>${t.n}</span><span class="sim-badge ${bClass}">${bText}</span></div>`;
+    }).join('');
+  }
+  window.onload = () => updateSim();
+</script>
 <!-- 3 FORFAITS -->
 <section class="section" style="background:var(--gris-100);">
   <div class="container">
@@ -324,7 +426,45 @@
     </div>
   </div>
 </section>
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <div class="section__eyebrow">Ce que je gère pour vous</div>
+      <h2 class="section__titre">Un périmètre d'action <em>sans angles morts</em></h2>
+      <p class="section__sous-titre">La valeur réelle n'est pas dans une liste de tâches, mais dans le fait que vous n'avez plus à porter ces sujets seul dans votre tête.</p>
+    </div>
 
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:30px;">
+      <div>
+        <h4 style="font-family:var(--font-titre); color:var(--cuivre); font-size:1.2rem; margin-bottom:12px;">📈 Finances & Trésorerie</h4>
+        <ul style="list-style:none; padding:0; font-size:0.9rem; color:var(--gris-500); line-height:1.6;">
+          <li>• Suivi des entrées/sorties hebdomadaires</li>
+          <li>• Provisionnement TVA, IS et charges</li>
+          <li>• Analyse de rentabilité par chantier</li>
+          <li>• Aide à la décision de rémunération</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:var(--font-titre); color:var(--cuivre); font-size:1.2rem; margin-bottom:12px;">⚖️ Juridique & Administratif</h4>
+        <ul style="list-style:none; padding:0; font-size:0.9rem; color:var(--gris-500); line-height:1.6;">
+          <li>• Rédaction des actes courants (PV d'AG)</li>
+          <li>• Dépôts au greffe et mises à jour statuts</li>
+          <li>• Gestion des assurances professionnelles</li>
+          <li>• Interface avec expert-comptable/avocat</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-family:var(--font-titre); color:var(--cuivre); font-size:1.2rem; margin-bottom:12px;">🤝 Ressources Humaines</h4>
+        <ul style="list-style:none; padding:0; font-size:0.9rem; color:var(--gris-500); line-height:1.6;">
+          <li>• Gestion des embauches de A à Z</li>
+          <li>• Rédaction de contrats et fiches de poste</li>
+          <li>• Suivi des congés et arrêts maladie</li>
+          <li>• Coordination de la médecine du travail</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- PRESTATIONS ÉLARGIES -->
 <section class="section">
   <div class="container">
