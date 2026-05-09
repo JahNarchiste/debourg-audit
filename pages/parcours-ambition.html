@@ -23,11 +23,11 @@
   <style id="nav-dropdown-styles">
     .nav__logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
     .nav__has-dropdown { position:relative; }
-    .nav__has-dropdown > a::after { content:' ▾'; font-size:0.65rem; opacity:0.6; margin-left:2px; }
+    .nav__has-dropdown > a::after { content:' ▾'; font-size:0.6rem; opacity:0.6; margin-left:2px; }
     .nav__dropdown { display:none; position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%); background:var(--blanc,#fff); border:1px solid rgba(26,54,93,0.1); border-radius:12px; box-shadow:0 16px 48px rgba(26,54,93,0.14); padding:8px; min-width:240px; z-index:1000; list-style:none; margin:0; }
-    .nav__dropdown::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%); width:12px; height:12px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
+    .nav__dropdown::before { content:''; position:absolute; top:-5px; left:50%; transform:translateX(-50%); width:10px; height:10px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
     .nav__dropdown li { margin:0; padding:0; }
-    .nav__dropdown li a { display:block; padding:10px 16px; font-size:0.875rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:8px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
+    .nav__dropdown li a { display:block; padding:7px 12px; font-size:0.75rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:6px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
     .nav__dropdown li a:hover { background:rgba(26,54,93,0.05); color:var(--bleu,#1a365d); }
     .nav__has-dropdown:hover .nav__dropdown, .nav__has-dropdown:focus-within .nav__dropdown { display:block; }
     .nav__has-dropdown > a { padding-bottom:14px; }
@@ -458,6 +458,14 @@
     }
     .pa-badge-da strong { font-weight: 700; }
   </style>
+</style>
+<style id="footer-grid-fix">
+.footer__links--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+</style>
 </head>
 <body>
 
@@ -481,7 +489,7 @@
           </ul>
         </li>
         <li class="nav__has-dropdown">
-          <a href="approche.html">L'approche</a>
+          <a href="approche.html">L'audit</a>
           <ul class="nav__dropdown">
             <li><a href="approche.html">La méthode Bottom-Up</a></li>
             <li><a href="approche.html">Les 12 critères de friction</a></li>
@@ -498,18 +506,6 @@
           </ul>
         </li>
         <li class="nav__has-dropdown">
-          <a href="nos-parcours.html">Nos parcours</a>
-          <ul class="nav__dropdown">
-            <li><a href="approche.html">Audit Bottom-Up</a></li>
-            <li><a href="parcours-ambition.html">Parcours Ambition</a></li>
-            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
-            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
-            <li><a href="certification.html">Certification &amp; Conformité</a></li>
-            <li><a href="sap.html">Parcours SAP</a></li>
-            <li><a href="rge.html">Parcours RGE</a></li>
-          </ul>
-        </li>
-        <li class="nav__has-dropdown">
           <a href="nos-dossiers.html">Nos dossiers</a>
           <ul class="nav__dropdown">
             <li><a href="sap.html">Dossier SAP &amp; Avance immédiate</a></li>
@@ -517,6 +513,7 @@
             <li><a href="nos-dossiers.html">Newsletter</a></li>
           </ul>
         </li>
+        <li><a href="pourquoi-nous.html">Pourquoi nous ?</a></li>
         <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
       </ul>
       <button class="nav__burger" aria-label="Menu">
@@ -928,9 +925,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           Évaluer mon étape — gratuitement
         </a>
-        <a href="offres.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.3); color:var(--blanc);">
-          Voir toutes les offres
-        </a>
+        <a href="offres.html" class="btn btn-outline">Voir toute les offres</a>
+        <a href="pourquoi-nous.html" class="btn btn-outline">Pourquoi nous ?</a>
       </div>
     </div>
   </div>
@@ -939,19 +935,19 @@
 <!-- ═══ FOOTER ═══ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer__top">
+        <div class="footer__top">
       <div>
         <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
         <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
       </div>
       <div>
         <div class="footer__col-titre">Navigation</div>
-        <ul class="footer__links">
+        <ul class="footer__links footer__links--grid">
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="offres.html">Les offres</a></li>
           <li><a href="approche.html">L'approche</a></li>
-          <li><a href="nos-parcours.html">Nos parcours</a></li>
           <li><a href="nos-dossiers.html">Nos dossiers</a></li>
+          <li><a href="pourquoi-nous.html">Pourquoi nous</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -964,7 +960,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg | SIRET 931 404 917</p>
       <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
     </div>
   </div>

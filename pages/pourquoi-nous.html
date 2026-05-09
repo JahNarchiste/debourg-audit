@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pourquoi choisir Debourg Audit ? Expérience terrain, méthode Bottom-Up, exécution concrète, résultats chiffrés. Découvrez ce qui nous différencie des autres consultants." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://debourg-audit.fr/pages/pourquoi-nous.html" />
+  <meta property="og:title" content="Pourquoi nous choisir — Debourg Audit" />
+  <meta property="og:description" content="Pas de jargon, pas de rapport de 100 pages. Du conseil et de l'exécution, en langage artisan, avec des résultats chiffrés dès la première année." />
+  <meta property="og:image" content="https://debourg-audit.fr/assets/logo_transparent.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Debourg Audit" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pourquoi nous choisir — Debourg Audit" />
+  <meta name="twitter:description" content="Expérience terrain, méthode Bottom-Up, conseil et exécution. Résultats chiffrés dès la première année." />
+  <link rel="canonical" href="https://debourg-audit.fr/pages/pourquoi-nous.html" />
+  <title>Pourquoi nous choisir — Debourg Audit</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+
+  <style id="nav-dropdown-styles">
+    .nav__logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+    .nav__has-dropdown { position:relative; }
+    .nav__has-dropdown > a::after { content:' ▾'; font-size:0.6rem; opacity:0.6; margin-left:2px; }
+    .nav__dropdown { display:none; position:absolute; top:calc(100% + 0px); left:50%; transform:translateX(-50%); background:var(--blanc,#fff); border:1px solid rgba(26,54,93,0.1); border-radius:8px; box-shadow:0 8px 24px rgba(26,54,93,0.12); padding:4px; min-width:180px; z-index:1000; list-style:none; margin:0; }
+    .nav__dropdown::before { content:''; position:absolute; top:-5px; left:50%; transform:translateX(-50%); width:10px; height:10px; background:var(--blanc,#fff); border-left:1px solid rgba(26,54,93,0.1); border-top:1px solid rgba(26,54,93,0.1); rotate:45deg; }
+    .nav__dropdown li { margin:0; padding:0; }
+    .nav__dropdown li a { display:block; padding:7px 12px; font-size:0.75rem; color:var(--gris-500,#6b7280); text-decoration:none; border-radius:6px; transition:background 0.15s,color 0.15s; white-space:nowrap; }
+    .nav__dropdown li a:hover { background:rgba(26,54,93,0.05); color:var(--bleu,#1a365d); }
+    .nav__has-dropdown:hover .nav__dropdown, .nav__has-dropdown:focus-within .nav__dropdown { display:block; }
+    .nav__has-dropdown > a { padding-bottom:14px; }
+    .nav__has-dropdown::after { content:''; position:absolute; top:100%; left:0; right:0; height:16px; }
+    @media (max-width:900px) { .nav__dropdown { display:none !important; } .nav__has-dropdown > a::after { display:none; } .nav__has-dropdown > a { padding-bottom:0; } }
+  </style>
+
+  <style>
+    /* ══ PAGE POURQUOI NOUS ══════════════════════════════════ */
+
+    /* Hero */
+    .pn-hero {
+      background: var(--bleu);
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pn-hero::before {
+      content: '?';
+      position: absolute;
+      right: -10px;
+      top: -30px;
+      font-family: var(--font-titre);
+      font-size: 22rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .pn-hero__eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 20px;
+    }
+    .pn-hero__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--blanc);
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+    .pn-hero__titre em { color: var(--cuivre); font-style: normal; }
+    .pn-hero__accroche {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 580px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .pn-hero__accroche strong { color: var(--blanc); }
+
+    /* Stat bar */
+    .pn-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .pn-stat__val {
+      font-family: var(--font-titre);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--cuivre);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .pn-stat__lbl {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    /* Cas concret */
+    .pn-cas {
+      background: var(--gris-100);
+      padding: 64px 0;
+    }
+    .pn-cas__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (max-width: 780px) { .pn-cas__inner { grid-template-columns: 1fr; } }
+    .pn-cas__texte {}
+    .pn-cas__chiffre {
+      background: var(--bleu);
+      border-radius: 18px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pn-cas__chiffre::before {
+      content: '€';
+      position: absolute;
+      right: -10px;
+      bottom: -20px;
+      font-family: var(--font-titre);
+      font-size: 10rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.05);
+      line-height: 1;
+    }
+    .pn-cas__montant {
+      font-family: var(--font-titre);
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--cuivre);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .pn-cas__montant-lbl {
+      font-size: 1rem;
+      color: var(--blanc);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+    .pn-cas__detail {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+    }
+
+    /* Piliers */
+    .pn-piliers { padding: 80px 0; }
+    .pn-piliers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .pn-pilier {
+      background: var(--blanc);
+      border-radius: 14px;
+      padding: 32px 28px;
+      border: 1px solid rgba(26,54,93,0.08);
+      border-top: 4px solid var(--bleu);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .pn-pilier:hover {
+      box-shadow: 0 12px 36px rgba(26,54,93,0.1);
+      transform: translateY(-3px);
+    }
+    .pn-pilier--cuivre { border-top-color: var(--cuivre); }
+    .pn-pilier--vert { border-top-color: #1B6B3A; }
+    .pn-pilier--rouge { border-top-color: #B03020; }
+    .pn-pilier--violet { border-top-color: #5B2C8D; }
+    .pn-pilier__num {
+      font-family: var(--font-titre);
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(192,122,69,0.35);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .pn-pilier__icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+    .pn-pilier__titre {
+      font-family: var(--font-titre);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .pn-pilier__desc {
+      font-size: 0.875rem;
+      color: var(--gris-500);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .pn-pilier__badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--bleu);
+      background: var(--gris-100);
+      border-radius: 4px;
+      padding: 4px 10px;
+    }
+
+    /* Objections */
+    .pn-objections { background: var(--gris-100); padding: 80px 0; }
+    .pn-obj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 48px;
+    }
+    @media (max-width: 780px) { .pn-obj-grid { grid-template-columns: 1fr; } }
+    .pn-obj {
+      background: var(--blanc);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid rgba(26,54,93,0.08);
+    }
+    .pn-obj__question {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+    .pn-obj__question-mark {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--bleu);
+      color: var(--blanc);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      margin-top: 1px;
+    }
+    .pn-obj__reponse {
+      font-size: 0.875rem;
+      color: var(--gris-500);
+      line-height: 1.75;
+    }
+    .pn-obj__reponse strong { color: var(--bleu); }
+
+    /* Trustpilot */
+    .pn-trust { background: var(--bleu); padding: 48px 0; }
+    .pn-trust__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .pn-trust__label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 8px;
+    }
+    .pn-trust__titre {
+      font-family: var(--font-titre);
+      font-size: 1.4rem;
+      color: var(--blanc);
+      font-weight: 700;
+    }
+
+    /* Garantie */
+    .pn-garantie {
+      padding: 80px 0;
+      background: var(--blanc);
+    }
+    .pn-garantie__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 780px) { .pn-garantie__grid { grid-template-columns: 1fr; } }
+    .pn-garantie__item {
+      text-align: center;
+      padding: 32px 24px;
+      border-radius: 12px;
+      background: var(--gris-100);
+    }
+    .pn-garantie__icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+    .pn-garantie__titre {
+      font-family: var(--font-titre);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin-bottom: 10px;
+    }
+    .pn-garantie__desc {
+      font-size: 0.86rem;
+      color: var(--gris-500);
+      line-height: 1.7;
+    }
+  </style>
+<style id="nav-cta-highlight">
+.nav__cta--highlight {
+  background: var(--cuivre) !important;
+  color: var(--blanc) !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(192,122,69,0.35);
+}
+.nav__cta--highlight:hover {
+  background: #a8662e !important;
+  color: var(--blanc) !important;
+}
+</style>
+<style id="debourg-fixes">
+/* btn-cuivre — bouton fond cuivre sur fond coloré */
+.btn-cuivre {
+  background: var(--cuivre, #C07A45);
+  color: #fff;
+  border: 2px solid var(--cuivre, #C07A45);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius, 8px);
+  font-family: var(--font-corps, 'DM Sans', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-cuivre:hover {
+  background: #a8662e;
+  border-color: #a8662e;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192,122,69,0.35);
+}
+.btn-cuivre svg { width: 16px; height: 16px; }
+/* Force footer horizontal sur toutes les résolutions > 600px */
+@media (min-width: 601px) {
+  .footer__top {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr 1fr !important;
+    gap: 48px !important;
+  }
+}
+</style>
+<style id="footer-grid-fix">
+.footer__links--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <img src="../assets/logo_transparent.png" alt="Debourg Audit" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="../index.html">Accueil</a></li>
+        <li class="nav__has-dropdown">
+          <a href="offres.html">Les offres</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">Audit Bottom-Up</a></li>
+            <li><a href="parcours-ambition.html">Parcours Ambition</a></li>
+            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
+            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
+            <li><a href="certification.html">Certification &amp; Conformité</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="approche.html">L'audit</a>
+          <ul class="nav__dropdown">
+            <li><a href="approche.html">La méthode Bottom-Up</a></li>
+            <li><a href="approche.html">Les 12 critères de friction</a></li>
+            <li><a href="approche.html">Les 4 phases</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="parcours-ambition.html">Parcours Ambition</a>
+          <ul class="nav__dropdown">
+            <li><a href="parcours-ambition.html#etape-1">① Fondations — 80k à 150k€</a></li>
+            <li><a href="parcours-ambition.html#etape-2">② Accélération — 150k à 300k€</a></li>
+            <li><a href="parcours-ambition.html#etape-3">③ Sécurisation — 400k à 800k€</a></li>
+            <li><a href="parcours-ambition.html#etape-4">④ L'Empire — 800k€ et +</a></li>
+          </ul>
+        </li>
+        <li class="nav__has-dropdown">
+          <a href="nos-dossiers.html">Nos dossiers</a>
+          <ul class="nav__dropdown">
+            <li><a href="sap.html">Dossier SAP &amp; Avance immédiate</a></li>
+            <li><a href="rge.html">Dossier RGE</a></li>
+            <li><a href="nos-dossiers.html">Newsletter</a></li>
+          </ul>
+        </li>
+        <li><a href="pourquoi-nous.html">Pourquoi nous ?</a></li>
+        <li><a href="contact.html" class="nav__cta nav__cta--highlight">Diagnostic Flash gratuit</a></li>
+      </ul>
+      <button class="nav__burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="pn-hero">
+  <div class="container">
+    <div class="pn-hero__eyebrow">Notre différence</div>
+    <h1 class="pn-hero__titre">
+      Pas de jargon.<br/>
+      Pas de rapport de 100 pages.<br/>
+      <em>Des résultats chiffrés.</em>
+    </h1>
+    <p class="pn-hero__accroche">
+      Debourg Audit n'est pas un cabinet de conseil classique. C'est un <strong>partenaire opérationnel</strong> qui conseille, exécute et mesure — en langage artisan, avec des résultats concrets et mesurables dès la première année.
+    </p>
+    <a href="contact.html" class="btn btn-cuivre">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      Diagnostic Flash gratuit — sans engagement
+    </a>
+    <div class="pn-stats">
+      <div>
+        <div class="pn-stat__val">30 000€</div>
+        <div class="pn-stat__lbl">économisés pour un<br/>artisan en Creuse</div>
+      </div>
+      <div>
+        <div class="pn-stat__val">5 ans</div>
+        <div class="pn-stat__lbl">d'expérience terrain<br/>en direction de PME</div>
+      </div>
+      <div>
+        <div class="pn-stat__val">48h</div>
+        <div class="pn-stat__lbl">pour votre premier<br/>diagnostic chiffré</div>
+      </div>
+      <div>
+        <div class="pn-stat__val">0€</div>
+        <div class="pn-stat__lbl">pour le Diagnostic<br/>Flash initial</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CAS CONCRET ═══ -->
+<section class="pn-cas">
+  <div class="container">
+    <div class="section__header">
+      <div class="section__eyebrow">La preuve par l'exemple</div>
+      <h2 class="section__titre">Un cas réel, des chiffres réels</h2>
+    </div>
+    <div class="pn-cas__inner" style="margin-top:40px;">
+      <div class="pn-cas__texte">
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; margin-bottom:20px;">
+          Un artisan du bâtiment en Creuse crée sa SARL depuis son entreprise individuelle. À la création, il apporte le matériel qu'il possédait en EI à son compte d'associé — une décision simple, souvent ignorée.
+        </p>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; margin-bottom:20px;">
+          Résultat : <strong style="color:var(--bleu);">30 000€ de valeur matériel récupérés sur son compte associé</strong>, ce qui lui évite de se verser un salaire la première année pour financer son outil de travail. La trésorerie de la société reste intacte pour développer l'activité.
+        </p>
+        <p style="font-size:1rem; color:var(--gris-500); line-height:1.8; margin-bottom:28px;">
+          Cette décision a été conseillée, structurée et exécutée par Debourg Audit — rédaction des statuts, déclaration au greffe, transfert du matériel. Une seule action, un impact immédiat et mesurable.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <span style="background:rgba(13,27,42,0.07); border-radius:6px; padding:8px 14px; font-size:0.8rem; font-weight:600; color:var(--bleu);">✓ Conseil stratégique</span>
+          <span style="background:rgba(13,27,42,0.07); border-radius:6px; padding:8px 14px; font-size:0.8rem; font-weight:600; color:var(--bleu);">✓ Rédaction des statuts</span>
+          <span style="background:rgba(13,27,42,0.07); border-radius:6px; padding:8px 14px; font-size:0.8rem; font-weight:600; color:var(--bleu);">✓ Dépôt au greffe</span>
+          <span style="background:rgba(13,27,42,0.07); border-radius:6px; padding:8px 14px; font-size:0.8rem; font-weight:600; color:var(--bleu);">✓ Résultat en euros</span>
+        </div>
+      </div>
+      <div class="pn-cas__chiffre">
+        <div class="pn-cas__montant">30 000€</div>
+        <div class="pn-cas__montant-lbl">récupérés dès la création de la SARL</div>
+        <div class="pn-cas__detail">
+          Matériel apporté au compte associé lors de la transformation EI → SARL.<br/><br/>
+          Zéro salaire nécessaire la première année.<br/>
+          Trésorerie préservée pour développer l'activité.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUSTPILOT ═══ (activé quand les avis sont disponibles) -->
+<section id="section-trustpilot-pn" style="display:none; background:var(--bleu); padding:40px 0;">
+  <div class="container">
+    <div class="pn-trust__inner">
+      <div>
+        <div class="pn-trust__label">Ce qu'ils disent</div>
+        <div class="pn-trust__titre">Nos clients en parlent mieux que nous</div>
+      </div>
+      <div style="flex:1; min-width:280px; max-width:560px;">
+        <div class="trustpilot-widget"
+          data-locale="fr-FR"
+          data-template-id="56278e9abfbbba0bdcd568bc"
+          data-businessunit-id="69fc2df577d05e8503cea656"
+          data-style-height="52px"
+          data-style-width="100%"
+          data-theme="dark"
+          data-token="ae2ee650-d8d4-44d4-b2b4-4a49965f7396">
+          <a href="https://fr.trustpilot.com/review/debourg-audit.fr" target="_blank" rel="noopener">Trustpilot</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Pour activer : changer display:none en display:block sur la section ci-dessus -->
+
+<!-- ═══ 5 PILIERS ═══ -->
+<section class="pn-piliers">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">Notre différence</div>
+      <h2 class="section__titre">5 raisons de choisir<br/><em>Debourg Audit</em></h2>
+      <p class="section__sous-titre">Ce qui nous distingue concrètement d'un expert-comptable, d'une chambre de commerce ou d'un consultant classique.</p>
+    </div>
+    <div class="pn-piliers-grid">
+
+      <div class="pn-pilier">
+        <span class="pn-pilier__icon">🏗️</span>
+        <div class="pn-pilier__num">01</div>
+        <div class="pn-pilier__titre">L'expérience du terrain, pas du bureau</div>
+        <p class="pn-pilier__desc">5 ans de direction de PME : relation client, fournisseurs, actes juridiques, gestion quotidienne. Je comprends votre réalité parce que je l'ai vécue — pas lue dans un manuel.</p>
+        <span class="pn-pilier__badge">vs. le consultant théorique</span>
+      </div>
+
+      <div class="pn-pilier pn-pilier--cuivre">
+        <span class="pn-pilier__icon">🔧</span>
+        <div class="pn-pilier__num">02</div>
+        <div class="pn-pilier__titre">Le langage artisan, pas le jargon corporate</div>
+        <p class="pn-pilier__desc">On ne parle pas de "départements" ou de "synergies". On parle d'"aller chercher le boulot", de "faire le boulot", de "suivre les pépins" et de "faire tourner la boutique". Droit au but.</p>
+        <span class="pn-pilier__badge" style="color:var(--cuivre); background:rgba(192,122,69,0.1);">vs. le jargon incompréhensible</span>
+      </div>
+
+      <div class="pn-pilier pn-pilier--vert">
+        <span class="pn-pilier__icon">⚙️</span>
+        <div class="pn-pilier__num">03</div>
+        <div class="pn-pilier__titre">Du conseil et de l'exécution — pas l'un sans l'autre</div>
+        <p class="pn-pilier__desc">Debourg Audit conseille la stratégie ET l'exécute : dossiers RGE/SAP/Qualiopi montés de A à Z, création de société, dépôt au greffe, coordination administrative mensuelle. Vous n'avez rien à préparer.</p>
+        <span class="pn-pilier__badge" style="color:#1B6B3A; background:rgba(27,107,58,0.08);">vs. les "donneurs de leçons"</span>
+      </div>
+
+      <div class="pn-pilier pn-pilier--rouge">
+        <span class="pn-pilier__icon">📊</span>
+        <div class="pn-pilier__num">04</div>
+        <div class="pn-pilier__titre">La méthode Bottom-Up — pas l'audit de 100 pages</div>
+        <p class="pn-pilier__desc">48 questions posées anonymement aux équipes terrain en 15 minutes. Les vrais blocages remontent, pas ceux que la direction pense qu'il se passe. Résultat : le coût exact de chaque friction en euros par an.</p>
+        <span class="pn-pilier__badge" style="color:#B03020; background:rgba(176,48,32,0.08);">vs. l'audit inutile</span>
+      </div>
+
+      <div class="pn-pilier pn-pilier--violet" style="grid-column: span 1;">
+        <span class="pn-pilier__icon">💰</span>
+        <div class="pn-pilier__num">05</div>
+        <div class="pn-pilier__titre">Un investissement qui s'autofinance — pas une charge fixe</div>
+        <p class="pn-pilier__desc">Le Diagnostic Flash est gratuit. Le Parcours Ambition est structuré pour que chaque étape autofinance la suivante : économies de l'étape 1, nouveaux marchés RGE de l'étape 2. Vous décidez sur la base de chiffres réels.</p>
+        <span class="pn-pilier__badge" style="color:#5B2C8D; background:rgba(91,44,141,0.08);">vs. la charge fixe sans retour</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OBJECTIONS ═══ -->
+<section class="pn-objections">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">Vos questions</div>
+      <h2 class="section__titre">Vous vous demandez peut-être…</h2>
+      <p class="section__sous-titre">Les objections les plus fréquentes — et les réponses honnêtes.</p>
+    </div>
+    <div class="pn-obj-grid">
+
+      <div class="pn-obj">
+        <div class="pn-obj__question">
+          <div class="pn-obj__question-mark">?</div>
+          Mon expert-comptable me donne déjà des conseils, pourquoi vous payer en plus ?
+        </div>
+        <p class="pn-obj__reponse">Votre expert-comptable est indispensable pour votre bilan et votre conformité fiscale. <strong>Mais monte-t-il votre dossier RGE ? Optimise-t-il l'arbitrage entre votre salaire et vos dividendes ?</strong> Debourg Audit intervient là où votre comptable s'arrête : opérations présentes, stratégie de structure, certifications. Les deux rôles sont complémentaires.</p>
+      </div>
+
+      <div class="pn-obj">
+        <div class="pn-obj__question">
+          <div class="pn-obj__question-mark">?</div>
+          390€ ou 780€ par mois, c'est une charge de plus que je ne peux pas me permettre.
+        </div>
+        <p class="pn-obj__reponse">Posons les chiffres. Si vous perdez 2 à 3 chantiers MaPrimeRénov' par mois faute de RGE, c'est <strong>30 000€ à 60 000€ de CA perdus par an</strong>. L'abonnement à 780€/mois est remboursé dès le premier gros chantier décroché. Le Diagnostic Flash est gratuit — jugez sur pièces.</p>
+      </div>
+
+      <div class="pn-obj">
+        <div class="pn-obj__question">
+          <div class="pn-obj__question-mark">?</div>
+          Je n'ai pas le temps, je fais déjà 70h par semaine.
+        </div>
+        <p class="pn-obj__reponse">70h par semaine, c'est le symptôme du <strong>dirigeant-goulot d'étranglement</strong> : vous gérez les urgences à la place de vos équipes. Ma méthode ne nécessite aucune préparation — 15 minutes de questionnaire. Ensuite, je prends en charge la coordination. Objectif : vous rendre 10h par semaine.</p>
+      </div>
+
+      <div class="pn-obj">
+        <div class="pn-obj__question">
+          <div class="pn-obj__question-mark">?</div>
+          Vous n'êtes pas de mon secteur technique. Pourquoi vous faire confiance ?
+        </div>
+        <p class="pn-obj__reponse">C'est mon avantage. Je ne viens pas vous apprendre à poser une charpente — vous le savez mieux que moi. <strong>J'ai généré 30 000€ d'économie pour un artisan du bâtiment en Creuse avec une seule décision structurelle.</strong> Mon regard extérieur est précisément ce qui rend l'intervention utile.</p>
+      </div>
+
+      <div class="pn-obj">
+        <div class="pn-obj__question">
+          <div class="pn-obj__question-mark">?</div>
+          Je peux monter mon dossier RGE tout seul, c'est de la paperasse.
+        </div>
+        <p class="pn-obj__reponse">Absolument. Mais le taux d'échec en première soumission dépasse 40% sans accompagnement, et chaque rejet retarde l'accès à MaPrimeRénov' de 6 mois. <strong>Le temps que vous passez sur ce dossier, c'est du temps non facturé sur vos chantiers.</strong> J'ai déjà monté ces dossiers en conditions réelles.</p>
+      </div>
+
+      <div class="pn-obj">
+        <div class="pn-obj__question">
+          <div class="pn-obj__question-mark">?</div>
+          J'ai déjà eu un consultant. Il m'a vendu un beau classeur et rien n'a changé.
+        </div>
+        <p class="pn-obj__reponse">Les audits classiques partent du sommet et produisent des rapports qui documentent ce que la direction pense qu'il se passe. <strong>Ma méthode Bottom-Up part du bas</strong> : vos équipes terrain parlent anonymement. On identifie les vrais blocages, on les chiffre en euros, et on agit. Le Diagnostic Flash est gratuit — aucun engagement avant d'avoir un résultat concret.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GARANTIES ═══ -->
+<section class="pn-garantie">
+  <div class="container">
+    <div class="section__header section__header--centre">
+      <div class="section__eyebrow">Nos engagements</div>
+      <h2 class="section__titre">Ce que vous pouvez<br/><em>attendre de nous</em></h2>
+    </div>
+    <div class="pn-garantie__grid">
+      <div class="pn-garantie__item">
+        <span class="pn-garantie__icon">⚡</span>
+        <div class="pn-garantie__titre">Réponse sous 24h</div>
+        <p class="pn-garantie__desc">Toute demande de contact reçoit une réponse dans la journée ou sous 24h en semaine. Pas de délai d'attente de plusieurs jours.</p>
+      </div>
+      <div class="pn-garantie__item">
+        <span class="pn-garantie__icon">🎯</span>
+        <div class="pn-garantie__titre">Diagnostic Flash gratuit</div>
+        <p class="pn-garantie__desc">Le premier diagnostic est gratuit et sans engagement. Vous recevez une estimation chiffrée de vos pertes ou de vos opportunités sous 48h. Vous décidez ensuite.</p>
+      </div>
+      <div class="pn-garantie__item">
+        <span class="pn-garantie__icon">🔒</span>
+        <div class="pn-garantie__titre">Confidentialité totale</div>
+        <p class="pn-garantie__desc">Vos données, vos chiffres et votre organisation restent strictement confidentiels. Aucune information n'est partagée avec des tiers sans votre accord explicite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-band">
+  <div class="container">
+    <h2 class="cta-band__titre">Convaincu ?<br/><em>Passons à l'action.</em></h2>
+    <p class="cta-band__texte">Le Diagnostic Flash est gratuit, anonyme et sans engagement. Résultat sous 48h.</p>
+    <div class="cta-band__actions">
+      <a href="contact.html" class="btn btn-primary">Demander mon Diagnostic Flash</a>
+      <a href="offres.html" class="btn btn-outline">Voir les offres</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+        <div class="footer__top">
+      <div>
+        <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
+        <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
+      </div>
+      <div>
+        <div class="footer__col-titre">Navigation</div>
+        <ul class="footer__links footer__links--grid">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="offres.html">Les offres</a></li>
+          <li><a href="approche.html">L'approche</a></li>
+          <li><a href="nos-dossiers.html">Nos dossiers</a></li>
+          <li><a href="pourquoi-nous.html">Pourquoi nous</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer__col-titre">Contact</div>
+        <ul class="footer__links">
+          <li><a href="mailto:contact@debourg-audit.fr">contact@debourg-audit.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antonin-debourg-4a451257/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg | SIRET 931 404 917</p>
+      <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+</body>
+</html>

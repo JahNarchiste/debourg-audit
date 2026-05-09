@@ -36,6 +36,61 @@
 .nav__has-dropdown::after { content:''; position:absolute; top:100%; left:0; right:0; height:16px; }
 @media (max-width:900px) { .nav__dropdown { display:none !important; } .nav__has-dropdown > a::after { display:none; } .nav__has-dropdown > a { padding-bottom: 0; } }
 </style>
+<style id="nav-cta-highlight">
+.nav__cta--highlight {
+  background: var(--cuivre) !important;
+  color: var(--blanc) !important;
+  border: none !important;
+  box-shadow: 0 2px 12px rgba(192,122,69,0.35);
+}
+.nav__cta--highlight:hover {
+  background: #a8662e !important;
+  color: var(--blanc) !important;
+}
+</style>
+<style id="debourg-fixes">
+/* btn-cuivre — bouton fond cuivre sur fond coloré */
+.btn-cuivre {
+  background: var(--cuivre, #C07A45);
+  color: #fff;
+  border: 2px solid var(--cuivre, #C07A45);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: var(--radius, 8px);
+  font-family: var(--font-corps, 'DM Sans', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.btn-cuivre:hover {
+  background: #a8662e;
+  border-color: #a8662e;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192,122,69,0.35);
+}
+.btn-cuivre svg { width: 16px; height: 16px; }
+/* Force footer horizontal sur toutes les résolutions > 600px */
+@media (min-width: 601px) {
+  .footer__top {
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr 1fr !important;
+    gap: 48px !important;
+  }
+}
+</style>
+<style id="footer-grid-fix">
+.footer__links--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+</style>
 </head>
 <body>
 
@@ -58,7 +113,7 @@
           </ul>
         </li>
         <li class="nav__has-dropdown">
-          <a href="approche.html">L'approche</a>
+          <a href="approche.html">L'audit</a>
           <ul class="nav__dropdown">
             <li><a href="approche.html">La méthode Bottom-Up</a></li>
             <li><a href="approche.html">Les 12 critères de friction</a></li>
@@ -75,18 +130,6 @@
           </ul>
         </li>
         <li class="nav__has-dropdown">
-          <a href="nos-parcours.html">Nos parcours</a>
-          <ul class="nav__dropdown">
-            <li><a href="approche.html">Audit Bottom-Up</a></li>
-            <li><a href="parcours-ambition.html">Parcours Ambition</a></li>
-            <li><a href="accompagnement-dirigeant.html">Accompagnement Dirigeant</a></li>
-            <li><a href="coordination-administrative.html">Coordination Administrative</a></li>
-            <li><a href="certification.html">Certification &amp; Conformité</a></li>
-            <li><a href="sap.html">Parcours SAP</a></li>
-            <li><a href="rge.html">Parcours RGE</a></li>
-          </ul>
-        </li>
-        <li class="nav__has-dropdown">
           <a href="nos-dossiers.html">Nos dossiers</a>
           <ul class="nav__dropdown">
             <li><a href="sap.html">Dossier SAP &amp; Avance immédiate</a></li>
@@ -94,7 +137,8 @@
             <li><a href="nos-dossiers.html">Newsletter</a></li>
           </ul>
         </li>
-        <li><a href="contact.html" class="nav__cta">Diagnostic Flash gratuit</a></li>
+        <li><a href="pourquoi-nous.html">Pourquoi nous ?</a></li>
+        <li><a href="contact.html" class="nav__cta nav__cta--highlight">Diagnostic Flash gratuit</a></li>
       </ul>
       <button class="nav__burger" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -232,19 +276,19 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="footer__top">
+        <div class="footer__top">
       <div>
         <div class="footer__logo"><img src="../assets/logo_transparent.png" alt="Debourg Audit" /></div>
         <p class="footer__desc">Cabinet de conseil en efficacité opérationnelle pour PME, franchises et artisans.</p>
       </div>
       <div>
         <div class="footer__col-titre">Navigation</div>
-        <ul class="footer__links">
+        <ul class="footer__links footer__links--grid">
           <li><a href="../index.html">Accueil</a></li>
           <li><a href="offres.html">Les offres</a></li>
           <li><a href="approche.html">L'approche</a></li>
-          <li><a href="nos-parcours.html">Nos parcours</a></li>
           <li><a href="nos-dossiers.html">Nos dossiers</a></li>
+          <li><a href="pourquoi-nous.html">Pourquoi nous</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -257,7 +301,7 @@
       </div>
     </div>
     <div class="footer__bottom">
-      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg</p>
+      <p class="footer__copy">© 2025 Debourg Audit — Antonin Debourg | SIRET 931 404 917</p>
       <div class="footer__legal"><a href="mentions-legales.html">Mentions légales</a></div>
     </div>
   </div>

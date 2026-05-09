@@ -79,19 +79,18 @@ ul { list-style: none; }
   align-items: center;
   gap: 10px;
 }
-.nav__logo img { height: 38px; width: auto; }
+.nav__logo img { height: 76px; width: auto; }
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 18px;
-  flex-wrap: nowrap;
+  gap: 36px;
 }
 .nav__links a {
   font-family: var(--font-corps);
-  font-size: 0.78rem;
+  font-size: 0.65rem;
   font-weight: 500;
   color: rgba(255,255,255,0.75);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: color var(--transition);
   position: relative;
@@ -110,12 +109,11 @@ ul { list-style: none; }
 .nav__cta {
   background: var(--cuivre);
   color: var(--blanc) !important;
-  padding: 8px 14px;
+  padding: 9px 20px;
   border-radius: var(--radius);
   font-weight: 600 !important;
-  font-size: 0.75rem !important;
-  letter-spacing: 0.04em !important;
-  white-space: nowrap;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.06em !important;
   transition: background var(--transition), transform var(--transition) !important;
 }
 .nav__cta:hover {
@@ -313,7 +311,7 @@ ul { list-style: none; }
   padding: 13px 28px;
   border-radius: var(--radius);
   font-family: var(--font-corps);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -352,6 +350,18 @@ ul { list-style: none; }
   border-color: var(--bleu-moy);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+}
+
+.btn-cuivre {
+  background: var(--cuivre);
+  color: var(--blanc);
+  border-color: var(--cuivre);
+}
+.btn-cuivre:hover {
+  background: #a8662e;
+  border-color: #a8662e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(192,122,69,0.35);
 }
 .btn svg { width: 16px; height: 16px; }
 
@@ -830,7 +840,7 @@ ul { list-style: none; }
 .critere__titre { font-weight: 600; font-size: 0.9rem; color: var(--bleu); margin-bottom: 4px; }
 .critere__desc { font-size: 0.8rem; color: var(--gris-500); line-height: 1.5; }
 
-/* À propos — ancienne structure */
+/* À propos */
 .apropos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -862,47 +872,9 @@ ul { list-style: none; }
   text-transform: uppercase;
   color: var(--cuivre);
   margin-bottom: 4px;
-  position: absolute;
+  position: static;
   bottom: 24px;
   left: 24px;
-}
-
-/* À propos — nouvelle structure (approche.html avec photo réelle) */
-.apropos-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 64px;
-  align-items: start;
-}
-
-.apropos-photo-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-
-.apropos-photo-block img {
-  width: 220px;
-  height: 290px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
-  display: block;
-}
-
-.apropos-photo-block .apropos__nom {
-  font-size: 0.875rem;
-  color: var(--bleu);
-  font-weight: 600;
-  text-align: center;
-  position: static;
-  bottom: auto;
-  left: auto;
-  margin-bottom: 0;
-  letter-spacing: 0.04em;
-  text-transform: none;
 }
 .apropos__titre {
   font-family: var(--font-titre);
@@ -1028,31 +1000,6 @@ ul { list-style: none; }
 .form-success__titre { font-family: var(--font-titre); font-size: 1.8rem; color: var(--bleu); margin-bottom: 8px; }
 .form-success__texte { font-size: 0.95rem; color: var(--gris-500); }
 
-.form-error {
-  display: none;
-  text-align: center;
-  padding: 40px 20px;
-  background: rgba(220, 53, 69, 0.05);
-  border: 1px solid rgba(220, 53, 69, 0.2);
-  border-radius: 12px;
-}
-.form-error__icon { font-size: 3rem; margin-bottom: 16px; }
-.form-error__titre { font-family: var(--font-titre); font-size: 1.8rem; color: #DC3545; margin-bottom: 12px; }
-.form-error__texte { font-size: 0.95rem; color: var(--gris-500); margin-bottom: 16px; }
-.form-error__link {
-  display: inline-block;
-  background: #DC3545;
-  color: var(--blanc);
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background var(--transition);
-}
-.form-error__link:hover {
-  background: #c82333;
-}
-
 /* ═══════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════ */
@@ -1070,8 +1017,8 @@ ul { list-style: none; }
   margin-bottom: 32px;
 }
 .footer__logo { margin-bottom: 16px; }
-.footer__logo img { height: 36px; }
-.footer__desc { font-size: 0.875rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
+.footer__logo img { height: 72px; }
+.footer__desc { font-size: 0.75rem; color: rgba(255,255,255,0.45); line-height: 1.7; }
 .footer__col-titre {
   font-size: 0.7rem;
   font-weight: 700;
@@ -1082,7 +1029,7 @@ ul { list-style: none; }
 }
 .footer__links { display: flex; flex-direction: column; gap: 10px; }
 .footer__links a {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: rgba(255,255,255,0.5);
   transition: color var(--transition);
 }
@@ -1151,7 +1098,7 @@ ul { list-style: none; }
     align-items: flex-start;
     z-index: 99;
   }
-  .nav__links.open a { font-size: 1.25rem; }
+  .nav__links.open a { font-size: 0.75rem; }
   .cibles { grid-template-columns: 1fr; }
   .criteres-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
