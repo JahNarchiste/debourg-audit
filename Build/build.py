@@ -156,19 +156,23 @@ def update_nav(articles):
     if NAV_MARKER not in content:
         print('  [!] Marqueur Newsletter introuvable dans nav.html.')
         return
+
+    # Supprimer tous les liens articles existants
+    content = re.sub(r'\s*<li><a href="\{\{PAGES\}\}articles/[^"]+\.html">[^<]+</a></li>', '', content)
+
+    # Réinsérer tous les liens triés par date_sort décroissant (déjà triés)
     new_links = []
     for fname, meta, _ in articles:
-        if f'articles/{fname}' in content:
-            print(f'  [=] Nav deja a jour : {fname}')
-        else:
-            label = meta.get('nav_label', fname)
-            new_links.append(f'            <li><a href="{{{{PAGES}}}}articles/{fname}">{label}</a></li>')
-            print(f'  [+] Lien ajoute dans nav.html : {fname}')
+        label = meta.get('nav_label', fname)
+        new_links.append(f'            <li><a href="{{{{PAGES}}}}articles/{fname}">{label}</a></li>')
+
     if new_links:
         insertion = '\n'.join(new_links) + '\n' + NAV_MARKER
         content = content.replace(NAV_MARKER, insertion, 1)
-        with open(nav_path, 'w', encoding='utf-8') as f:
-            f.write(content)
+
+    with open(nav_path, 'w', encoding='utf-8') as f:
+        f.write(content)
+    print(f'  [OK] {len(new_links)} lien(s) mis à jour dans nav.html (ordre chronologique inversé)')
 
 
 def update_nos_dossiers(articles):
@@ -182,33 +186,25 @@ def update_nos_dossiers(articles):
     # Recherche du marqueur FIN DOSSIERS (souple)
     match = re.search(r'<!--[^\S\n]*.*?FIN DOSSIERS.*?-->', content)
     if not match:
-        print('  [!] Marqueur FIN DOSSIERS introuvable — ajout automatique.')
-        # Fallback : insérer avant la fermeture de dossiers-grid
-        grid_end = re.search(r'(\s*</div>\s*\n\s*\n\s*<!--\s*Mention)', content)
-        if grid_end:
-            marker_line = '\n      <!-- ═══ FIN DOSSIERS — coller les nouvelles cartes juste au-dessus ═══ -->\n'
-            content = content[:grid_end.start()] + marker_line + content[grid_end.start():]
-            with open(path, 'w', encoding='utf-8') as f:
-                f.write(content)
-            match = re.search(r'<!--[^\S\n]*.*?FIN DOSSIERS.*?-->', content)
-        if not match:
-            print('  [!] Impossible de trouver un point d\'insertion dans nos-dossiers.html.')
-            return
+        print('  [!] Marqueur FIN DOSSIERS introuvable.')
+        return
 
     marker = match.group(0)
-    new_cards = []
-    for fname, meta, _ in articles:
-        slug = fname.upper().replace('.HTML', '')
-        if f'<!-- DOSSIER {slug}' in content:
-            print(f'  [=] Carte deja presente : {fname}')
-        else:
-            new_cards.append(build_dossier_card(fname, meta))
-            print(f'  [+] Carte ajoutee dans nos-dossiers.html : {fname}')
-    if new_cards:
-        insertion = '\n'.join(new_cards) + '\n\n      ' + marker
+
+    # Supprimer toutes les cartes générées automatiquement existantes
+    content = re.sub(r'\n\s*<!-- DOSSIER [A-Z0-9\-]+ — généré automatiquement -->.*?</a>', '', content, flags=re.DOTALL)
+
+    # Réinsérer toutes les cartes triées par date_sort décroissant (déjà triées par discover_articles)
+    all_cards = [build_dossier_card(fname, meta) for fname, meta, _ in articles]
+
+    if all_cards:
+        insertion = marker + '\n' + '\n'.join(all_cards)
         content = content.replace(marker, insertion)
-        with open(path, 'w', encoding='utf-8') as f:
-            f.write(content)
+
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(content)
+
+    print(f'  [OK] {len(all_cards)} carte(s) insérée(s) dans nos-dossiers.html (ordre chronologique inversé)')
 
 
 def update_sitemap(articles):
