@@ -95,5 +95,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
+	<!-- Articles — générés automatiquement par build.py -->
+	  <url>
+    <loc>https://debourg-audit.fr/pages/articles/compte-courant-associe.html</loc>
+    <lastmod>2025-05-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- FIN ARTICLES -->
 </urlset>
