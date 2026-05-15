@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<!--
+ARTICLE_META
+titre: Compte courant d'associé — Trésorerie et revenus complémentaires
+categorie: Gestion & Finance
+description: Comment apporter vos biens en nature, récupérer de la trésorerie sans salaire et générer des intérêts déductibles grâce au compte courant d'associé. Simulation chiffrée incluse.
+tags: CCA, Trésorerie, Apports en nature, Fiscalité
+emoji: 💼
+nav_label: Compte courant d'associé
+date: 14 mai 2025
+date_sort: 2025-05-14
+-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Le compte courant d'associé expliqué : comment apporter vos biens en nature, générer des intérêts déductibles et récupérer de la trésorerie sans salaire. Guide complet avec simulation chiffrée." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://debourg-audit.fr/pages/articles/compte-courant-associe.html" />
+  <meta property="og:title" content="Compte courant d'associé : récupérer de la trésorerie et générer des revenus — Debourg Audit" />
+  <meta property="og:description" content="Apports en nature, intérêts au taux légal, convention de compte courant : tout ce que vous devez savoir pour utiliser le CCA comme outil de trésorerie et de revenus complémentaires." />
+  <meta property="og:image" content="https://debourg-audit.fr/assets/logo_transparent.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Debourg Audit" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Compte courant d'associé : trésorerie et revenus complémentaires — Debourg Audit" />
+  <meta name="twitter:description" content="Guide complet sur le CCA : apports en nature, intérêts déductibles, simulation chiffrée." />
+  <link rel="canonical" href="https://debourg-audit.fr/pages/articles/compte-courant-associe.html" />
+  <title>Compte courant d'associé : récupérer de la trésorerie et générer des revenus complémentaires — Debourg Audit</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Compte courant d'associé : récupérer de la trésorerie et générer des revenus complémentaires",
+    "description": "Le compte courant d'associé expliqué : apports en nature, intérêts au taux légal, convention de compte courant, simulation chiffrée.",
+    "author": {"@type": "Person", "name": "Antonin Debourg"},
+    "publisher": {"@type": "Organization", "name": "Debourg Audit", "url": "https://debourg-audit.fr"},
+    "datePublished": "2025-05-14",
+    "url": "https://debourg-audit.fr/pages/articles/compte-courant-associe.html",
+    "mainEntityOfPage": "https://debourg-audit.fr/pages/articles/compte-courant-associe.html"
+  }
+  </script>
+
+  <link rel="stylesheet" href="{{ROOT}}css/style.css" />
+  <link rel="icon" href="{{ROOT}}assets/favicon.png" type="image/png" />
+
+  {{INCLUDE:nav-css.html}}
+
+  <style>
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .article-header {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--gris-200);
+      margin-bottom: 48px;
+    }
+    .article-header__categorie {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cuivre);
+      margin-bottom: 16px;
+    }
+    .article-header__titre {
+      font-family: var(--font-titre);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--bleu);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .article-header__intro {
+      font-size: 1.1rem;
+      color: var(--gris-500);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .article-header__meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: var(--gris-500);
+    }
+    .article-header__meta span { display: flex; align-items: center; gap: 6px; }
+    .article-body { padding-bottom: 64px; }
+    .article-body h2 {
+      font-family: var(--font-titre);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin: 48px 0 16px;
+      line-height: 1.25;
+    }
+    .article-body h3 {
+      font-family: var(--font-titre);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--bleu);
+      margin: 32px 0 12px;
+    }
+    .article-body p {
+      font-size: 1rem;
+      color: var(--gris-800);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 24px;
+      list-style: disc;
+    }
+    .article-body ol { list-style: decimal; }
+    .article-body li {
+      font-size: 1rem;
+      color: var(--gris-800);
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .article-body strong { color: var(--bleu); font-weight: 600; }
+    .article-body em { font-style: italic; }
+    .article-body a { color: var(--cuivre); text-decoration: underline; }
+    .article-body a:hover { color: var(--bleu); }
+    .article-body hr { border: none; border-top: 1px solid var(--gris-200); margin: 40px 0; }
+    .article-body .encadre {
+      background: var(--gris-100);
+      border-left: 4px solid var(--cuivre);
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .article-body .encadre p { margin-bottom: 0; }
+    .article-body .encadre p + p { margin-top: 10px; }
+    .article-body .alerte {
+      background: rgba(192,122,69,0.08);
+      border: 1px solid rgba(192,122,69,0.25);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin: 28px 0;
+      font-size: 0.9rem;
+    }
+    .article-body blockquote {
+      border-left: 3px solid var(--cuivre);
+      margin: 32px 0;
+      padding: 4px 0 4px 24px;
+      font-family: var(--font-titre);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--bleu);
+      line-height: 1.5;
+    }
+    .simulation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      font-size: 0.9rem;
+    }
+    .simulation-table th {
+      background: var(--bleu);
+      color: var(--blanc);
+      padding: 12px 16px;
+      text-align: left;
+      font-family: var(--font-titre);
+      font-weight: 600;
+    }
+    .simulation-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(26,54,93,0.08);
+      color: var(--gris-800);
+    }
+    .simulation-table tr:nth-child(even) td { background: var(--gris-100); }
+    .simulation-table tr:last-child td { border-bottom: none; }
+    .simulation-table td:first-child { font-weight: 600; color: var(--bleu); }
+    .article-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 0;
+      border-top: 1px solid var(--gris-200);
+      gap: 16px;
+    }
+    .article-nav__retour {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gris-500);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .article-nav__retour:hover { color: var(--bleu); }
+    .article-nav__retour svg { width: 16px; height: 16px; }
+    .article-cta {
+      background: var(--bleu);
+      border-radius: 14px;
+      padding: 40px;
+      text-align: center;
+      margin: 48px 0;
+    }
+    .article-cta__titre {
+      font-family: var(--font-titre);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--blanc);
+      margin-bottom: 10px;
+    }
+    .article-cta__titre em { color: var(--cuivre); font-style: normal; }
+    .article-cta__texte { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+  </style>
+
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdlDtwsAAAAAFpFJrTwKEAXuAr2u-Jf5b-0gP12"></script>
+</head>
+<body>
+
+{{INCLUDE:nav.html}}
+
+<div style="padding-top: 80px;">
+<div class="article-wrap">
+
+  <header class="article-header">
+    <div class="article-header__categorie">Gestion &amp; Finance</div>
+    <h1 class="article-header__titre">Le compte courant d'associé : comment récupérer de la trésorerie et générer des revenus complémentaires</h1>
+    <p class="article-header__intro">
+      Le compte courant d'associé (CCA) est l'un des outils les plus puissants et les plus méconnus du droit des sociétés. Utilisé correctement, il permet de récupérer de la trésorerie sans être salarié, de valoriser les biens que vous apportez à votre société et de générer des intérêts déductibles pour la société. Ce dossier s'adresse aussi bien au créateur qui lance sa structure qu'au dirigeant déjà en activité.
+    </p>
+    <div class="article-header__meta">
+      <span>📅 14 mai 2025</span>
+      <span>⏱ 12 min de lecture</span>
+    </div>
+  </header>
+
+  <article class="article-body">
+
+    <h2>Qu'est-ce que le compte courant d'associé ?</h2>
+
+    <p>
+      Le compte courant d'associé est une créance que l'associé détient sur sa propre société. Concrètement, lorsque vous mettez de l'argent ou des biens à disposition de votre société sans augmenter le capital social, cette mise à disposition est enregistrée dans un compte courant d'associé. La société vous doit cet argent — et elle peut vous le rembourser à tout moment, selon les modalités prévues.
+    </p>
+
+    <div class="encadre">
+      <p><strong>À retenir :</strong> Le CCA est une dette de la société envers l'associé. Le remboursement du principal est neutre fiscalement — ce n'est pas un revenu. Ce sont les éventuels intérêts versés qui constituent un revenu pour l'associé et une charge déductible pour la société.</p>
+    </div>
+
+    <p>
+      Il existe deux façons d'alimenter un compte courant d'associé. La première est l'<strong>avance en numéraire</strong> : vous versez de l'argent sur le compte de la société et cette somme est inscrite à votre CCA. La seconde est l'<strong>apport en nature</strong> : vous mettez un bien matériel à disposition de la société (véhicule, outillage, matériel informatique, mobilier professionnel) dont la valeur est inscrite à votre CCA.
+    </p>
+
+    <p>
+      Il est important de bien distinguer le CCA du capital social. Le capital social est définitivement apporté à la société — vous ne pouvez pas le récupérer librement. Le CCA, lui, reste une dette remboursable à tout moment, sous réserve que la trésorerie de la société le permette.
+    </p>
+
+    <h2>Les apports en nature : valoriser ce que vous possédez déjà</h2>
+
+    <p>
+      L'apport en nature au CCA est particulièrement intéressant lors de la création d'une société ou lors du passage d'une entreprise individuelle (EI ou micro-entreprise) vers une structure sociétaire (SARL, SAS, SASU, EURL). Vous possédez certainement déjà du matériel professionnel — un véhicule, des outils, du matériel informatique — que vous utilisez dans votre activité. Plutôt que de les laisser hors bilan, vous pouvez les inscrire au compte courant d'associé dès la constitution de la société.
+    </p>
+
+    <h3>Quels biens peuvent être apportés ?</h3>
+
+    <ul>
+      <li>Véhicule professionnel ou utilitaire</li>
+      <li>Outillage et matériel de chantier</li>
+      <li>Matériel informatique (ordinateurs, imprimantes, serveurs)</li>
+      <li>Mobilier et équipement de bureau</li>
+      <li>Stocks de matières premières ou de marchandises</li>
+      <li>Tout bien meuble corporel utilisé dans l'activité professionnelle</li>
+    </ul>
+
+    <h3>Comment évaluer la valeur d'un apport en nature ?</h3>
+
+    <p>
+      La valeur retenue pour un apport en nature au CCA est la <strong>valeur vénale</strong> — c'est-à-dire le prix auquel le bien pourrait être vendu sur le marché entre deux parties informées. Cette valeur n'est pas la valeur d'achat ni la valeur nette comptable (valeur d'origine diminuée des amortissements), mais bien la valeur de marché au moment de l'apport.
+    </p>
+
+    <div class="encadre">
+      <p><strong>Exemple :</strong> Un véhicule utilitaire acheté 28 000€ il y a 4 ans. Sa valeur vénale actuelle selon la cote Argus est 16 000€. C'est cette valeur de 16 000€ qui est inscrite au CCA — pas les 28 000€ d'achat ni la valeur nette comptable.</p>
+    </div>
+
+    <p>
+      Pour justifier la valeur retenue, une <strong>facture d'achat récente, un devis de vente ou une cotation de marché</strong> (cote Argus pour un véhicule, devis d'un revendeur pour du matériel) suffisent dans la plupart des cas. L'associé peut lui-même établir cette valorisation, à condition qu'elle soit documentée et cohérente avec les prix du marché.
+    </p>
+
+    <h3>Commissaire aux apports : quand est-il obligatoire ?</h3>
+
+    <p>
+      Pour une SARL ou une SAS, le recours à un commissaire aux apports est obligatoire dans deux cas : lorsqu'un apport en nature dépasse <strong>30 000€</strong>, ou lorsque l'ensemble des apports en nature représente plus de <strong>la moitié du capital social</strong>. En dessous de ces seuils, les associés peuvent décider à l'unanimité de ne pas nommer de commissaire — mais ils restent <strong>solidairement responsables de la valeur retenue pendant 5 ans</strong>.
+    </p>
+
+    <p>
+      Le coût d'intervention d'un commissaire aux apports varie selon la complexité du dossier. Pour un dossier simple (peu de biens, valorisation straightforward), comptez <strong>500€ à 600€ HT</strong>. Pour un dossier standard, la fourchette courante est de <strong>1 000€ à 1 500€ HT</strong>. Pour des dossiers complexes impliquant des apports immobiliers, de nombreux biens ou des expertises complémentaires, les honoraires peuvent atteindre <strong>3 000€ HT voire davantage</strong>.
+    </p>
+
+    <div class="alerte">
+      <p>⚠️ <strong>Debourg Audit prend en charge la recherche du commissaire aux apports au meilleur prix</strong> selon la complexité de votre dossier, et coordonne l'ensemble de la procédure : collecte des pièces, liaison avec le commissaire, suivi jusqu'à la remise du rapport.</p>
+    </div>
+
+    <h2>Les intérêts du CCA : un revenu complémentaire déductible pour la société</h2>
+
+    <p>
+      Une fois votre CCA constitué, vous pouvez percevoir des intérêts sur les sommes mises à disposition de la société. Ces intérêts sont <strong>déductibles du résultat imposable de la société</strong>, dans la limite du taux légal en vigueur — fixé à <strong>5,07% pour 2024</strong>. Ce taux est révisé chaque année par arrêté ministériel ; il convient donc de le vérifier annuellement.
+    </p>
+
+    <blockquote>
+      Les intérêts du CCA constituent un revenu pour l'associé et une charge déductible pour la société — à condition de respecter le taux légal et de formaliser la convention.
+    </blockquote>
+
+    <h3>Remboursement du capital vs intérêts : une distinction fondamentale</h3>
+
+    <p>
+      Il est essentiel de bien distinguer ces deux composantes. Le <strong>remboursement du principal</strong> (la somme inscrite au CCA) est neutre fiscalement : la société rembourse une dette, l'associé récupère ses fonds. Ce n'est pas un revenu, il n'y a aucun impôt ni charge sociale.
+    </p>
+
+    <p>
+      Les <strong>intérêts</strong>, en revanche, constituent un revenu pour l'associé, imposable à l'impôt sur le revenu dans la catégorie des revenus de capitaux mobiliers. Pour la société, ils sont déductibles dans la limite du taux légal. Au-delà de ce taux, la fraction excédentaire n'est pas déductible et peut être requalifiée en revenus distribués par l'administration fiscale.
+    </p>
+
+    <h3>La convention de compte courant : indispensable</h3>
+
+    <p>
+      Pour sécuriser le dispositif et prévenir tout risque de requalification, la rédaction d'une <strong>convention de compte courant d'associé</strong> est indispensable. Ce document formalise les conditions du prêt : montant maximum autorisé, taux d'intérêt retenu (dans la limite du taux légal), modalités de remboursement et durée. Elle est signée par le gérant ou le président de la société et par l'associé, puis annexée aux statuts ou déposée au greffe.
+    </p>
+
+    <div class="encadre">
+      <p><strong>Debourg Audit rédige la convention de compte courant sur demande</strong> et accompagne la procédure complète : rédaction sur mesure, signature par les parties, enregistrement et archivage. Une convention bien rédigée est la meilleure protection en cas de contrôle fiscal.</p>
+    </div>
+
+    <h2>Simulation : combien rapporte un CCA et en combien de temps amortit-on le coût du commissaire ?</h2>
+
+    <p>
+      Voici une simulation des intérêts annuels et mensuels générés au taux légal 2024 (5,07%), ainsi que la durée nécessaire pour amortir le coût d'un commissaire aux apports selon le montant du CCA.
+    </p>
+
+    <table class="simulation-table">
+      <thead>
+        <tr>
+          <th>Montant CCA</th>
+          <th>Intérêts / an</th>
+          <th>Intérêts / mois</th>
+          <th>Amortir 600€</th>
+          <th>Amortir 1 500€</th>
+          <th>Amortir 3 000€</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10 000€</td>
+          <td>507€</td>
+          <td>42€</td>
+          <td>15 mois</td>
+          <td>36 mois</td>
+          <td>71 mois</td>
+        </tr>
+        <tr>
+          <td>20 000€</td>
+          <td>1 014€</td>
+          <td>84€</td>
+          <td>7 mois</td>
+          <td>18 mois</td>
+          <td>36 mois</td>
+        </tr>
+        <tr>
+          <td>30 000€</td>
+          <td>1 521€</td>
+          <td>127€</td>
+          <td>5 mois</td>
+          <td>12 mois</td>
+          <td>24 mois</td>
+        </tr>
+        <tr>
+          <td>50 000€</td>
+          <td>2 535€</td>
+          <td>211€</td>
+          <td>3 mois</td>
+          <td>7 mois</td>
+          <td>15 mois</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Pour un CCA de 30 000€, le coût d'un commissaire aux apports dans le scénario le plus défavorable (3 000€) est amorti en <strong>24 mois</strong>. À partir du 25e mois, les intérêts sont du pur revenu complémentaire déductible pour la société. Pour un dossier simple facturé 600€, le commissaire est amorti en <strong>5 mois seulement</strong>.
+    </p>
+
+    <h2>Cas pratique 1 — Le créateur ou le passage EI vers société</h2>
+
+    <p>
+      Vous créez votre SARL ou SAS, ou vous transformez votre entreprise individuelle en société. Vous possédez déjà du matériel professionnel. Plutôt que de le laisser hors bilan ou de le racheter via la société, inscrivez-le au compte courant d'associé dès la constitution.
+    </p>
+
+    <h3>Exemple chiffré</h3>
+
+    <ul>
+      <li>Véhicule utilitaire — valeur vénale : <strong>18 000€</strong></li>
+      <li>Outillage professionnel — valeur vénale : <strong>12 000€</strong></li>
+      <li><strong>CCA total : 30 000€</strong></li>
+    </ul>
+
+    <p>
+      Ce CCA de 30 000€ génère <strong>127€ d'intérêts par mois</strong> (1 521€/an au taux légal 2024), déductibles pour la société. Surtout, pendant les 6 à 12 premiers mois où vous ne vous versez pas de salaire pour préserver la trésorerie, la société peut vous rembourser progressivement votre CCA — ce qui vous procure un flux de trésorerie personnel sans cotisations sociales ni imposition supplémentaire sur le principal remboursé.
+    </p>
+
+    <div class="encadre">
+      <p><strong>L'avantage clé :</strong> Le remboursement du CCA n'est pas un salaire. Il ne génère ni cotisations sociales ni impôt sur le principal. C'est la récupération d'une dette que la société a envers vous.</p>
+    </div>
+
+    <h2>Cas pratique 2 — Le dirigeant déjà en activité</h2>
+
+    <p>
+      Vous êtes gérant ou président d'une société en activité. Le CCA peut jouer plusieurs rôles stratégiques selon votre situation.
+    </p>
+
+    <h3>Avance de trésorerie ponctuelle</h3>
+
+    <p>
+      Votre société traverse une période de tension de trésorerie (délai de paiement client, investissement à financer). Plutôt que de recourir à un découvert bancaire coûteux, vous avancez personnellement des fonds à la société via le CCA. Ces fonds seront remboursés en priorité lors du retour à une trésorerie positive, avant tout versement de dividendes.
+    </p>
+
+    <h3>Stratégie de rémunération mixte</h3>
+
+    <p>
+      Le CCA peut s'intégrer dans une stratégie de rémunération optimisée : en combinant remboursements de CCA, dividendes et salaire, vous réduisez l'assiette des cotisations sociales. Le remboursement du principal CCA est neutre — seuls les intérêts sont imposés, à un taux souvent plus favorable que les charges sur salaire.
+    </p>
+
+    <h3>Valorisation avant cession ou entrée d'associé</h3>
+
+    <p>
+      Un CCA bien documenté et correctement valorisé renforce la structure bilancielle de votre société. Il est remboursable en priorité sur les dividendes et peut constituer un argument de valorisation lors d'une cession ou d'une ouverture du capital à un nouvel associé.
+    </p>
+
+    <h2>Les points de vigilance</h2>
+
+    <h3>Respecter le taux légal sur les intérêts</h3>
+
+    <p>
+      Les intérêts versés au-delà du taux légal (5,07% en 2024) ne sont pas déductibles pour la société et peuvent être requalifiés en revenus distribués par l'administration fiscale. Vérifiez le taux légal en vigueur chaque année.
+    </p>
+
+    <h3>Proportionnalité du montant</h3>
+
+    <p>
+      Un CCA disproportionné par rapport aux capitaux propres de la société peut attirer l'attention de l'administration. Il convient de maintenir un rapport cohérent entre le montant du CCA et la solidité financière de la structure.
+    </p>
+
+    <h3>Faire appel à son expert-comptable</h3>
+
+    <p>
+      La mise en place d'un CCA, la rédaction de la convention et l'évaluation des apports en nature doivent être réalisées en coordination avec votre expert-comptable. Ce dernier s'assure de la correcte comptabilisation des opérations et de leur conformité avec les règles fiscales en vigueur.
+    </p>
+
+    <div class="alerte">
+      <p>⚠️ <strong>Rappel :</strong> La convention de compte courant est le document fondamental qui protège l'associé en cas de contrôle fiscal. Sans convention formalisée, le dispositif est fragilisé. Debourg Audit rédige cette convention sur demande et coordonne l'ensemble de la procédure.</p>
+    </div>
+
+    <hr>
+
+    <h2>En résumé</h2>
+
+    <ul>
+      <li>Le CCA permet de récupérer la valeur de vos biens professionnels sans augmenter le capital social</li>
+      <li>Le remboursement du principal est neutre fiscalement — ce n'est pas un revenu</li>
+      <li>Les intérêts au taux légal (5,07% en 2024) sont déductibles pour la société et constituent un revenu complémentaire pour l'associé</li>
+      <li>La convention de compte courant est indispensable pour sécuriser le dispositif</li>
+      <li>Le commissaire aux apports est obligatoire au-delà de 30 000€ par bien ou 50% du capital — son coût est amorti rapidement par les intérêts générés</li>
+      <li>Debourg Audit rédige la convention, identifie le commissaire au meilleur prix et coordonne l'ensemble de la procédure</li>
+    </ul>
+
+    <!-- CTA contact -->
+    <div class="article-cta">
+      <div class="article-cta__titre">Vous souhaitez mettre en place<br/><em>un compte courant d'associé ?</em></div>
+      <p style="font-size:0.9rem; color:rgba(255,255,255,0.85); margin-bottom:24px;">Debourg Audit rédige votre convention, trouve le commissaire aux apports au meilleur prix et coordonne la procédure de A à Z. Premier échange gratuit de 30 minutes.</p>
+      <a href="{{PAGES}}contact.html" style="display:inline-flex; align-items:center; gap:8px; margin-top:8px; padding:13px 28px; background:#C07A45; color:#fff; border:none; border-radius:8px; font-weight:700; font-size:0.9rem; text-decoration:none; font-family:var(--font-corps,'DM Sans',sans-serif); transition:background 0.2s;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        Prendre contact
+      </a>
+    </div>
+
+    <!-- CTA Newsletter Brevo -->
+    <div class="article-cta">
+      <div class="article-cta__titre">Recevoir les prochains dossiers<br/><em>directement dans votre boîte mail</em></div>
+      <p style="font-size:0.9rem; color:rgba(255,255,255,0.85); margin-bottom:24px;">Un dossier à la fois, quand il est prêt. Pas de spam.</p>
+      <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+      <style>
+        #sib-form .sib-form-block:first-child p { display:none; }
+        #sib-form .sib-form-block:nth-child(2) { display:none; }
+        #sib-form .entry__label { font-size:0.8rem !important; font-weight:600 !important; color:rgba(255,255,255,0.75) !important; letter-spacing:0.06em !important; text-transform:uppercase !important; font-family:var(--font-corps,'DM Sans',sans-serif) !important; margin-bottom:8px !important; }
+        #sib-form .entry__specification { display:none !important; }
+        #sib-form #EMAIL { width:100% !important; padding:16px 20px !important; border:2px solid rgba(255,255,255,0.25) !important; border-radius:10px !important; background:rgba(255,255,255,0.12) !important; color:#1a1a1a !important; font-size:1rem !important; font-family:var(--font-corps,'DM Sans',sans-serif) !important; box-sizing:border-box !important; outline:none !important; transition:border-color 0.2s !important; }
+        #sib-form #EMAIL::placeholder { color:rgba(255,255,255,0.5) !important; }
+        #sib-form #EMAIL:focus { border-color:#C07A45 !important; }
+        #sib-form .sib-form-block__button { width:100% !important; padding:16px 24px !important; background:#C07A45 !important; color:#fff !important; border:none !important; border-radius:10px !important; font-size:1rem !important; font-weight:700 !important; font-family:var(--font-corps,'DM Sans',sans-serif) !important; cursor:pointer !important; letter-spacing:0.02em !important; margin-top:12px !important; transition:background 0.2s !important; }
+        #sib-form .sib-form-block__button:hover { background:#a8662e !important; }
+        #sib-form .entry__error { font-size:0.8rem !important; font-family:var(--font-corps,'DM Sans',sans-serif) !important; }
+        #sib-form-container { padding:0 !important; }
+        .sib-form { background:transparent !important; padding:0 !important; }
+        #success-message .sib-form-message-panel__inner-text { color:#fff !important; font-family:var(--font-corps,'DM Sans',sans-serif) !important; }
+        #error-message .sib-form-message-panel__inner-text { font-family:var(--font-corps,'DM Sans',sans-serif) !important; }
+      </style>
+      <div class="sib-form" style="max-width:420px; margin:0 auto;">
+        <div id="sib-form-container" class="sib-form-container">
+          <div id="error-message" class="sib-form-message-panel" style="display:none; font-size:14px; font-family:Helvetica,sans-serif; color:#661d1d; background-color:#ffeded; border-radius:3px; border-color:#ff4949;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Nous n&#039;avons pas pu confirmer votre inscription.</span>
+            </div>
+          </div>
+          <div id="success-message" class="sib-form-message-panel" style="display:none; font-size:14px; font-family:Helvetica,sans-serif; color:#085229; background-color:#e7faf0; border-radius:3px; border-color:#13ce66;">
+            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
+              <span class="sib-form-message-panel__inner-text">Votre inscription est confirmée. ✅</span>
+            </div>
+          </div>
+          <div id="sib-container" class="sib-container--large sib-container--vertical">
+            <form id="sib-form" method="POST" action="https://c2d92939.sibforms.com/serve/MUIFALfqr-TsXCtGnIdK41K3z8WJl94uZnGHi6PE_SIwWbJ7CLtp4pAWBoEOmqPNShezT6IaNglt5dFeAl10aHDbZzcyiESJjK0UIfhqppvmSXmsi7qscgHlhmTueHLGtjUMviOooVC6CfsGweboknowKMeSvi3OeGweZcWphZdAaJXYZcIUjLC3bEKq8UYPjKI6YK3E5Ma8fl9dXQ==" data-type="subscription">
+              <div class="sib-form-block" style="font-size:32px; font-weight:700; font-family:Helvetica,sans-serif; color:#3C4858; background-color:transparent; text-align:left;"><p>Newsletter</p></div>
+              <div class="sib-form-block" style="font-size:16px; font-family:Helvetica,sans-serif; color:#3C4858; background-color:transparent; text-align:left;"><div class="sib-text-form-block"><p>Newsletter</p></div></div>
+              <div class="sib-input sib-form-block">
+                <div class="form__entry entry_block">
+                  <div class="form__label-row">
+                    <label class="entry__label" style="font-weight:700; font-size:16px; font-family:Helvetica,sans-serif; color:#3c4858;" for="EMAIL" data-required="*">Votre adresse email</label>
+                    <div class="entry__field">
+                      <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="vous@exemple.fr" data-required="true" required />
+                    </div>
+                  </div>
+                  <label class="entry__error entry__error--primary"></label>
+                </div>
+              </div>
+              <div class="sib-form-block" style="text-align:left;">
+                <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">S'abonner</button>
+              </div>
+              <input type="text" name="email_address_check" value="" class="input--hidden">
+              <input type="hidden" name="locale" value="fr">
+            </form>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:0.72rem; color:rgba(255,255,255,0.45); margin-top:12px;">Désinscription libre à tout moment. Données non transmises à des tiers.</p>
+    </div>
+
+    <!-- Navigation retour -->
+    <div class="article-nav">
+      <a href="{{PAGES}}nos-dossiers.html" class="article-nav__retour">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
+        Retour aux dossiers
+      </a>
+    </div>
+
+  </article>
+</div>
+</div>
+
+{{INCLUDE:footer.html}}
+
+<script src="{{ROOT}}js/main.js"></script>
+<script>
+  window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
+  window.LOCALE = 'fr';
+  window.EMAIL_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides.";
+  window.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ.";
+  window.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides.";
+  window.translation = { common: { selectedList: '{quantity} liste sélectionnée', selectedLists: '{quantity} listes sélectionnées', selectedOption: '{quantity} sélectionné', selectedOptions: '{quantity} sélectionnés' } };
+  var AUTOHIDE = Boolean(0);
+</script>
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var forms = document.querySelectorAll('#sib-form');
+  forms.forEach(function(form) {
+    if (!form.querySelector('input[name="g-recaptcha-response"]')) {
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'g-recaptcha-response';
+      input.id = 'g-recaptcha-response';
+      form.appendChild(input);
+    }
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var f = this;
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6LdlDtwsAAAAAFpFJrTwKEAXuAr2u-Jf5b-0gP12', {action: 'newsletter_subscribe'}).then(function(token) {
+          f.querySelector('#g-recaptcha-response').value = token;
+          f.removeEventListener('submit', arguments.callee);
+          HTMLFormElement.prototype.submit.call(f);
+        });
+      });
+    }, false);
+  });
+});
+</script>
+</body>
+</html>
