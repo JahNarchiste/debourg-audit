@@ -102,5 +102,11 @@
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+    <url>
+    <loc>https://debourg-audit.fr/pages/articles/ei-vers-societe.html</loc>
+    <lastmod>2025-05-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- FIN ARTICLES -->
 </urlset>
